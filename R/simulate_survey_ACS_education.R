@@ -89,6 +89,7 @@ simulate_survey_ACS_education <- function(state) {
         education <- bind_rows(education, educationother)
         education <- left_join(education, totaleducation) %>% 
                 mutate(prob = population/statetotal)
+        education$raceethnicity <- toupper(education$raceethnicity)
 
         education        
 }

@@ -99,6 +99,7 @@ simulate_survey_ACS_age <- function(state) {
         age <- bind_rows(age, ageother)
         age <- left_join(age, totalage) %>% 
                 mutate(prob = population/statetotal)
+        age$raceethnicity <- toupper(age$raceethnicity)
         
         age        
 }
