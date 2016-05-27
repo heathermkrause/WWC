@@ -2,12 +2,19 @@
 % Please edit documentation in R/simulate_survey.R
 \name{simulate_survey}
 \alias{simulate_survey}
-\title{Simulate a single survey to a yes/no response question}
+\title{Simulate a single survey to a yes/no response question in a U.S. state}
 \usage{
-simulate_survey(n = 1000, raceethnicity, gender, opinionyes)
+simulate_survey(n = 1000, state, opinionyes)
 }
 \arguments{
 \item{n}{Number of respondents in the survey (default is 1000)}
+
+\item{state}{Two letter string abbreviation for the state to simulate in, for
+example, \code{"TX"}, \code{"UT"}, or \code{"WA"}}
+
+\item{opinionyes}{Numeric vector specifying what proportion of each 
+racial/ethnic group approves of the survey question, for example, 
+\code{c(0.2, 0.7, 0.5, 0.1, 0.9)}}
 
 \item{raceethnicity}{Numeric vector specifying the racial/ethnic 
 characteristics of the survey respondendents as proportions in the order
@@ -19,13 +26,9 @@ respondents fall into one of these racial/ethnic bins.}
 survey respondents as proportions in the order male, then female, for
 example, \code{c(0.49, 0.51)}. Must sum to 1, i.e., all respondents fall into
 one of these gender bins.}
-
-\item{opinionyes}{Numeric vector specifying what proportion of each 
-racial/ethnic group approves of the survey question, for example, 
-\code{c(0.2, 0.7, 0.5, 0.1, 0.9)}}
 }
 \description{
-Simulate a single survey to a yes/no response question
+Simulate a single survey to a yes/no response question in a U.S. state
 }
 \examples{
 
