@@ -34,8 +34,8 @@
 simulate_survey <- function(n = 1000, state, opinionyes) {
         
         statefetch <- acs::geo.make(state = state)
-        acseducationDF <- process_ACS_education(geographyfetch = statefetch)
-        acsageDF <- process_ACS_age(geographyfetch = statefetch)
+        acseducationDF <- process_acs_education(geographyfetch = statefetch)
+        acsageDF <- process_acs_age(geographyfetch = statefetch)
         
         
         # NOT WORKING FROM HERE ON DOWN RIGHT NOW

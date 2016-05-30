@@ -12,34 +12,35 @@
 #' attainment binning in this data frame is the same as in ACS tables 
 #' C15002B/D/H/I (the data from table C15002 is rebinned and used to find the 
 #' "other" population).
-
 #' 
 #' @import dplyr
+#' @importFrom stringr str_extract
 #' 
-#' @name process_ACS_education
+#' 
+#' @name process_acs_education
 #' 
 #' @examples 
 #' 
 #' library(acs)
 #' unitedstates <- geo.make(us = TRUE)
-#' usDF <- process_ACS_education(unitedstates)
+#' usDF <- process_acs_education(unitedstates)
 #' 
 #' texas <- geo.make(state = "TX")
-#' txDF <- process_ACS_education(texas)
+#' txDF <- process_acs_education(texas)
 #' 
 #' cookcounty <- geo.make(county = 17031)
-#' cookDF <- process_ACS_education(cookcounty)
+#' cookDF <- process_acs_education(cookcounty)
 #' 
 #' @export
 
-process_ACS_education <- function(geographyfetch) {
+process_acs_education <- function(geographyfetch) {
 
         # get education attainment for male/female population, not broken
         # down by race/ethnicity
         totaleducationfetch <- acs::acs.fetch(geography = geographyfetch, endyear = 2014,
                                          span = 1, table.number = "C15002",
                                          col.names = "pretty")
-        totaleducation <- reshape2::melt(estimate(totaleducationfetch))
+        totaleducation <- reshape2::melt(acs::estimate(totaleducationfetch))
         totaleducation$Var2 <- str_extract(as.character(totaleducation$Var2), 
                                            "(Female:.+$|Female:|Male:.+$|Male:)")
         totaleducation$sex <- str_extract(totaleducation$Var2, "(Female|Male)")
@@ -57,12 +58,12 @@ process_ACS_education <- function(geographyfetch) {
         # by race/ethnicity
         tablenames <- paste0("C15002", c("B","D","H", "I"))
         educationfetch <- purrr::map(tablenames, function(x) {
-                acs.fetch(geography = geographyfetch, endyear = 2014, span = 1,
+                acs::acs.fetch(geography = geographyfetch, endyear = 2014, span = 1,
                           table.number = x, col.names = "pretty")
         })
         
         process_fetch <- function(fetch) {
-                education <- estimate(fetch)
+                education <- acs::estimate(fetch)
                 education <- reshape2::melt(education)
                 education$raceethnicity <- str_extract(str_extract(as.character(education$Var2), "\\(.+\\):{1}"),
                                                        "[a-zA-Z\\,\\s]+")

@@ -13,31 +13,32 @@
 #' B01001 is rebinned and used to find the "other" population).
 #' 
 #' @import dplyr
+#' @importFrom stringr str_extract
 #' 
-#' @name process_ACS_age
+#' @name process_acs_age
 #' 
 #' @examples 
 #' 
 #' library(acs)
 #' unitedstates <- geo.make(us = TRUE)
-#' usDF <- process_ACS_age(unitedstates)
+#' usDF <- process_acs_age(unitedstates)
 #' 
 #' texas <- geo.make(state = "TX")
-#' txDF <- process_ACS_age(texas)
+#' txDF <- process_acs_age(texas)
 #' 
 #' cookcounty <- geo.make(county = 17031)
-#' cookDF <- process_ACS_age(cookcounty)
+#' cookDF <- process_acs_age(cookcounty)
 #' 
 #' @export
 
-process_ACS_age <- function(geographyfetch) {
+process_acs_age <- function(geographyfetch) {
 
         # get age for male/female population, not broken
         # down by race/ethnicity
         totalagefetch <- acs::acs.fetch(geography = geographyfetch, endyear = 2014,
                                          span = 1, table.number = "B01001",
                                          col.names = "pretty")
-        totalage <- reshape2::melt(estimate(totalagefetch))
+        totalage <- reshape2::melt(acs::estimate(totalagefetch))
         totalage$age <- str_extract(as.character(totalage$Var2), 
                                            "(\\d+ (to|and) \\d+ years|\\d+ years and over|\\d+ years|Under \\d+ years)")
         totalage$sex <- str_extract(totalage$Var2, "(Female|Male)")
@@ -55,12 +56,12 @@ process_ACS_age <- function(geographyfetch) {
         # by race/ethnicity
         tablenames <- paste0("B01001", c("B","D","H", "I"))
         agefetch <- purrr::map(tablenames, function(x) {
-                acs.fetch(geography = geographyfetch, endyear = 2014, span = 1,
+                acs::acs.fetch(geography = geographyfetch, endyear = 2014, span = 1,
                           table.number = x, col.names = "pretty")
         })
         
         process_fetch <- function(fetch) {
-                sexbyage <- estimate(fetch)
+                sexbyage <- acs::estimate(fetch)
                 sexbyage <- reshape2::melt(sexbyage)
                 sexbyage$raceethnicity <- str_extract(str_extract(as.character(sexbyage$Var2), "\\(.+\\):{1}"),
                                                        "[a-zA-Z\\,\\s]+")
