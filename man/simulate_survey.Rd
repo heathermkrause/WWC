@@ -32,11 +32,12 @@ Simulate a single survey to a yes/no response question in a U.S. state
 }
 \examples{
 
+\dontrun{
 myRaceEthnicity <- c(0.65, 0.25, 0.1, 0.05, 0.05)
 myGender <- c(0.48, 0.52)
 myOpinions <- c(0.8, 0.2, 0.9, 0.5, 0.5)
 mySurvey <- simulate_survey(900, myraceethnicity, myopinions)
-
+}
 
 }
 

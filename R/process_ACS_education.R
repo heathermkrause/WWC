@@ -21,6 +21,8 @@
 #' 
 #' @examples 
 #' 
+#' 
+#' \dontrun{
 #' library(acs)
 #' unitedstates <- geo.make(us = TRUE)
 #' usDF <- process_acs_education(unitedstates)
@@ -30,6 +32,7 @@
 #' 
 #' cookcounty <- geo.make(county = 17031)
 #' cookDF <- process_acs_education(cookcounty)
+#' }
 #' 
 #' @export
 

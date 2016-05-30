@@ -27,6 +27,7 @@ single geography
 }
 \examples{
 
+\dontrun{
 library(acs)
 unitedstates <- geo.make(us = TRUE)
 usDF <- process_acs_age(unitedstates)
@@ -36,6 +37,7 @@ txDF <- process_acs_age(texas)
 
 cookcounty <- geo.make(county = 17031)
 cookDF <- process_acs_age(cookcounty)
+}
 
 }
 
