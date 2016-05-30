@@ -1,9 +1,40 @@
-simulate_survey_ACS_age <- function(state) {
-        statefetch <- geo.make(state = state)
-        
+#' Fetch and process age and demographic data from ACS 
+#' tables B01001 and B01001B/D/H/I and return a tidy data frame for a specified 
+#' single geography
+#' 
+#' @param geographyfetch A geography created with the \code{geo.make()} function
+#' of the acs package. The geography must be the entire U.S. or a single state
+#' or a single county.
+#' 
+#' @return A data frame with 7 columns that tabulates the sex by age population
+#' for five racial/ethnic groups: black alone, white alone (not Hispanic or 
+#' Latino), Hispanic or Latino, Asian alone, and other. The age binning in this
+#' data frame is the same as in ACS tables B01001B/D/H/I (the data from table
+#' B01001 is rebinned and used to find the "other" population).
+#' 
+#' @import dplyr
+#' 
+#' @name process_ACS_age
+#' 
+#' @examples 
+#' 
+#' library(acs)
+#' unitedstates <- geo.make(us = TRUE)
+#' usDF <- process_ACS_age(unitedstates)
+#' 
+#' texas <- geo.make(state = "TX")
+#' txDF <- process_ACS_age(texas)
+#' 
+#' cookcounty <- geo.make(county = 17031)
+#' cookDF <- process_ACS_age(cookcounty)
+#' 
+#' @export
+
+process_ACS_age <- function(geographyfetch) {
+
         # get age for male/female population, not broken
         # down by race/ethnicity
-        totalagefetch <- acs.fetch(geography = statefetch, endyear = 2014,
+        totalagefetch <- acs::acs.fetch(geography = geographyfetch, endyear = 2014,
                                          span = 1, table.number = "B01001",
                                          col.names = "pretty")
         totalage <- reshape2::melt(estimate(totalagefetch))
@@ -23,8 +54,8 @@ simulate_survey_ACS_age <- function(state) {
         # get age for male/female population broken down
         # by race/ethnicity
         tablenames <- paste0("B01001", c("B","D","H", "I"))
-        agefetch <- map(tablenames, function(x) {
-                acs.fetch(geography = statefetch, endyear = 2014, span = 1,
+        agefetch <- purrr::map(tablenames, function(x) {
+                acs.fetch(geography = geographyfetch, endyear = 2014, span = 1,
                           table.number = x, col.names = "pretty")
         })
         
@@ -92,12 +123,12 @@ simulate_survey_ACS_age <- function(state) {
         # what about "other" as a racial/ethnic group?
         ageother <- age %>% group_by(sex, age) %>% 
                 summarise(notother = sum(population)) %>% 
-                left_join(totalage) %>% 
+                left_join(totalage, by = c("sex", "age")) %>% 
                 mutate(raceethnicity = "Other", 
                        population = sextotal - notother) %>% 
                 select(sex, age, raceethnicity, population)
         age <- bind_rows(age, ageother)
-        age <- left_join(age, totalage) %>% 
+        age <- left_join(age, totalage, by = c("sex", "age")) %>% 
                 mutate(prob = population/statetotal)
         age$raceethnicity <- toupper(age$raceethnicity)
         

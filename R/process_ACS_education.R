@@ -1,9 +1,42 @@
-simulate_survey_ACS_education <- function(state) {
-        statefetch <- geo.make(state = state)
-        
+#' Fetch and process educational attainment and demographic data from ACS 
+#' tables C15002 and C15002B/D/H/I and return a tidy data frame for a specified 
+#' single geography
+#' 
+#' @param geographyfetch A geography created with the \code{geo.make()} function
+#' of the acs package. The geography must be the entire U.S. or a single state
+#' or a single county.
+#' 
+#' @return A data frame with 7 columns that tabulates the educational attainment
+#' by sex for five racial/ethnic groups: black alone, white alone (not Hispanic 
+#' or Latino), Hispanic or Latino, Asian alone, and other. The educational 
+#' attainment binning in this data frame is the same as in ACS tables 
+#' C15002B/D/H/I (the data from table C15002 is rebinned and used to find the 
+#' "other" population).
+
+#' 
+#' @import dplyr
+#' 
+#' @name process_ACS_education
+#' 
+#' @examples 
+#' 
+#' library(acs)
+#' unitedstates <- geo.make(us = TRUE)
+#' usDF <- process_ACS_education(unitedstates)
+#' 
+#' texas <- geo.make(state = "TX")
+#' txDF <- process_ACS_education(texas)
+#' 
+#' cookcounty <- geo.make(county = 17031)
+#' cookDF <- process_ACS_education(cookcounty)
+#' 
+#' @export
+
+process_ACS_education <- function(geographyfetch) {
+
         # get education attainment for male/female population, not broken
         # down by race/ethnicity
-        totaleducationfetch <- acs.fetch(geography = statefetch, endyear = 2014,
+        totaleducationfetch <- acs::acs.fetch(geography = geographyfetch, endyear = 2014,
                                          span = 1, table.number = "C15002",
                                          col.names = "pretty")
         totaleducation <- reshape2::melt(estimate(totaleducationfetch))
@@ -23,8 +56,8 @@ simulate_survey_ACS_education <- function(state) {
         # get educational attainment for male/female population broken down
         # by race/ethnicity
         tablenames <- paste0("C15002", c("B","D","H", "I"))
-        educationfetch <- map(tablenames, function(x) {
-                acs.fetch(geography = statefetch, endyear = 2014, span = 1,
+        educationfetch <- purrr::map(tablenames, function(x) {
+                acs.fetch(geography = geographyfetch, endyear = 2014, span = 1,
                           table.number = x, col.names = "pretty")
         })
         
@@ -82,12 +115,13 @@ simulate_survey_ACS_education <- function(state) {
         # what about "other" as a racial/ethnic group?
         educationother <- education %>% group_by(sex, level) %>% 
                 summarise(notother = sum(population)) %>% 
-                left_join(totaleducation) %>% 
+                left_join(totaleducation, by = c("sex", "level")) %>% 
                 mutate(raceethnicity = "Other", 
                        population = sextotal - notother) %>% 
                 select(sex, level, raceethnicity, population)
         education <- bind_rows(education, educationother)
-        education <- left_join(education, totaleducation) %>% 
+        education <- left_join(education, totaleducation, 
+                               by = c("sex", "level")) %>% 
                 mutate(prob = population/statetotal)
         education$raceethnicity <- toupper(education$raceethnicity)
 
