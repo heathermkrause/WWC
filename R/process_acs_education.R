@@ -51,8 +51,6 @@ process_acs_education <- function(geographyfetch) {
         totaleducation$sex <- str_extract(totaleducation$Var2, "(Female|Male)")
         totaleducation$level <- str_extract(str_extract(totaleducation$Var2, ":.+$"), "\\b.+$")
         totaleducation$level[is.na(totaleducation$level)] <- "Total"
-        totaleducation$level <- factor(totaleducation$level, levels = unique(totaleducation$level))
-        totaleducation$sex <- as.factor(totaleducation$sex)
         totaleducation <- totaleducation %>% 
                 select(sex, level, population = value) %>%
                 filter(!is.na(sex))
@@ -76,8 +74,6 @@ process_acs_education <- function(geographyfetch) {
                 education$sex <- str_extract(education$Var2, "(Female|Male)")
                 education$level <- str_extract(str_extract(education$Var2, ":.+$"), "\\b.+$")
                 education$level[is.na(education$level)] <- "Total"
-                education$level <- factor(education$level, levels = unique(education$level))
-                education$sex <- as.factor(education$sex)
                 education <- education %>% select(sex, level, raceethnicity, population = value)
         }
         

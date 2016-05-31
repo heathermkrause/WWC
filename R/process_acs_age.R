@@ -47,8 +47,6 @@ process_acs_age <- function(geographyfetch) {
                                            "(\\d+ (to|and) \\d+ years|\\d+ years and over|\\d+ years|Under \\d+ years)")
         totalage$sex <- str_extract(totalage$Var2, "(Female|Male)")
         totalage$age[is.na(totalage$age)] <- "Total"
-        totalage$age <- factor(totalage$age, levels = unique(totalage$age))
-        totalage$sex <- as.factor(totalage$sex)
         geototal <- totalage$value[is.na(totalage$sex)]
         totalage <- totalage %>% 
                 select(sex, age, population = value) %>%
@@ -73,8 +71,6 @@ process_acs_age <- function(geographyfetch) {
                                             "(\\d+ (to|and) \\d+ years|\\d+ years and over|\\d+ years|Under \\d+ years)")
                 sexbyage$sex <- str_extract(sexbyage$Var2, "(Female|Male)")
                 sexbyage$age[is.na(sexbyage$age)] <- "Total"
-                sexbyage$age <- factor(sexbyage$age, levels = unique(sexbyage$age))
-                sexbyage$sex <- as.factor(sexbyage$sex)
                 sexbyage <- sexbyage %>% select(sex, age, raceethnicity, population = value)
         }
         
