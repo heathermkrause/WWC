@@ -6,6 +6,8 @@
 #' of the acs package. The geography must be the entire U.S. or a single state
 #' or a single county.
 #' 
+#' @details Uses ACS 1-year estimate for 2014
+#' 
 #' @return A data frame with 7 columns that tabulates the sex by age population
 #' for five racial/ethnic groups: black alone, white alone (not Hispanic or 
 #' Latino), Hispanic or Latino, Asian alone, and other. The age binning in this
@@ -47,7 +49,7 @@ process_acs_age <- function(geographyfetch) {
         totalage$age[is.na(totalage$age)] <- "Total"
         totalage$age <- factor(totalage$age, levels = unique(totalage$age))
         totalage$sex <- as.factor(totalage$sex)
-        statetotal <- totalage$value[is.na(totalage$sex)]
+        geototal <- totalage$value[is.na(totalage$sex)]
         totalage <- totalage %>% 
                 select(sex, age, population = value) %>%
                 filter(!is.na(sex))
@@ -119,7 +121,7 @@ process_acs_age <- function(geographyfetch) {
                                       summarize(population = sum(population, na.rm = TRUE)) %>% 
                                       mutate(age = "75 to 84 years")) %>%
                 select(sex, age, sextotal = population) %>%
-                mutate(statetotal = statetotal)
+                mutate(geototal = geototal)
         
         # now both age and totalage have the same bins
         
@@ -132,7 +134,7 @@ process_acs_age <- function(geographyfetch) {
                 select(sex, age, raceethnicity, population)
         age <- bind_rows(age, ageother)
         age <- left_join(age, totalage, by = c("sex", "age")) %>% 
-                mutate(prob = population/statetotal)
+                mutate(prob = population/geototal)
         age$raceethnicity <- toupper(age$raceethnicity)
         
         age        

@@ -6,6 +6,8 @@
 #' of the acs package. The geography must be the entire U.S. or a single state
 #' or a single county.
 #' 
+#' @details Uses ACS 1-year estimate for 2014
+#' 
 #' @return A data frame with 7 columns that tabulates the educational attainment
 #' by sex for five racial/ethnic groups: black alone, white alone (not Hispanic 
 #' or Latino), Hispanic or Latino, Asian alone, and other. The educational 
@@ -110,9 +112,9 @@ process_acs_education <- function(geographyfetch) {
                                                            level == "Graduate or professional degree") %>% 
                                             summarize(sextotal = sum(population, na.rm = TRUE)) %>% 
                                             mutate(level = "Bachelor's degree or higher"))
-        statetotal <- totaleducation %>% filter(level == "Total") %>% 
-                summarise(statetotal = sum(sextotal))
-        totaleducation <- totaleducation %>% mutate(statetotal = statetotal[[1]])
+        geototal <- totaleducation %>% filter(level == "Total") %>% 
+                summarise(geototal = sum(sextotal))
+        totaleducation <- totaleducation %>% mutate(geototal = geototal[[1]])
         
         # now both education and total education have the same bins
         
@@ -126,7 +128,7 @@ process_acs_education <- function(geographyfetch) {
         education <- bind_rows(education, educationother)
         education <- left_join(education, totaleducation, 
                                by = c("sex", "level")) %>% 
-                mutate(prob = population/statetotal)
+                mutate(prob = population/geototal)
         education$raceethnicity <- toupper(education$raceethnicity)
 
         education        
