@@ -38,7 +38,7 @@ usDF <- process_acs_age(unitedstates)
 texas <- geo.make(state = "TX")
 txDF <- process_acs_age(texas)
 
-cookcounty <- geo.make(county = 17031)
+cookcounty <- geo.make(state = "IL", county = 17031)
 cookDF <- process_acs_age(cookcounty)
 }
 

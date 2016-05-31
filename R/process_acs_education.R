@@ -32,7 +32,7 @@
 #' texas <- geo.make(state = "TX")
 #' txDF <- process_acs_education(texas)
 #' 
-#' cookcounty <- geo.make(county = 17031)
+#' cookcounty <- geo.make(state = "IL", county = 17031)
 #' cookDF <- process_acs_education(cookcounty)
 #' }
 #' 
@@ -51,6 +51,8 @@ process_acs_education <- function(geographyfetch) {
         totaleducation$sex <- str_extract(totaleducation$Var2, "(Female|Male)")
         totaleducation$level <- str_extract(str_extract(totaleducation$Var2, ":.+$"), "\\b.+$")
         totaleducation$level[is.na(totaleducation$level)] <- "Total"
+        totaleducation$level <- factor(totaleducation$level, levels = unique(totaleducation$level))
+        totaleducation$sex <- as.factor(totaleducation$sex)
         totaleducation <- totaleducation %>% 
                 select(sex, level, population = value) %>%
                 filter(!is.na(sex))
@@ -74,6 +76,8 @@ process_acs_education <- function(geographyfetch) {
                 education$sex <- str_extract(education$Var2, "(Female|Male)")
                 education$level <- str_extract(str_extract(education$Var2, ":.+$"), "\\b.+$")
                 education$level[is.na(education$level)] <- "Total"
+                education$level <- factor(education$level, levels = unique(education$level))
+                education$sex <- as.factor(education$sex)
                 education <- education %>% select(sex, level, raceethnicity, population = value)
         }
         
@@ -117,6 +121,7 @@ process_acs_education <- function(geographyfetch) {
         # what about "other" as a racial/ethnic group?
         educationother <- education %>% group_by(sex, level) %>% 
                 summarise(notother = sum(population)) %>% 
+                mutate(level = as.character(level)) %>%
                 left_join(totaleducation, by = c("sex", "level")) %>% 
                 mutate(raceethnicity = "Other", 
                        population = sextotal - notother) %>% 
