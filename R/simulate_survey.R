@@ -31,7 +31,7 @@
 #' @examples 
 #' 
 #' prob_sex <- c(0.48, 0.52)
-#' prob_raceethnicity <- c(0.65, 0.25, 0.1, 0.05, 0.05)
+#' prob_raceethnicity <- c(0.55, 0.25, 0.1, 0.05, 0.05)
 #' prob_age <- c(0, 0, 0, 0.04, 0.1, 0.1, 0.12, 0.13, 0.12, 0.11, 0.11, 0.09, 0.06, 0.02)
 #' prob_education <- c(0.1, 0.3, 0.4, 0.2)
 #' mySurvey <- simulate_survey(900, prob_sex, prob_raceethnicity, prob_age, prob_education)
@@ -40,6 +40,11 @@
 
 simulate_survey <- function(n = 1000, prob_sex, prob_raceethnicity,
                             prob_age, prob_education) {
+        
+        if (sum(prob_sex) != 1) stop("prob_sex does not sum to 1")
+        if (sum(prob_raceethnicity) != 1) stop("prob_raceethnicity does not sum to 1")
+        if (sum(prob_age) != 1) stop("prob_age does not sum to 1")
+        if (sum(prob_education) != 1) stop("prob_education does not sum to 1")
         
         sex_sample <- c("Male", "Female")
         raceethnicity_sample <- c("WHITE ALONE, NOT HISPANIC OR LATINO", 
@@ -95,7 +100,7 @@ simulate_survey <- function(n = 1000, prob_sex, prob_raceethnicity,
         
 
         
-        myList <- map(myList, calc_response)        
+        myList <- purrr::map(myList, calc_response)        
         mySurvey <- purrr::map_df(myList, bind_rows)
         mySurvey        
 }

@@ -42,7 +42,7 @@ Simulate a single survey to a yes/no response question in a U.S. state
 \examples{
 
 prob_sex <- c(0.48, 0.52)
-prob_raceethnicity <- c(0.65, 0.25, 0.1, 0.05, 0.05)
+prob_raceethnicity <- c(0.55, 0.25, 0.1, 0.05, 0.05)
 prob_age <- c(0, 0, 0, 0.04, 0.1, 0.1, 0.12, 0.13, 0.12, 0.11, 0.11, 0.09, 0.06, 0.02)
 prob_education <- c(0.1, 0.3, 0.4, 0.2)
 mySurvey <- simulate_survey(900, prob_sex, prob_raceethnicity, prob_age, prob_education)
