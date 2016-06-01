@@ -41,41 +41,46 @@
 simulate_survey <- function(n = 1000, prob_sex, prob_raceethnicity,
                             prob_age, prob_education) {
         
+        sex_sample <- c("Male", "Female")
+        raceethnicity_sample <- c("WHITE ALONE, NOT HISPANIC OR LATINO", 
+                                  "HISPANIC OR LATINO", 
+                                  "BLACK OR AFRICAN AMERICAN ALONE", 
+                                  "ASIAN ALONE", 
+                                  "OTHER")
+        age_sample <- c("Under 5 years",
+                        "5 to 9 years",
+                        "10 to 14 years",
+                        "15 to 17 years",
+                        "18 and 19 years",
+                        "20 to 24 years",
+                        "25 to 29 years",
+                        "30 to 34 years",
+                        "35 to 44 years",
+                        "45 to 54 years",
+                        "55 to 64 years",
+                        "65 to 74 years",
+                        "75 to 84 years",
+                        "85 years and over")
+        education_sample <- c("Less than high school diploma",
+                              "High school graduate (includes equivalency)",
+                              "Some college or associate's degree",
+                              "Bachelor's degree or higher")
+        
         #statefetch <- acs::geo.make(state = state)
         #acseducationDF <- process_acs_education(geographyfetch = statefetch)
         #acsageDF <- process_acs_age(geographyfetch = statefetch)
         
         myList <- purrr::rerun(n, 
-                               data_frame(sex = sample(c("Male", "Female"),
+                               data_frame(sex = sample(sex_sample,
                                                        size = 1,
                                                        prob = prob_sex)) %>%
-                                       mutate(raceethnicity = sample(c("WHITE ALONE, NOT HISPANIC OR LATINO", 
-                                                                       "HISPANIC OR LATINO", 
-                                                                       "BLACK OR AFRICAN AMERICAN ALONE", 
-                                                                       "ASIAN ALONE", 
-                                                                       "OTHER"), 
+                                       mutate(raceethnicity = sample(raceethnicity_sample, 
                                                                      size = 1, 
                                                                      prob = prob_raceethnicity)) %>%
-                                       mutate(age = sample(c("Under 5 years",
-                                                             "5 to 9 years",
-                                                             "10 to 14 years",
-                                                             "15 to 17 years",
-                                                             "18 and 19 years",
-                                                             "20 to 24 years",
-                                                             "25 to 29 years",
-                                                             "30 to 34 years",
-                                                             "35 to 44 years",
-                                                             "45 to 54 years",
-                                                             "55 to 64 years",
-                                                             "65 to 74 years",
-                                                             "75 to 84 years",
-                                                             "85 years and over"),
+                                       mutate(age = sample(age_sample,
                                                            size = 1,
                                                            prob = prob_age)) %>%
-                                       mutate(education = sample(c("Less than high school diploma",
-                                                                   "High school graduate (includes equivalency)",
-                                                                   "Some college or associate's degree",
-                                                                   "Bachelor's degree or higher"),
+                                       mutate(education = sample(education_sample,
                                                                  size = 1,
                                                                  prob = prob_education)))
                                        
