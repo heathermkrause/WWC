@@ -4,40 +4,48 @@
 \alias{simulate_survey}
 \title{Simulate a single survey to a yes/no response question in a U.S. state}
 \usage{
-simulate_survey(n = 1000, state, opinionyes)
+simulate_survey(n = 1000, prob_sex, prob_raceethnicity, prob_age,
+  prob_education)
 }
 \arguments{
 \item{n}{Number of respondents in the survey (default is 1000)}
 
-\item{state}{Two letter string abbreviation for the state to simulate in, for
-example, \code{"TX"}, \code{"UT"}, or \code{"WA"}}
-
-\item{opinionyes}{Numeric vector specifying what proportion of each 
-racial/ethnic group approves of the survey question, for example, 
-\code{c(0.2, 0.7, 0.5, 0.1, 0.9)}}
-
-\item{raceethnicity}{Numeric vector specifying the racial/ethnic 
-characteristics of the survey respondendents as proportions in the order
-white alone, all Hispanic, black alone, Asian alone, and other, 
-for example, \code{c(0.6, 0.22, 0.11, 0.05, 0.02)}. Must sum to 1, i.e., all
-respondents fall into one of these racial/ethnic bins.}
-
-\item{gender}{Numeric vector specifying the gender characteristics of the
+\item{prob_sex}{Numeric vector specifying the gender characteristics of the
 survey respondents as proportions in the order male, then female, for
 example, \code{c(0.49, 0.51)}. Must sum to 1, i.e., all respondents fall into
 one of these gender bins.}
+
+\item{prob_raceethnicity}{Numeric vector specifying the racial/ethnic 
+characteristics of the survey respondendents as proportions in the order
+white alone, Hispanic or Latino, black alone, Asian alone, and other, 
+for example, \code{c(0.6, 0.22, 0.11, 0.05, 0.02)}. Must sum to 1, i.e., all
+respondents fall into one of these racial/ethnic bins.}
+
+\item{prob_age}{Numeric vector specifying the age characteristics of the
+survey respondents as proportions in the following bins: under 5 years, 5 to 
+9 years, 10 to 14 years, 15 to 17 years, 18 and 19 years, 20 to 24 years, 25 
+to 29 years, 30 to 34 years, 35 to 44 years, 45 to 54 years, 55 to 64 years, 
+65 to 74 years, 75 to 84 years, 85 years and over, for example, \code{c(0, 
+0, 0, 0.05, 0.1, 0.1, 0.12, 0.13, 0.12, 0.11, 0.1, 0.1, 0.05, 0.02)}. Must
+sum to 1, i.e., all respondents must fall into one of these age bins.}
+
+\item{prob_education}{Numeric vector specifying the educational attainment
+of the survey respondents as proportions in the following bins: less than 
+high school diploma, high school graduate (includes equivalency), some 
+college or associate's degree, bachelor's degree or higher, for example,
+\code{c(0.1, 0.2, 0.4, 0.3)}. Must sum to 1, i.e., all respondents must fall
+into one of these educational attainment bins.}
 }
 \description{
 Simulate a single survey to a yes/no response question in a U.S. state
 }
 \examples{
 
-\dontrun{
-myRaceEthnicity <- c(0.65, 0.25, 0.1, 0.05, 0.05)
-myGender <- c(0.48, 0.52)
-myOpinions <- c(0.8, 0.2, 0.9, 0.5, 0.5)
-mySurvey <- simulate_survey(900, myraceethnicity, myopinions)
-}
+prob_sex <- c(0.48, 0.52)
+prob_raceethnicity <- c(0.65, 0.25, 0.1, 0.05, 0.05)
+prob_age <- c(0, 0, 0, 0.04, 0.1, 0.1, 0.12, 0.13, 0.12, 0.11, 0.11, 0.09, 0.06, 0.02)
+prob_education <- c(0.1, 0.3, 0.4, 0.2)
+mySurvey <- simulate_survey(900, prob_sex, prob_raceethnicity, prob_age, prob_education)
 
 }
 
