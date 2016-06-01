@@ -83,7 +83,19 @@ simulate_survey <- function(n = 1000, prob_sex, prob_raceethnicity,
                                        mutate(education = sample(education_sample,
                                                                  size = 1,
                                                                  prob = prob_education)))
-                                       
+        
+        calc_response <- function(myDF) {
+                # this function takes a 1 x 4 data frame with sex, race/ethnicity,
+                # age, and education and calculates the yes/no response
+                myDF <- myDF %>% mutate(response = sample(c("yes", "no"), 
+                                                  size = 1,
+                                                  prob = c(0.4, 0.6)))
+                myDF
+        }
+        
+
+        
+        myList <- map(myList, calc_response)        
         mySurvey <- purrr::map_df(myList, bind_rows)
         mySurvey        
 }
