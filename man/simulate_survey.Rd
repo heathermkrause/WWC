@@ -2,7 +2,7 @@
 % Please edit documentation in R/simulate_survey.R
 \name{simulate_survey}
 \alias{simulate_survey}
-\title{Simulate a single survey to a yes/no response question in a U.S. state}
+\title{Simulate a single survey to a yes/no response question according to inputs}
 \usage{
 simulate_survey(n = 1000, prob_sex, prob_raceethnicity, prob_age,
   prob_education)
@@ -37,7 +37,7 @@ college or associate's degree, bachelor's degree or higher, for example,
 into one of these educational attainment bins.}
 }
 \description{
-Simulate a single survey to a yes/no response question in a U.S. state
+Simulate a single survey to a yes/no response question according to inputs
 }
 \examples{
 

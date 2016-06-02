@@ -1,4 +1,4 @@
-#' Simulate a single survey to a yes/no response question in a U.S. state
+#' Simulate a single survey to a yes/no response question according to inputs
 #' 
 #' @param n Number of respondents in the survey (default is 1000)
 #' @param prob_sex Numeric vector specifying the gender characteristics of the
@@ -70,11 +70,7 @@ simulate_survey <- function(n = 1000, prob_sex, prob_raceethnicity,
                               "High school graduate (includes equivalency)",
                               "Some college or associate's degree",
                               "Bachelor's degree or higher")
-        
-        #statefetch <- acs::geo.make(state = state)
-        #acseducationDF <- process_acs_education(geographyfetch = statefetch)
-        #acsageDF <- process_acs_age(geographyfetch = statefetch)
-        
+
         myList <- purrr::rerun(n, 
                                data_frame(sex = sample(sex_sample,
                                                        size = 1,

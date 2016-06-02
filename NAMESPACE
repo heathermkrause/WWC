@@ -3,5 +3,6 @@
 export(process_acs_age)
 export(process_acs_education)
 export(simulate_survey)
+export(simulate_true_response)
 import(dplyr)
 importFrom(stringr,str_extract)
