@@ -31,3 +31,5 @@ This open-source tool weights collected survey results for demographic and other
 
 ## Examples
 
+
+This project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
