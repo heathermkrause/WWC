@@ -9,11 +9,9 @@
 #' \code{result}) that tabulates the true opinion on the yes/no question 
 #' in the given geography.
 #' 
-#' 
 #' @import dplyr
 #' 
 #' @name simulate_true_response
-#' 
 #' 
 #' @examples 
 #' 
