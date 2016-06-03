@@ -1,6 +1,5 @@
 #' Simulate a single survey to a yes/no response question according to inputs
 #' 
-#' @param n Number of respondents in the survey (default is 1000)
 #' @param prob_sex Numeric vector specifying the gender characteristics of the
 #' survey respondents as proportions in the order male, then female, for
 #' example, \code{c(0.49, 0.51)}. Must sum to 1, i.e., all respondents fall into
@@ -36,6 +35,7 @@
 #' @param weight_education Numeric vector specifying the opinion weights of the survey
 #' respondents by educational attainment in the same order bins as 
 #' \code{prob_education}, for example, \code{c(0.4, 0.5, 2, 2.5)}.
+#' @param n Number of respondents in the survey (default is 1000)
 #' 
 #' @import dplyr
 #'
@@ -55,18 +55,19 @@
 #' weight_age <- c(1, 1, 1, 1, 1, 1, 1, 0.8, 2, 2, 2.5, 3, 0.5, 0.2)
 #' prob_education <- c(0.1, 0.3, 0.4, 0.2)
 #' weight_education <- c(0.4, 0.5, 2, 2.5)
-#' mySurvey <- simulate_survey(900, prob_sex, weight_sex,
+#' mySurvey <- simulate_survey(prob_sex, weight_sex,
 #'                              prob_raceethnicity, weight_raceethnicity,
 #'                              prob_age, weight_age,
-#'                              prob_education, weight_education)
+#'                              prob_education, weight_education,
+#'                              n = 900)
 #' 
 #' @export
 
-simulate_survey <- function(n = 1000, 
-                            prob_sex, weight_sex,
+simulate_survey <- function(prob_sex, weight_sex,
                             prob_raceethnicity, weight_raceethnicity,
                             prob_age, weight_age,
-                            prob_education, weight_education) {
+                            prob_education, weight_education,
+                            n = 1000) {
         
         if (sum(prob_sex) != 1) stop("prob_sex does not sum to 1")
         if (sum(prob_raceethnicity) != 1) stop("prob_raceethnicity does not sum to 1")
