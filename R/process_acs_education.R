@@ -26,6 +26,8 @@
 #' 
 #' \dontrun{
 #' library(acs)
+#' # if you are new to using the acs package, you will need to get an API key
+#' # and run api.key.install() one time to install your key on your system
 #' unitedstates <- geo.make(us = TRUE)
 #' usDF <- process_acs_education(unitedstates)
 #' 
