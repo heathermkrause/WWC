@@ -18,8 +18,7 @@ one of these gender bins.}
 \item{weight_sex}{Numeric vector specifying the opinion weights of the survey
 respondents by sex in the order male, then female. For example, \code{c(0.8,
 1.25)} means that men are 0.8 times as likely to approve the survey question
-and women are 1.25 times as likely to approve the survey question. The 
-product of all elements (\code{prod()}) must equal 1.}
+and women are 1.25 times as likely to approve the survey question.}
 
 \item{prob_raceethnicity}{Numeric vector specifying the racial/ethnic 
 characteristics of the survey respondendents as proportions in the order
@@ -29,8 +28,7 @@ respondents fall into one of these racial/ethnic bins.}
 
 \item{weight_raceethnicity}{Numeric vector specifying the opinion weights of
 the survey respondents by race/ethnicity in the same order as 
-\code{prob_raceethnicity}, for example, \code{c(0.2, 2, 2.5, 1, 1)}.
-The product of all elements (\code{prod()}) must equal 1.}
+\code{prob_raceethnicity}, for example, \code{c(0.2, 2, 2.5, 1, 1)}.}
 
 \item{prob_age}{Numeric vector specifying the age characteristics of the
 survey respondents as proportions in the following bins: under 5 years, 5 to 
@@ -42,8 +40,7 @@ sum to 1, i.e., all respondents must fall into one of these age bins.}
 
 \item{weight_age}{Numeric vector specifying the opinion weights of the
 survey respondents by age in the same order bins as \code{prob_age}, for
-example, \code{c(1, 1, 1, 1, 1, 1, 1, 0.5, 2, 2, 2, 2.5, 0.5, 0.2)}. The 
-product of all elements (\code{prod()}) must equal 1.}
+example, \code{c(1, 1, 1, 1, 1, 1, 1, 0.5, 2, 2, 2, 2.5, 0.5, 0.2)}.}
 
 \item{prob_education}{Numeric vector specifying the educational attainment
 of the survey respondents as proportions in the following bins: less than 
@@ -54,8 +51,7 @@ into one of these educational attainment bins.}
 
 \item{weight_education}{Numeric vector specifying the opinion weights of the survey
 respondents by educational attainment in the same order bins as 
-\code{prob_education}, for example, \code{c(0.4, 0.5, 2, 2.5)}. The 
-product of all elements (\code{prod()}) must equal 1.}
+\code{prob_education}, for example, \code{c(0.4, 0.5, 2, 2.5)}.}
 }
 \description{
 Simulate a single survey to a yes/no response question according to inputs
@@ -71,7 +67,7 @@ weight_sex <- c(0.5, 2)
 prob_raceethnicity <- c(0.55, 0.25, 0.1, 0.05, 0.05)
 weight_raceethnicity <- c(0.2, 2, 2.5, 1, 1)
 prob_age <- c(0, 0, 0, 0.04, 0.1, 0.1, 0.12, 0.13, 0.12, 0.11, 0.11, 0.09, 0.06, 0.02)
-weight_age <- c(1, 1, 1, 1, 1, 1, 1, 0.5, 2, 2, 2, 2.5, 0.5, 0.2)
+weight_age <- c(1, 1, 1, 1, 1, 1, 1, 0.8, 2, 2, 2.5, 3, 0.5, 0.2)
 prob_education <- c(0.1, 0.3, 0.4, 0.2)
 weight_education <- c(0.4, 0.5, 2, 2.5)
 mySurvey <- simulate_survey(900, prob_sex, weight_sex,
