@@ -124,11 +124,17 @@ simulate_survey <- function(n = 1000, prob_sex, weight_sex,
                                                                  size = 1,
                                                                  prob = prob_education)))
         
-        calc_response <- function(myDF) {
+        calc_response <- function(myDF, 
+                                  sex_sample, raceethnicity_sample, 
+                                  age_sample, education_sample,
+                                  weight_sex, weight_raceethnicity,
+                                  weight_age, weight_education) {
                 # this function takes a 1 x 4 data frame with sex, race/ethnicity,
                 # age, and education and calculates the yes/no response
-                weight <- weight_sex[2] * weight_raceethnicity[2] * 
-                        weight_age[8] * weight_education[3]
+                weight <- prod(weight_sex[which(sex_sample == myDF$sex)], 
+                                weight_raceethnicity[which(raceethnicity_sample == myDF$race_ethnicity)],
+                                weight_age[which(age_sample == myDF$age)],
+                                weight_education[which(education_sample == myDF$education)])
                 prob_yes <- weight/(weight + 1)
                 myDF <- myDF %>% mutate(response = sample(c("yes", "no"), 
                                                   size = 1,
