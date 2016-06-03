@@ -36,7 +36,7 @@
 #' college or associate's degree, bachelor's degree or higher, for example,
 #' \code{c(0.1, 0.2, 0.4, 0.3)}. Must sum to 1, i.e., all respondents must fall
 #' into one of these educational attainment bins.
-#' @param weight_educationb Numeric vector specifying the opinion weights of the survey
+#' @param weight_education Numeric vector specifying the opinion weights of the survey
 #' respondents by educational attainment in the same order bins as 
 #' \code{prob_education}, for example, \code{c(0.4, 0.5, 2, 2.5)}. The 
 #' product of all elements (\code{prod()}) must equal 1.
@@ -127,9 +127,12 @@ simulate_survey <- function(n = 1000, prob_sex, weight_sex,
         calc_response <- function(myDF) {
                 # this function takes a 1 x 4 data frame with sex, race/ethnicity,
                 # age, and education and calculates the yes/no response
+                weight <- weight_sex[2] * weight_raceethnicity[2] * 
+                        weight_age[8] * weight_education[3]
+                prob_yes <- weight/(weight + 1)
                 myDF <- myDF %>% mutate(response = sample(c("yes", "no"), 
                                                   size = 1,
-                                                  prob = c(0.4, 0.6)))
+                                                  prob = c(prob_yes, 1 - prob_yes)))
                 myDF
         }
         

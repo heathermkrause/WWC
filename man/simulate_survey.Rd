@@ -52,7 +52,7 @@ college or associate's degree, bachelor's degree or higher, for example,
 \code{c(0.1, 0.2, 0.4, 0.3)}. Must sum to 1, i.e., all respondents must fall
 into one of these educational attainment bins.}
 
-\item{weight_educationb}{Numeric vector specifying the opinion weights of the survey
+\item{weight_education}{Numeric vector specifying the opinion weights of the survey
 respondents by educational attainment in the same order bins as 
 \code{prob_education}, for example, \code{c(0.4, 0.5, 2, 2.5)}. The 
 product of all elements (\code{prod()}) must equal 1.}
