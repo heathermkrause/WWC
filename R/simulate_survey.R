@@ -66,7 +66,8 @@
 #' 
 #' @export
 
-simulate_survey <- function(n = 1000, prob_sex, weight_sex,
+simulate_survey <- function(n = 1000, 
+                            prob_sex, weight_sex,
                             prob_raceethnicity, weight_raceethnicity,
                             prob_age, weight_age,
                             prob_education, weight_education) {
@@ -144,7 +145,11 @@ simulate_survey <- function(n = 1000, prob_sex, weight_sex,
         
 
         
-        myList <- purrr::map(myList, calc_response)        
+        myList <- purrr::map(myList, calc_response, 
+                             sex_sample, raceethnicity_sample, 
+                             age_sample, education_sample,
+                             weight_sex, weight_raceethnicity,
+                             weight_age, weight_education)        
         mySurvey <- purrr::map_df(myList, bind_rows)
         mySurvey        
 }
