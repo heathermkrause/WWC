@@ -89,7 +89,7 @@ simulate_true_response <- function(geographyfetch,
                 # and age or education and calculates the yes/no response
 
                 weight <- prod(weight_sex[which(sex_sample == myDF$sex)], 
-                               weight_raceethnicity[which(raceethnicity_sample == myDF$race_ethnicity)])
+                               weight_raceethnicity[which(raceethnicity_sample == myDF$raceethnicity)])
                 if ("age" %in% colnames(myDF)) {
                         weight <- prod(weight, 
                                        weight_age[which(age_sample == myDF$age)])
