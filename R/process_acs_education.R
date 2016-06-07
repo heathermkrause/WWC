@@ -51,12 +51,12 @@ process_acs_education <- function(geographyfetch) {
         totaleducation$Var2 <- str_extract(as.character(totaleducation$Var2), 
                                            "(Female:.+$|Female:|Male:.+$|Male:)")
         totaleducation$sex <- str_extract(totaleducation$Var2, "(Female|Male)")
-        totaleducation$level <- str_extract(str_extract(totaleducation$Var2, ":.+$"), "\\b.+$")
-        totaleducation$level[is.na(totaleducation$level)] <- "Total"
-        totaleducation$level <- factor(totaleducation$level, levels = unique(totaleducation$level))
+        totaleducation$education <- str_extract(str_extract(totaleducation$Var2, ":.+$"), "\\b.+$")
+        totaleducation$education[is.na(totaleducation$education)] <- "Total"
+        totaleducation$education <- factor(totaleducation$education, levels = unique(totaleducation$education))
         totaleducation$sex <- as.factor(totaleducation$sex)
         totaleducation <- totaleducation %>% 
-                select(sex, level, population = value) %>%
+                select(sex, education, population = value) %>%
                 filter(!is.na(sex))
         # this data frame above has sex by educational attainment for total population
         
@@ -76,11 +76,11 @@ process_acs_education <- function(geographyfetch) {
                                                        "[a-zA-Z\\,\\s]+")
                 education$Var2 <- str_extract(as.character(education$Var2), "(Female:.+$|Female:|Male:.+$|Male:)")
                 education$sex <- str_extract(education$Var2, "(Female|Male)")
-                education$level <- str_extract(str_extract(education$Var2, ":.+$"), "\\b.+$")
-                education$level[is.na(education$level)] <- "Total"
-                education$level <- factor(education$level, levels = unique(education$level))
+                education$education <- str_extract(str_extract(education$Var2, ":.+$"), "\\b.+$")
+                education$education[is.na(education$education)] <- "Total"
+                education$education <- factor(education$education, levels = unique(education$education))
                 education$sex <- as.factor(education$sex)
-                education <- education %>% select(sex, level, raceethnicity, population = value)
+                education <- education %>% select(sex, education, raceethnicity, population = value)
         }
         
         # this data frame has sex by educational attainment for four
@@ -92,45 +92,45 @@ process_acs_education <- function(geographyfetch) {
         # total education data frame above
         
         totaleducation <- bind_rows(totaleducation %>% group_by(sex) %>% 
-                                            filter(level == "Total") %>% 
+                                            filter(education == "Total") %>% 
                                             summarize(sextotal = sum(population, na.rm = TRUE)) %>% 
-                                            mutate(level = "Total"),
+                                            mutate(education = "Total"),
                                     totaleducation %>% group_by(sex) %>% 
-                                            filter(level == "Less than 9th grade" | 
-                                                           level == "9th to 12th grade, no diploma") %>% 
+                                            filter(education == "Less than 9th grade" | 
+                                                           education == "9th to 12th grade, no diploma") %>% 
                                             summarize(sextotal = sum(population, na.rm = TRUE)) %>% 
-                                            mutate(level = "Less than high school diploma"),
+                                            mutate(education = "Less than high school diploma"),
                                     totaleducation %>% group_by(sex) %>% 
-                                            filter(level == "High school graduate (includes equivalency)") %>% 
+                                            filter(education == "High school graduate (includes equivalency)") %>% 
                                             summarize(sextotal = sum(population, na.rm = TRUE)) %>% 
-                                            mutate(level = "High school graduate (includes equivalency)"),
+                                            mutate(education = "High school graduate (includes equivalency)"),
                                     totaleducation %>% group_by(sex) %>% 
-                                            filter(level == "Some college, no degree" | 
-                                                           level == "Associate's degree") %>% 
+                                            filter(education == "Some college, no degree" | 
+                                                           education == "Associate's degree") %>% 
                                             summarize(sextotal = sum(population, na.rm = TRUE)) %>% 
-                                            mutate(level = "Some college or associate's degree"),
+                                            mutate(education = "Some college or associate's degree"),
                                     totaleducation %>% group_by(sex) %>% 
-                                            filter(level == "Bachelor's degree" | 
-                                                           level == "Graduate or professional degree") %>% 
+                                            filter(education == "Bachelor's degree" | 
+                                                           education == "Graduate or professional degree") %>% 
                                             summarize(sextotal = sum(population, na.rm = TRUE)) %>% 
-                                            mutate(level = "Bachelor's degree or higher"))
-        geototal <- totaleducation %>% filter(level == "Total") %>% 
+                                            mutate(education = "Bachelor's degree or higher"))
+        geototal <- totaleducation %>% filter(education == "Total") %>% 
                 summarise(geototal = sum(sextotal))
         totaleducation <- totaleducation %>% mutate(geototal = geototal[[1]])
         
         # now both education and total education have the same bins
         
         # what about "other" as a racial/ethnic group?
-        educationother <- education %>% group_by(sex, level) %>% 
+        educationother <- education %>% group_by(sex, education) %>% 
                 summarise(notother = sum(population)) %>% 
-                mutate(level = as.character(level)) %>%
-                left_join(totaleducation, by = c("sex", "level")) %>% 
+                mutate(education = as.character(education)) %>%
+                left_join(totaleducation, by = c("sex", "education")) %>% 
                 mutate(raceethnicity = "Other", 
                        population = sextotal - notother) %>% 
-                select(sex, level, raceethnicity, population)
+                select(sex, education, raceethnicity, population)
         education <- bind_rows(education, educationother)
         education <- left_join(education, totaleducation, 
-                               by = c("sex", "level")) %>% 
+                               by = c("sex", "education")) %>% 
                 mutate(prob = population/geototal)
         education$raceethnicity <- toupper(education$raceethnicity)
 
