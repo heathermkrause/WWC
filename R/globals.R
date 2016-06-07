@@ -1,2 +1,2 @@
 globalVariables(c("level", "notother", "population", "raceethnicity", "sex", 
-                  "sextotal", "value", "yes", "no"))
+                  "sextotal", "value", "yes", "no", "education", "prob", "age"))
