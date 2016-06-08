@@ -1,3 +1,3 @@
-globalVariables(c("level", "notother", "population", "raceethnicity", "sex", 
-                  "sextotal", "value", "yes1", "no1", "yes", "no",
-                  "education", "prob", "age"))
+globalVariables(c("population", "raceethnicity", "sex", "notother", "education",
+                  "age", "sextotal", "value", "yes", "no", "prob",
+                  "age_wt", "race_wt", "sex_wt", "wt"))
