@@ -99,11 +99,11 @@ simulate_true_response_education <- function(geographyfetch,
                 select(-contains("wt"))
         
         opinionDF <- bind_rows(acsDF %>% 
-                                       filter(age != "Total") %>%
+                                       filter(education != "Total") %>%
                                        summarise(response = sum(yes*prob)) %>% 
                                        mutate(answer = "yes", result = "Population"),
                                acsDF %>% 
-                                       filter(age != "Total") %>%
+                                       filter(education != "Total") %>%
                                        summarise(response = sum(no*prob)) %>% 
                                        mutate(answer = "no", result = "Population"))
         opinionDF
