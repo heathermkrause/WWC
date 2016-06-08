@@ -101,44 +101,42 @@ simulate_true_response <- function(geographyfetch,
                 
                 prob_yes <- weight/(weight + 1)
                 myDF <- myDF %>% mutate(yes = prob_yes, 
-                                        no = 1 - prob_yes)
+                                        no = 1 - prob_yes) %>%
+                        select(yes, no)
                 myDF
         }
         
 
-        myList <- acseducationDF %>% split(rep(1:dim(acseducationDF)[1])) %>% 
-                purrr::map(calc_response, 
+        acseducationDF <- acseducationDF %>% 
+                purrr::by_row(calc_response, 
                            sex_sample, raceethnicity_sample, 
                            age_sample, education_sample,
                            weight_sex, weight_raceethnicity,
-                           weight_age = rep(1, 14), weight_education)
-        acseducationDF <- purrr::map_df(myList, bind_rows)
-        
-
-        myList <- acsageDF %>% split(rep(1:dim(acsageDF)[1])) %>% 
-                purrr::map(calc_response, 
-                             sex_sample, raceethnicity_sample, 
-                             age_sample, education_sample,
-                             weight_sex, weight_raceethnicity,
-                             weight_age, weight_education = rep(1, 4))
-        acsageDF <- purrr::map_df(myList, bind_rows)
-        
+                           weight_age = rep(1, 14), weight_education,
+                           .collate = "cols")
+        acsageDF <- acsageDF %>% 
+                purrr::by_row(calc_response, 
+                              sex_sample, raceethnicity_sample, 
+                              age_sample, education_sample,
+                              weight_sex, weight_raceethnicity,
+                              weight_age, weight_education = rep(1, 4),
+                              .collate = "cols")
 
         opinionDF <- bind_rows(acseducationDF %>% 
                                        filter(education != "Total") %>%
-                                       summarise(response = sum(yes*prob)) %>% 
+                                       summarise(response = sum(yes1*prob)) %>% 
                                        mutate(answer = "yes", result = "Population (Edu)"),
                                acseducationDF %>% 
                                        filter(education != "Total") %>%
-                                       summarise(response = sum(no*prob)) %>% 
+                                       summarise(response = sum(no1*prob)) %>% 
                                        mutate(answer = "no", result = "Population (Edu)"),
                                acsageDF %>% 
                                        filter(age != "Total") %>%
-                                       summarise(response = sum(yes*prob)) %>% 
+                                       summarise(response = sum(yes1*prob)) %>% 
                                        mutate(answer = "yes", result = "Population (Age)"),
                                acsageDF %>% 
                                        filter(age != "Total") %>%
-                                       summarise(response = sum(no*prob)) %>% 
+                                       summarise(response = sum(no1*prob)) %>% 
                                        mutate(answer = "no", result = "Population (Age)"))
                                
         opinionDF
