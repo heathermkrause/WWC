@@ -53,6 +53,12 @@ simulate_true_response_education <- function(geographyfetch,
                                              weight_raceethnicity, 
                                              weight_education) {
         
+        if (length(weight_sex) != 2) 
+                stop("weight_sex must be a vector of length 2")
+        if (length(weight_raceethnicity) != 5) 
+                stop("weight_raceethnicity must be a vector of length 5")
+        if (length(weight_education) != 5) 
+                stop("weight_education must be a vector of length 4")
         sex_sample <- c("Male", "Female")
         names(weight_sex) <- sex_sample
         raceethnicity_sample <- c("WHITE ALONE, NOT HISPANIC OR LATINO", 
