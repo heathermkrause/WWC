@@ -14,6 +14,7 @@
 #' @return A data frame with some columns that have some stuff in them.
 #' 
 #' @import dplyr
+#' @importFrom reshape2 melt
 #' 
 #' @name weight_age_one
 #' 
