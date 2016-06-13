@@ -11,6 +11,8 @@
 #' of the acs package. The geography must be the entire U.S. or a single state
 #' or a single county.
 #' 
+#' @return A data frame with some columns that have some stuff in them.
+#' 
 #' @import dplyr
 #' 
 #' @name weight_age_one
@@ -22,12 +24,8 @@ weight_age_one <- function(mysurvey, response, indicator, geographyfetch) {
         acsageDF <- process_acs_age(geographyfetch)
         
         indicator_col <- col_name(substitute(indicator))
-        tbl <- group_by_(acsageDF, indicator_col) %>%
-                summarise(population = sum(population))
-        
-        popDF <- data.frame(indicator = tbl$indicator_col, 
-                            Freq = tbl$population)
-        
+        popDF <- group_by_(acsageDF, indicator_col) %>%
+                summarise(Freq = sum(population))
         
         mySurvey <- survey::svydesign(ids = ~0, data = mysurvey)
         rawresult <- survey::svymean(~response, mysurvey)        
