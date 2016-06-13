@@ -18,7 +18,8 @@ Imports: purrr,
         dplyr,
         stringr,
         reshape2,
-        acs
+        acs,
+        survey
 Suggests: ggplot2,
         knitr
 VignetteBuilder: knitr
