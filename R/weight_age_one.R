@@ -1,4 +1,4 @@
-#' Weight a survey using post-stratification for one weighting indicator
+#' Weight a survey using post-stratification for a single weighting indicator
 #' 
 #' @param mysurvey A survey data frame, such as that created by 
 #' \code{simulate_survey}
@@ -28,10 +28,10 @@ weight_age_one <- function(mysurvey, response, indicator, geographyfetch) {
         popDF <- group_by_(acsageDF, indicator_col) %>%
                 summarise(Freq = sum(population))
         
-        mySurvey <- survey::svydesign(ids = ~0, data = mysurvey)
-        rawresult <- survey::svymean(~response, mysurvey)        
+        rawSurvey <- survey::svydesign(ids = ~0, data = mysurvey, weights = NULL)
+        rawresult <- survey::svymean(~response, rawSurvey)        
         
-        psSurvey <- survey::postStratify(mysurvey, ~indicator, population = popDF)
+        psSurvey <- survey::postStratify(rawSurvey, ~indicator_col, population = popDF)
         psresult <- survey::svymean(~response, psSurvey)       
         results <- bind_rows(data_frame(answer = rownames(melt(rawresult))) %>% 
                                      mutate(value = melt(rawresult)$value) %>%

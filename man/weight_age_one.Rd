@@ -2,7 +2,7 @@
 % Please edit documentation in R/weight_age_one.R
 \name{weight_age_one}
 \alias{weight_age_one}
-\title{Weight a survey using post-stratification for one weighting indicator}
+\title{Weight a survey using post-stratification for a single weighting indicator}
 \usage{
 weight_age_one(mysurvey, response, indicator, geographyfetch)
 }
@@ -25,6 +25,6 @@ or a single county.}
 A data frame with some columns that have some stuff in them.
 }
 \description{
-Weight a survey using post-stratification for one weighting indicator
+Weight a survey using post-stratification for a single weighting indicator
 }
 
