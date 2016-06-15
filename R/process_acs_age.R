@@ -50,11 +50,11 @@ process_acs_age <- function(geographyfetch) {
         totalage$sex <- str_extract(totalage$Var2, "(Female|Male)")
         totalage$age[is.na(totalage$age)] <- "Total"
         totalage$age <- factor(totalage$age, levels = unique(totalage$age))
-        totalage$sex <- as.factor(totalage$sex)
         geototal <- totalage$value[is.na(totalage$sex)]
         totalage <- totalage %>% 
                 select(sex, age, population = value) %>%
-                filter(!is.na(sex))
+                filter(!is.na(sex)) %>%
+                mutate(age = as.character(age))
         # this data frame above has sex by age for total population
         
         
@@ -76,19 +76,19 @@ process_acs_age <- function(geographyfetch) {
                 sexbyage$sex <- str_extract(sexbyage$Var2, "(Female|Male)")
                 sexbyage$age[is.na(sexbyage$age)] <- "Total"
                 sexbyage$age <- factor(sexbyage$age, levels = unique(sexbyage$age))
-                sexbyage$sex <- as.factor(sexbyage$sex)
                 sexbyage <- sexbyage %>% select(sex, age, raceethnicity, population = value)
         }
         
         # this data frame has sex by age for four
         # racial/ethnic groups but NOT total or other
         age <- purrr::map_df(agefetch, function(x) {process_fetch(x)})
-        age <- age[!is.na(age$sex),]
+        age <- age[!is.na(age$sex),] %>%
+                mutate(age = as.character(age))
         
         # unfortunately, it is not the same age bins as the
         # total age data frame above
         
-        totalage <- bind_rows(totalage %>% filter(age %in% levels(age$age)),
+        totalage <- bind_rows(totalage %>% filter(age %in% age$age),
                               totalage %>% group_by(sex) %>% 
                                       filter(age == "20 years" |
                                                      age == "21 years" |
