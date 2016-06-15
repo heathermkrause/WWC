@@ -54,7 +54,6 @@ process_acs_education <- function(geographyfetch) {
         totaleducation$education <- str_extract(str_extract(totaleducation$Var2, ":.+$"), "\\b.+$")
         totaleducation$education[is.na(totaleducation$education)] <- "Total"
         totaleducation$education <- factor(totaleducation$education, levels = unique(totaleducation$education))
-        totaleducation$sex <- as.factor(totaleducation$sex)
         totaleducation <- totaleducation %>% 
                 select(sex, education, population = value) %>%
                 filter(!is.na(sex))
@@ -79,14 +78,14 @@ process_acs_education <- function(geographyfetch) {
                 education$education <- str_extract(str_extract(education$Var2, ":.+$"), "\\b.+$")
                 education$education[is.na(education$education)] <- "Total"
                 education$education <- factor(education$education, levels = unique(education$education))
-                education$sex <- as.factor(education$sex)
                 education <- education %>% select(sex, education, raceethnicity, population = value)
         }
         
         # this data frame has sex by educational attainment for four
         # racial/ethnic groups but NOT total or other
         education <- purrr::map_df(educationfetch, function(x) {process_fetch(x)})
-        education <- education[!is.na(education$sex),]
+        education <- education[!is.na(education$sex),] %>%
+                mutate(education = as.character(education))
         
         # unfortunately, it is not the same education bins as the
         # total education data frame above
