@@ -23,7 +23,6 @@
 #' in the given geography.
 #' 
 #' @import dplyr
-#' @importFrom purrr contains
 #' 
 #' @name simulate_true_response_education
 #' 
@@ -57,7 +56,7 @@ simulate_true_response_education <- function(geographyfetch,
                 stop("weight_sex must be a vector of length 2")
         if (length(weight_raceethnicity) != 5) 
                 stop("weight_raceethnicity must be a vector of length 5")
-        if (length(weight_education) != 5) 
+        if (length(weight_education) != 4) 
                 stop("weight_education must be a vector of length 4")
         sex_sample <- c("Male", "Female")
         names(weight_sex) <- sex_sample
