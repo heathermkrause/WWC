@@ -15,6 +15,7 @@
 #' 
 #' @import dplyr
 #' @importFrom reshape2 melt
+#' @importFrom stats as.formula
 #' 
 #' @name weight_age_one
 #' 
@@ -25,14 +26,18 @@ weight_age_one <- function(mysurvey, response, indicator, geographyfetch) {
         acsageDF <- process_acs_age(geographyfetch)
         
         indicator_col <- col_name(substitute(indicator))
+        response_col <- col_name(substitute(response))
         popDF <- group_by_(acsageDF, indicator_col) %>%
                 summarise(Freq = sum(population))
         
         rawSurvey <- survey::svydesign(ids = ~0, data = mysurvey, weights = NULL)
-        rawresult <- survey::svymean(~response, rawSurvey)        
+        responseform <- as.formula(paste("~", response_col)) 
+        rawresult <- survey::svymean(responseform, rawSurvey)        
         
-        psSurvey <- survey::postStratify(rawSurvey, ~indicator_col, population = popDF)
-        psresult <- survey::svymean(~response, psSurvey)       
+        indicatorform <- as.formula(paste("~", indicator_col))
+        psSurvey <- survey::postStratify(rawSurvey, indicatorform, 
+                                         population = popDF)
+        psresult <- survey::svymean(responseform, psSurvey)       
         results <- bind_rows(data_frame(answer = rownames(melt(rawresult))) %>% 
                                      mutate(value = melt(rawresult)$value) %>%
                                      mutate(result = "Raw"),
