@@ -121,7 +121,7 @@ simulate_survey <- function(prob_sex, weight_sex,
                 # this function takes a 1 x 4 data frame with sex, race/ethnicity,
                 # age, and education and calculates the yes/no response
                 weight <- prod(weight_sex[which(sex_sample == myDF$sex)], 
-                                weight_raceethnicity[which(raceethnicity_sample == myDF$race_ethnicity)],
+                                weight_raceethnicity[which(raceethnicity_sample == myDF$raceethnicity)],
                                 weight_age[which(age_sample == myDF$age)],
                                 weight_education[which(education_sample == myDF$education)])
                 prob_yes <- weight/(weight + 1)
