@@ -18,7 +18,7 @@
 #' college or associate's degree, bachelor's degree or higher, for example, 
 #' \code{c(0.4, 0.5, 2, 2.5)}.
 #' 
-#' @return A data frame with 3 columns (\code{response}, \code{answer}, and 
+#' @return A data frame with 3 columns (\code{value}, \code{answer}, and 
 #' \code{result}) that tabulates the true opinion on the yes/no question 
 #' in the given geography.
 #' 
@@ -105,11 +105,11 @@ simulate_true_response_education <- function(geographyfetch,
         
         opinionDF <- bind_rows(acsDF %>% 
                                        filter(education != "Total") %>%
-                                       summarise(response = sum(yes*prob)) %>% 
+                                       summarise(value = sum(yes*prob)) %>% 
                                        mutate(answer = "yes", result = "Population"),
                                acsDF %>% 
                                        filter(education != "Total") %>%
-                                       summarise(response = sum(no*prob)) %>% 
+                                       summarise(value = sum(no*prob)) %>% 
                                        mutate(answer = "no", result = "Population"))
         opinionDF
 }

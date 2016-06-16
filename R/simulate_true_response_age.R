@@ -19,7 +19,7 @@
 #' 74 years, 75 to 84 years, 85 years and over, for example, \code{prob_age}, 
 #' for example, \code{c(1, 1, 1, 1, 1, 1, 1, 0.5, 2, 2, 2, 2.5, 0.5, 0.2)}.
 #' 
-#' @return A data frame with 3 columns (\code{response}, \code{answer}, and 
+#' @return A data frame with 3 columns (\code{value}, \code{answer}, and 
 #' \code{result}) that tabulates the true opinion on the yes/no question 
 #' in the given geography.
 #' 
@@ -104,11 +104,11 @@ simulate_true_response_age <- function(geographyfetch, weight_sex,
         
         opinionDF <- bind_rows(acsDF %>% 
                                        filter(age != "Total") %>%
-                                       summarise(response = sum(yes*prob)) %>% 
+                                       summarise(value = sum(yes*prob)) %>% 
                                        mutate(answer = "yes", result = "Population"),
                                acsDF %>% 
                                        filter(age != "Total") %>%
-                                       summarise(response = sum(no*prob)) %>% 
+                                       summarise(value = sum(no*prob)) %>% 
                                        mutate(answer = "no", result = "Population"))
         opinionDF
 }
