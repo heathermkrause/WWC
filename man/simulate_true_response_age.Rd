@@ -31,7 +31,7 @@ years, 30 to 34 years, 35 to 44 years, 45 to 54 years, 55 to 64 years, 65 to
 for example, \code{c(1, 1, 1, 1, 1, 1, 1, 0.5, 2, 2, 2, 2.5, 0.5, 0.2)}.}
 }
 \value{
-A data frame with 3 columns (\code{response}, \code{answer}, and 
+A data frame with 3 columns (\code{value}, \code{answer}, and 
 \code{result}) that tabulates the true opinion on the yes/no question 
 in the given geography.
 }
