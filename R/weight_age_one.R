@@ -76,7 +76,8 @@ weight_age_one <- function(mysurvey, response, indicator, geographyfetch) {
         # now do the post-stratification?
         indicatorform <- as.formula(paste("~", indicator_col))
         psSurvey <- survey::postStratify(rawSurvey, indicatorform, 
-                                         population = popDF)
+                                         population = popDF,
+                                         partial = TRUE)
         psresult <- survey::svymean(responseform, psSurvey)
         
         # bind raw and post-stratified results together
