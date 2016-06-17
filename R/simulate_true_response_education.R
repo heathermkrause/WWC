@@ -106,10 +106,10 @@ simulate_true_response_education <- function(geographyfetch,
         opinionDF <- bind_rows(acsDF %>% 
                                        filter(education != "Total") %>%
                                        summarise(value = sum(yes*prob)) %>% 
-                                       mutate(answer = "yes", result = "Population"),
+                                       mutate(answer = "responseyes", result = "Population"),
                                acsDF %>% 
                                        filter(education != "Total") %>%
                                        summarise(value = sum(no*prob)) %>% 
-                                       mutate(answer = "no", result = "Population"))
+                                       mutate(answer = "responseno", result = "Population"))
         opinionDF
 }
