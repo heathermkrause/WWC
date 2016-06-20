@@ -3,14 +3,14 @@
 #' 
 #' @param mysurvey A survey data frame, such as that created by 
 #' \code{simulate_survey}
+#' @param geographyfetch A geography created with the \code{geo.make()} function
+#' of the acs package. The geography must be the entire U.S. or a single state
+#' or a single county.
 #' @param response A column in \code{mysurvey} that contains the quantity to be
 #' weighted, such as the response to a yes/no question as in 
 #' \code{simulate_survey}
 #' @param indicator A weighting indicator to be used for post-stratification.
 #' One of \code{sex}, \code{raceethnicity}, \code{age}
-#' @param geographyfetch A geography created with the \code{geo.make()} function
-#' of the acs package. The geography must be the entire U.S. or a single state
-#' or a single county.
 #' 
 #' @return A data frame with 3 columns (\code{answer}, \code{value}, and 
 #' \code{result}) that tabulates the weighted response on the yes/no question 
@@ -46,12 +46,12 @@
 #'                              prob_age, weight_age,
 #'                              prob_education, weight_education,
 #'                              n = 200)
-#' weight_age_one(mysurvey, response, sex, unitedstates)
+#' weight_age_one(mysurvey, unitedstates, response, sex)
 #' }
 #' 
 #' @export
 
-weight_age_one <- function(mysurvey, response, indicator, geographyfetch) {
+weight_age_one <- function(mysurvey, geographyfetch, response, indicator) {
         
         # NSE magic
         indicator_col <- col_name(substitute(indicator))

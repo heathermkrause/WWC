@@ -5,11 +5,15 @@
 \title{Weight a survey using post-stratification for a single weighting indicator 
 from ACS tables with age by sex data}
 \usage{
-weight_age_one(mysurvey, response, indicator, geographyfetch)
+weight_age_one(mysurvey, geographyfetch, response, indicator)
 }
 \arguments{
 \item{mysurvey}{A survey data frame, such as that created by 
 \code{simulate_survey}}
+
+\item{geographyfetch}{A geography created with the \code{geo.make()} function
+of the acs package. The geography must be the entire U.S. or a single state
+or a single county.}
 
 \item{response}{A column in \code{mysurvey} that contains the quantity to be
 weighted, such as the response to a yes/no question as in 
@@ -17,10 +21,6 @@ weighted, such as the response to a yes/no question as in
 
 \item{indicator}{A weighting indicator to be used for post-stratification.
 One of \code{sex}, \code{raceethnicity}, \code{age}}
-
-\item{geographyfetch}{A geography created with the \code{geo.make()} function
-of the acs package. The geography must be the entire U.S. or a single state
-or a single county.}
 }
 \value{
 A data frame with 3 columns (\code{answer}, \code{value}, and 
@@ -55,7 +55,7 @@ mysurvey <- simulate_survey(prob_sex, weight_sex,
                              prob_age, weight_age,
                              prob_education, weight_education,
                              n = 200)
-weight_age_one(mysurvey, response, sex, unitedstates)
+weight_age_one(mysurvey, unitedstates, response, sex)
 }
 
 }
