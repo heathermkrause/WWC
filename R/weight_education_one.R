@@ -6,15 +6,21 @@
 #' @param geographyfetch A geography created with the \code{geo.make()} function
 #' of the acs package. The geography must be the entire U.S. or a single state
 #' or a single county.
-#' @param response A column in \code{mysurvey} that contains the quantity to be
+#' @param response_col A column in \code{mysurvey} that contains the quantity to be
 #' weighted, such as the response to a yes/no question as in 
 #' \code{simulate_survey}
-#' @param indicator A weighting indicator to be used for post-stratification.
+#' @param indicator_col A weighting indicator to be used for post-stratification.
 #' One of \code{sex}, \code{raceethnicity}, \code{education}
+#' @param response Response column as bare name
+#' @param indicator Indicator column as bare name
 #' 
 #' @return A data frame with 3 columns (\code{answer}, \code{value}, and 
 #' \code{result}) that tabulates the weighted response on the yes/no question 
 #' in the given geography.
+#' 
+#' @details \code{weight_education_one} is given bare names, while 
+#' \code{weight_education_one_} is given strings and is therefore suitable for 
+#' programming with.
 #' 
 #' @import dplyr
 #' @importFrom reshape2 melt
@@ -50,13 +56,9 @@
 #' }
 #' 
 #' @export
-
-weight_education_one <- function(mysurvey, geographyfetch, response, indicator) {
-        
-        # NSE magic
-        indicator_col <- col_name(substitute(indicator))
-        response_col <- col_name(substitute(response))
-        
+weight_education_one_ <- function(mysurvey, geographyfetch, 
+                                  response_col, indicator_col) {
+                
         # error handling for weighting indicator
         if (!(indicator_col %in% c("sex", "raceethnicity", "education"))) {
                 stop("indicator must be one of sex, raceethnicity, or education") }
@@ -88,4 +90,16 @@ weight_education_one <- function(mysurvey, geographyfetch, response, indicator) 
                                      mutate(value = melt(psresult)$value) %>%
                                      mutate(result = "Weighted"))
         results
+}
+
+#' @rdname weight_education_one
+#' @export
+weight_education_one <- function(mysurvey, geographyfetch, response, indicator) {
+        
+        # NSE magic
+        indicator_col <- col_name(substitute(indicator))
+        response_col <- col_name(substitute(response))
+        
+        weight_education_one_(mysurvey, geographyfetch, 
+                              response_col, indicator_col)
 }

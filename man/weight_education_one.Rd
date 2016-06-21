@@ -2,9 +2,12 @@
 % Please edit documentation in R/weight_education_one.R
 \name{weight_education_one}
 \alias{weight_education_one}
+\alias{weight_education_one_}
 \title{Weight a survey using post-stratification for a single weighting indicator 
 from ACS tables with education attainment data}
 \usage{
+weight_education_one_(mysurvey, geographyfetch, response_col, indicator_col)
+
 weight_education_one(mysurvey, geographyfetch, response, indicator)
 }
 \arguments{
@@ -15,12 +18,16 @@ weight_education_one(mysurvey, geographyfetch, response, indicator)
 of the acs package. The geography must be the entire U.S. or a single state
 or a single county.}
 
-\item{response}{A column in \code{mysurvey} that contains the quantity to be
+\item{response_col}{A column in \code{mysurvey} that contains the quantity to be
 weighted, such as the response to a yes/no question as in 
 \code{simulate_survey}}
 
-\item{indicator}{A weighting indicator to be used for post-stratification.
+\item{indicator_col}{A weighting indicator to be used for post-stratification.
 One of \code{sex}, \code{raceethnicity}, \code{education}}
+
+\item{response}{Response column as bare name}
+
+\item{indicator}{Indicator column as bare name}
 }
 \value{
 A data frame with 3 columns (\code{answer}, \code{value}, and 
@@ -30,6 +37,11 @@ in the given geography.
 \description{
 Weight a survey using post-stratification for a single weighting indicator 
 from ACS tables with education attainment data
+}
+\details{
+\code{weight_education_one} is given bare names, while 
+\code{weight_education_one_} is given strings and is therefore suitable for 
+programming with.
 }
 \examples{
 
