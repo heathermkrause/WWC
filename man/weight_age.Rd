@@ -23,9 +23,10 @@ weighted, such as the response to a yes/no question as in
 \code{simulate_survey}}
 
 \item{...}{Weighting indicator(s) to be used for post-stratification.
-One or more of \code{sex}, \code{raceethnicity}, \code{age}}
+One or more of \code{'sex'}, \code{'raceethnicity'}, \code{'age'} as 
+string(s)}
 
-\item{response}{Response column as bare name}
+\item{response}{Response column as string}
 }
 \value{
 A data frame with 3 columns (\code{answer}, \code{value}, and 
@@ -37,9 +38,9 @@ Weight a survey using post-stratification for weighting indicator(s) from
 ACS tables with age by sex data
 }
 \details{
-\code{weight_age} is given bare names, while 
-\code{weight_age_} is given strings and is therefore suitable for 
-programming with.
+\code{weight_age} is given bare names (can I make this 
+work?!?!?!?!?), while \code{weight_age_} is given strings and is therefore 
+suitable for programming with.
 }
 \examples{
 
@@ -65,7 +66,7 @@ mysurvey <- simulate_survey(prob_sex, weight_sex,
                              prob_age, weight_age,
                              prob_education, weight_education,
                              n = 200)
-weight_age(mysurvey, unitedstates, response, sex)
+weight_age(mysurvey, unitedstates, response, 'sex', 'raceethnicity')
 }
 
 }

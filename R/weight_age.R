@@ -10,16 +10,17 @@
 #' weighted, such as the response to a yes/no question as in 
 #' \code{simulate_survey}
 #' @param ... Weighting indicator(s) to be used for post-stratification.
-#' One or more of \code{sex}, \code{raceethnicity}, \code{age}
-#' @param response Response column as bare name
+#' One or more of \code{'sex'}, \code{'raceethnicity'}, \code{'age'} as 
+#' string(s)
+#' @param response Response column as string
 #' 
 #' @return A data frame with 3 columns (\code{answer}, \code{value}, and 
 #' \code{result}) that tabulates the weighted response on the yes/no question 
 #' in the given geography.
 #' 
-#' @details \code{weight_age} is given bare names, while 
-#' \code{weight_age_} is given strings and is therefore suitable for 
-#' programming with.
+#' @details \code{weight_age} is given bare names (can I make this 
+#' work?!?!?!?!?), while \code{weight_age_} is given strings and is therefore 
+#' suitable for programming with.
 #' 
 #' @import dplyr
 #' @importFrom reshape2 melt
@@ -51,7 +52,7 @@
 #'                              prob_age, weight_age,
 #'                              prob_education, weight_education,
 #'                              n = 200)
-#' weight_age(mysurvey, unitedstates, response, sex)
+#' weight_age(mysurvey, unitedstates, response, 'sex', 'raceethnicity')
 #' }
 #' 
 #' @export
@@ -59,16 +60,23 @@
 weight_age_ <- function(mysurvey, geographyfetch, 
                             response_col, ...) {
         
+        dots <- list(...)
+        print(dots)
+        
         # error handling for weighting indicator
-        if (!(indicator_col %in% c("sex", "raceethnicity", "age"))) {
+        if (any(purrr::map(dots, function(x) 
+                {x[[1]] %in% c("sex", "raceethnicity", "age")}) == FALSE)) {
                 stop("indicator must be one of sex, raceethnicity, or age") }
+        
+        dots <- unlist(dots)
         
         # download and process ACS data
         acsageDF <- process_acs_age(geographyfetch)
         
         # what are the population frequencies for post-stratification?
-        popDF <- group_by_(acsageDF, indicator_col) %>%
+        popDF <- group_by_(acsageDF, ...) %>%
                 summarise(Freq = sum(population))
+        print(popDF)
         
         # what is the raw result on the survey question in the population?
         rawSurvey <- survey::svydesign(ids = ~0, data = mysurvey, weights = NULL)
@@ -76,7 +84,8 @@ weight_age_ <- function(mysurvey, geographyfetch,
         rawresult <- survey::svymean(responseform, rawSurvey)        
         
         # now do the post-stratification?
-        indicatorform <- as.formula(paste("~", indicator_col))
+        vars <- paste(dots, collapse="+")
+        indicatorform <- as.formula(paste("~", vars))
         psSurvey <- survey::postStratify(rawSurvey, indicatorform, 
                                          population = popDF,
                                          partial = TRUE)
@@ -97,10 +106,9 @@ weight_age_ <- function(mysurvey, geographyfetch,
 weight_age <- function(mysurvey, geographyfetch, response, ...) {
         
         # NSE magic
-        indicator_col <- col_name(substitute(indicator))
         response_col <- col_name(substitute(response))
         
-        weight_age_one_(mysurvey, geographyfetch, 
-                        response_col, indicator_col)
+        weight_age_(mysurvey, geographyfetch, 
+                    response_col, ...)
         
 }
