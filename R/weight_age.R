@@ -9,18 +9,17 @@
 #' @param response_col A column in \code{mysurvey} that contains the quantity to be
 #' weighted, such as the response to a yes/no question as in 
 #' \code{simulate_survey}
-#' @param ... Weighting indicator(s) to be used for post-stratification.
-#' One or more of \code{'sex'}, \code{'raceethnicity'}, \code{'age'} as 
-#' string(s)
 #' @param response Response column as string
+#' @param ... Weighting indicator(s) to be used for post-stratification.
+#' One or more of \code{sex}, \code{raceethnicity}, \code{age}
+#' @param dots List of weighting indicator(s) as string(s)
 #' 
 #' @return A data frame with 3 columns (\code{answer}, \code{value}, and 
 #' \code{result}) that tabulates the weighted response on the yes/no question 
 #' in the given geography.
 #' 
-#' @details \code{weight_age} is given bare names (can I make this 
-#' work?!?!?!?!?), while \code{weight_age_} is given strings and is therefore 
-#' suitable for programming with.
+#' @details \code{weight_age} is given bare names while \code{weight_age_} is 
+#' given strings and is therefore suitable for programming with.
 #' 
 #' @import dplyr
 #' @importFrom reshape2 melt
@@ -52,15 +51,14 @@
 #'                              prob_age, weight_age,
 #'                              prob_education, weight_education,
 #'                              n = 200)
-#' weight_age(mysurvey, unitedstates, response, 'sex', 'raceethnicity')
+#' weight_age(mysurvey, unitedstates, response, sex, raceethnicity)
 #' }
 #' 
 #' @export
 
 weight_age_ <- function(mysurvey, geographyfetch, 
-                            response_col, ...) {
+                            response_col, dots, ...) {
         
-        dots <- list(...)
         print(dots)
         
         # error handling for weighting indicator
@@ -74,7 +72,7 @@ weight_age_ <- function(mysurvey, geographyfetch,
         acsageDF <- process_acs_age(geographyfetch)
         
         # what are the population frequencies for post-stratification?
-        popDF <- group_by_(acsageDF, ...) %>%
+        popDF <- group_by_(acsageDF, dots) %>%
                 summarise(Freq = sum(population))
         print(popDF)
         
@@ -105,10 +103,14 @@ weight_age_ <- function(mysurvey, geographyfetch,
 #' @export
 weight_age <- function(mysurvey, geographyfetch, response, ...) {
         
+        dots <- eval(substitute(alist(...)))
+        print(dots)
+        
         # NSE magic
+        dots <- purrr::map(dots, col_name)
         response_col <- col_name(substitute(response))
         
         weight_age_(mysurvey, geographyfetch, 
-                    response_col, ...)
+                    response_col, dots, ...)
         
 }

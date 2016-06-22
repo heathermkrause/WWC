@@ -6,7 +6,7 @@
 \title{Weight a survey using post-stratification for weighting indicator(s) from 
 ACS tables with age by sex data}
 \usage{
-weight_age_(mysurvey, geographyfetch, response_col, ...)
+weight_age_(mysurvey, geographyfetch, response_col, dots, ...)
 
 weight_age(mysurvey, geographyfetch, response, ...)
 }
@@ -22,9 +22,10 @@ or a single county.}
 weighted, such as the response to a yes/no question as in 
 \code{simulate_survey}}
 
+\item{dots}{List of weighting indicator(s) as string(s)}
+
 \item{...}{Weighting indicator(s) to be used for post-stratification.
-One or more of \code{'sex'}, \code{'raceethnicity'}, \code{'age'} as 
-string(s)}
+One or more of \code{sex}, \code{raceethnicity}, \code{age}}
 
 \item{response}{Response column as string}
 }
@@ -38,9 +39,8 @@ Weight a survey using post-stratification for weighting indicator(s) from
 ACS tables with age by sex data
 }
 \details{
-\code{weight_age} is given bare names (can I make this 
-work?!?!?!?!?), while \code{weight_age_} is given strings and is therefore 
-suitable for programming with.
+\code{weight_age} is given bare names while \code{weight_age_} is 
+given strings and is therefore suitable for programming with.
 }
 \examples{
 
@@ -66,7 +66,7 @@ mysurvey <- simulate_survey(prob_sex, weight_sex,
                              prob_age, weight_age,
                              prob_education, weight_education,
                              n = 200)
-weight_age(mysurvey, unitedstates, response, 'sex', 'raceethnicity')
+weight_age(mysurvey, unitedstates, response, sex, raceethnicity)
 }
 
 }
