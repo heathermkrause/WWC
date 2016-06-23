@@ -6,9 +6,9 @@
 \title{Weight a survey using post-stratification for weighting indicator(s) from 
 ACS tables with age by sex data}
 \usage{
-weight_age_(mysurvey, geographyfetch, response_col, dots, ...)
-
 weight_age(mysurvey, geographyfetch, response, ...)
+
+weight_age_(mysurvey, geographyfetch, response_col, dots)
 }
 \arguments{
 \item{mysurvey}{A survey data frame, such as that created by 
@@ -18,16 +18,16 @@ weight_age(mysurvey, geographyfetch, response, ...)
 of the acs package. The geography must be the entire U.S. or a single state
 or a single county.}
 
-\item{response_col}{A column in \code{mysurvey} that contains the quantity to be
+\item{response}{A column in \code{mysurvey} that contains the quantity to be
 weighted, such as the response to a yes/no question as in 
 \code{simulate_survey}}
-
-\item{dots}{List of weighting indicator(s) as string(s)}
 
 \item{...}{Weighting indicator(s) to be used for post-stratification.
 One or more of \code{sex}, \code{raceethnicity}, \code{age}}
 
-\item{response}{Response column as string}
+\item{response_col}{Response column as string}
+
+\item{dots}{List of weighting indicator(s) as string(s)}
 }
 \value{
 A data frame with 3 columns (\code{answer}, \code{value}, and 

@@ -6,10 +6,10 @@
 #' @param geographyfetch A geography created with the \code{geo.make()} function
 #' of the acs package. The geography must be the entire U.S. or a single state
 #' or a single county.
-#' @param response_col A column in \code{mysurvey} that contains the quantity to be
+#' @param response A column in \code{mysurvey} that contains the quantity to be
 #' weighted, such as the response to a yes/no question as in 
 #' \code{simulate_survey}
-#' @param response Response column as string
+#' @param response_col Response column as string
 #' @param ... Weighting indicator(s) to be used for post-stratification.
 #' One or more of \code{sex}, \code{raceethnicity}, \code{age}
 #' @param dots List of weighting indicator(s) as string(s)
@@ -39,9 +39,24 @@
 #' }
 #' 
 #' @export
+weight_age <- function(mysurvey, geographyfetch, response, ...) {
+        
+        dots <- eval(substitute(alist(...)))
+        print(dots)
+        
+        # NSE magic
+        dots <- purrr::map(dots, col_name)
+        response_col <- col_name(substitute(response))
+        
+        weight_age_(mysurvey, geographyfetch, 
+                    response_col, dots, ...)
+        
+}
 
+#' @rdname weight_age
+#' @export
 weight_age_ <- function(mysurvey, geographyfetch, 
-                            response_col, dots, ...) {
+                            response_col, dots) {
         
         print(dots)
         
@@ -81,20 +96,4 @@ weight_age_ <- function(mysurvey, geographyfetch,
                                      mutate(value = melt(psresult)$value) %>%
                                      mutate(result = "Weighted"))
         results
-}
-
-#' @rdname weight_age
-#' @export
-weight_age <- function(mysurvey, geographyfetch, response, ...) {
-        
-        dots <- eval(substitute(alist(...)))
-        print(dots)
-        
-        # NSE magic
-        dots <- purrr::map(dots, col_name)
-        response_col <- col_name(substitute(response))
-        
-        weight_age_(mysurvey, geographyfetch, 
-                    response_col, dots, ...)
-        
 }
