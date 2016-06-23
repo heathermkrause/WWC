@@ -57,7 +57,7 @@ weight_age_ <- function(mysurvey, geographyfetch, dots) {
         
         # what are the population frequencies for post-stratification?
         popDF <- group_by_(acsageDF, .dots = dots) %>%
-                summarise(Freq = sum(nrow(texassurvey)*population/geototal))
+                summarise(Freq = sum(nrow(mysurvey)*population/geototal))
         print(popDF)
 
         # what is the raw result on the survey question in the population?
