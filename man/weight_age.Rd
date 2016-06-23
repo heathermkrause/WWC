@@ -6,9 +6,9 @@
 \title{Weight a survey using post-stratification for weighting indicator(s) from 
 ACS tables with age by sex data}
 \usage{
-weight_age(mysurvey, geographyfetch, response, ...)
+weight_age(mysurvey, geographyfetch, ...)
 
-weight_age_(mysurvey, geographyfetch, response_col, dots)
+weight_age_(mysurvey, geographyfetch, dots)
 }
 \arguments{
 \item{mysurvey}{A survey data frame, such as that created by 
@@ -18,21 +18,15 @@ weight_age_(mysurvey, geographyfetch, response_col, dots)
 of the acs package. The geography must be the entire U.S. or a single state
 or a single county.}
 
-\item{response}{A column in \code{mysurvey} that contains the quantity to be
-weighted, such as the response to a yes/no question as in 
-\code{simulate_survey}}
-
 \item{...}{Weighting indicator(s) to be used for post-stratification.
-One or more of \code{sex}, \code{raceethnicity}, \code{age}}
-
-\item{response_col}{Response column as string}
+One or more of \code{sex}, \code{raceethnicity}, and \code{age}, which must 
+be columns in the survey data frame.}
 
 \item{dots}{List of weighting indicator(s) as string(s)}
 }
 \value{
-A data frame with 3 columns (\code{answer}, \code{value}, and 
-\code{result}) that tabulates the weighted response on the yes/no question 
-in the given geography.
+The original survey data frame with 1 column added, \code{weight},
+the post-stratification weight for each row in the survey.
 }
 \description{
 Weight a survey using post-stratification for weighting indicator(s) from 
@@ -50,7 +44,7 @@ library(acs)
 # and run api.key.install() one time to install your key on your system
 texas <- geo.make(state = "TX")
 data(texassurvey)
-weight_age(texassurvey, texas, response, sex, raceethnicity)
+weight_age(texassurvey, texas, sex, raceethnicity)
 }
 
 }

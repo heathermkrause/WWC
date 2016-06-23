@@ -6,17 +6,13 @@
 #' @param geographyfetch A geography created with the \code{geo.make()} function
 #' of the acs package. The geography must be the entire U.S. or a single state
 #' or a single county.
-#' @param response A column in \code{mysurvey} that contains the quantity to be
-#' weighted, such as the response to a yes/no question as in 
-#' \code{simulate_survey}
-#' @param response_col Response column as string
 #' @param ... Weighting indicator(s) to be used for post-stratification.
-#' One or more of \code{sex}, \code{raceethnicity}, \code{age}
+#' One or more of \code{sex}, \code{raceethnicity}, and \code{age}, which must 
+#' be columns in the survey data frame.
 #' @param dots List of weighting indicator(s) as string(s)
 #' 
-#' @return A data frame with 3 columns (\code{answer}, \code{value}, and 
-#' \code{result}) that tabulates the weighted response on the yes/no question 
-#' in the given geography.
+#' @return The original survey data frame with 1 column added, \code{weight},
+#' the post-stratification weight for each row in the survey.
 #' 
 #' @details \code{weight_age} is given bare names while \code{weight_age_} is 
 #' given strings and is therefore suitable for programming with.
@@ -35,45 +31,38 @@
 #' # and run api.key.install() one time to install your key on your system
 #' texas <- geo.make(state = "TX")
 #' data(texassurvey)
-#' weight_age(texassurvey, texas, response, sex, raceethnicity)
+#' weight_age(texassurvey, texas, sex, raceethnicity)
 #' }
 #' 
 #' @export
-weight_age <- function(mysurvey, geographyfetch, response, ...) {
+weight_age <- function(mysurvey, geographyfetch, ...) {
         # NSE magic
         dots <- eval(substitute(alist(...)))
         dots <- purrr::map(dots, col_name)
-        response_col <- col_name(substitute(response))
         
-        weight_age_(mysurvey, geographyfetch, 
-                    response_col, dots)
-        
+        weight_age_(mysurvey, geographyfetch, dots)
 }
 
 #' @rdname weight_age
 #' @export
-weight_age_ <- function(mysurvey, geographyfetch, 
-                            response_col, dots) {
+weight_age_ <- function(mysurvey, geographyfetch, dots) {
         
         # error handling for weighting indicator
         if (any(purrr::map(dots, function(x) 
                 {x[[1]] %in% c("sex", "raceethnicity", "age")}) == FALSE)) {
                 stop("indicator must be one of sex, raceethnicity, or age") }
         
-        
         # download and process ACS data
         acsageDF <- process_acs_age(geographyfetch)
         
         # what are the population frequencies for post-stratification?
         popDF <- group_by_(acsageDF, .dots = dots) %>%
-                summarise(Freq = sum(population))
+                summarise(Freq = sum(nrow(texassurvey)*population/geototal))
         print(popDF)
-        
+
         # what is the raw result on the survey question in the population?
         rawSurvey <- survey::svydesign(ids = ~0, data = mysurvey, weights = NULL)
         rawSurvey <- survey::as.svrepdesign(rawSurvey)
-        responseform <- as.formula(paste("~", response_col)) 
-        rawresult <- survey::svymean(responseform, rawSurvey)        
         
         # now do the post-stratification
         dots <- unlist(dots)
@@ -82,15 +71,5 @@ weight_age_ <- function(mysurvey, geographyfetch,
         psSurvey <- survey::postStratify(rawSurvey, indicatorform, 
                                          population = popDF,
                                          partial = TRUE)
-        psresult <- survey::svymean(responseform, psSurvey)
-        print(psSurvey$pweights)
-        
-        # bind raw and post-stratified results together
-        results <- bind_rows(data_frame(answer = rownames(melt(rawresult))) %>% 
-                                     mutate(value = melt(rawresult)$value) %>%
-                                     mutate(result = "Raw"),
-                             data_frame(answer = rownames(melt(psresult))) %>% 
-                                     mutate(value = melt(psresult)$value) %>%
-                                     mutate(result = "Weighted"))
-        results
+        mysurvey %>% mutate(weight = psSurvey$pweights)
 }
