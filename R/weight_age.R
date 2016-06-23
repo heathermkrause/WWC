@@ -40,16 +40,13 @@
 #' 
 #' @export
 weight_age <- function(mysurvey, geographyfetch, response, ...) {
-        
-        dots <- eval(substitute(alist(...)))
-        print(dots)
-        
         # NSE magic
+        dots <- eval(substitute(alist(...)))
         dots <- purrr::map(dots, col_name)
         response_col <- col_name(substitute(response))
         
         weight_age_(mysurvey, geographyfetch, 
-                    response_col, dots, ...)
+                    response_col, dots)
         
 }
 
@@ -57,8 +54,6 @@ weight_age <- function(mysurvey, geographyfetch, response, ...) {
 #' @export
 weight_age_ <- function(mysurvey, geographyfetch, 
                             response_col, dots) {
-        
-        print(dots)
         
         # error handling for weighting indicator
         if (any(purrr::map(dots, function(x) 
