@@ -71,6 +71,7 @@ weight_age_ <- function(mysurvey, geographyfetch,
         
         # what is the raw result on the survey question in the population?
         rawSurvey <- survey::svydesign(ids = ~0, data = mysurvey, weights = NULL)
+        rawSurvey <- survey::as.svrepdesign(rawSurvey)
         responseform <- as.formula(paste("~", response_col)) 
         rawresult <- survey::svymean(responseform, rawSurvey)        
         
@@ -82,6 +83,7 @@ weight_age_ <- function(mysurvey, geographyfetch,
                                          population = popDF,
                                          partial = TRUE)
         psresult <- survey::svymean(responseform, psSurvey)
+        print(psSurvey$pweights)
         
         # bind raw and post-stratified results together
         results <- bind_rows(data_frame(answer = rownames(melt(rawresult))) %>% 
