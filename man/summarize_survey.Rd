@@ -41,7 +41,7 @@ library(acs)
 # and run api.key.install() one time to install your key on your system
 texas <- geo.make(state = "TX")
 data(texassurvey)
-summarize_survey(weight_age(texassurvey, texas, response, sex, raceethnicity))
+summarize_survey(weight_age(texassurvey, texas, sex, raceethnicity), response)
 }
 
 }
