@@ -21,6 +21,7 @@ Imports: purrr,
         acs,
         survey
 Suggests: ggplot2,
-        knitr
+        knitr,
+        testthat
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1
