@@ -61,20 +61,15 @@ weight_age_ <- function(mysurvey, geographyfetch, dots) {
         print(popDF)
 
         # what is the raw result on the survey question in the population?
-        print("About to make rawSurvey...")
         rawSurvey <- survey::svydesign(ids = ~0, data = mysurvey, weights = NULL)
-        print("About to convert to a svrepdesign...")
-        rawSurvey <- survey::as.svrepdesign(rawSurvey)
-        
+
         # now do the post-stratification
         dots <- unlist(dots)
         vars <- paste(dots, collapse="+")
         indicatorform <- as.formula(paste("~", vars))
-        print("About to post-stratify...")
-        print("The problem is RIGHT HERE:")
         psSurvey <- survey::postStratify(rawSurvey, indicatorform, 
                                          population = popDF,
                                          partial = TRUE)
-        print("About to print the weights...")
+        psSurvey <- survey::as.svrepdesign(psSurvey)
         mysurvey %>% mutate(weight = psSurvey$pweights)
 }
