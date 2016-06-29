@@ -16,14 +16,14 @@ prop_sex <- c(0.55, 0.45)
 prop_raceethnicity <- c(0.75, 0.15, 0.03, 0.02, 0.05)
 prop_age <- c(0, 0, 0, 0, 0.05, 0.09, 0.09, 0.1, 0.18, 0.16, 0.14, 0.09, 0.06, 0.04)
 prop_education <- c(0.18, 0.25, 0.29, 0.28)
-weight_sex <- c(0.5, 2)
-weight_raceethnicity <- c(0.2, 2, 1, 1, 1)
-weight_age <- c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-weight_education <- c(1, 1, 1, 1)
-texassurvey <- simulate_survey(prop_sex, weight_sex,
-                               prop_raceethnicity, weight_raceethnicity,
-                               prop_age, weight_age,
-                               prop_education, weight_education,
+odds_sex <- c(0.5, 2)
+odds_raceethnicity <- c(0.2, 2, 1, 1, 1)
+odds_age <- c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+odds_education <- c(1, 1, 1, 1)
+texassurvey <- simulate_survey(prop_sex, odds_sex,
+                               prop_raceethnicity, odds_raceethnicity,
+                               prop_age, odds_age,
+                               prop_education, odds_education,
                                n = 1000)
 devtools::use_data(texassurvey, overwrite = TRUE)
 
