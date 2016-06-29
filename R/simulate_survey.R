@@ -4,7 +4,7 @@
 #' survey respondents as proportions in the order male, then female, for
 #' example, \code{c(0.49, 0.51)}. Must sum to 1, i.e., all respondents fall into
 #' one of these gender bins.
-#' @param weight_sex Numeric vector specifying the opinion weights of the survey
+#' @param odds_sex Numeric vector specifying the opinion odds of the survey
 #' respondents by sex in the order male, then female. For example, \code{c(0.8,
 #' 1.25)} means that men are 0.8 times as likely to approve the survey question
 #' and women are 1.25 times as likely to approve the survey question.
@@ -13,7 +13,7 @@
 #' white alone, Hispanic or Latino, black alone, Asian alone, and other, 
 #' for example, \code{c(0.6, 0.22, 0.11, 0.05, 0.02)}. Must sum to 1, i.e., all
 #' respondents fall into one of these racial/ethnic bins.
-#' @param weight_raceethnicity Numeric vector specifying the opinion weights of
+#' @param odds_raceethnicity Numeric vector specifying the opinion odds of
 #' the survey respondents by race/ethnicity in the same order as 
 #' \code{prop_raceethnicity}, for example, \code{c(0.2, 2, 2.5, 1, 1)}.
 #' @param prop_age Numeric vector specifying the age characteristics of the
@@ -23,7 +23,7 @@
 #' 65 to 74 years, 75 to 84 years, 85 years and over, for example, \code{c(0, 
 #' 0, 0, 0.05, 0.1, 0.1, 0.12, 0.13, 0.12, 0.11, 0.1, 0.1, 0.05, 0.02)}. Must
 #' sum to 1, i.e., all respondents must fall into one of these age bins.
-#' @param weight_age Numeric vector specifying the opinion weights of the
+#' @param odds_age Numeric vector specifying the opinion odds of the
 #' survey respondents by age in the same order bins as \code{prop_age}, for
 #' example, \code{c(1, 1, 1, 1, 1, 1, 1, 0.5, 2, 2, 2, 2.5, 0.5, 0.2)}.
 #' @param prop_education Numeric vector specifying the educational attainment
@@ -32,7 +32,7 @@
 #' college or associate's degree, bachelor's degree or higher, for example,
 #' \code{c(0.1, 0.2, 0.4, 0.3)}. Must sum to 1, i.e., all respondents must fall
 #' into one of these educational attainment bins.
-#' @param weight_education Numeric vector specifying the opinion weights of the survey
+#' @param odds_education Numeric vector specifying the opinion odds of the survey
 #' respondents by educational attainment in the same order bins as 
 #' \code{prop_education}, for example, \code{c(0.4, 0.5, 2, 2.5)}.
 #' @param n Number of respondents in the survey (default is 1000)
@@ -46,27 +46,27 @@
 #' # prop_sex specifies how many men/women are in the survey
 #' # in this example, the survey is 48% men and 52% women
 #' prop_sex <- c(0.48, 0.52)
-#' # weight_sex specifies the opinions of men/women
+#' # odds_sex specifies the opinions of men/women
 #' # in this example, women are twice as likely to approve and men half as likely
-#' weight_sex <- c(0.5, 2)
+#' odds_sex <- c(0.5, 2)
 #' prop_raceethnicity <- c(0.55, 0.25, 0.1, 0.05, 0.05)
-#' weight_raceethnicity <- c(0.2, 2, 2.5, 1, 1)
+#' odds_raceethnicity <- c(0.2, 2, 2.5, 1, 1)
 #' prop_age <- c(0, 0, 0, 0.04, 0.1, 0.1, 0.12, 0.13, 0.12, 0.11, 0.11, 0.09, 0.06, 0.02)
-#' weight_age <- c(1, 1, 1, 1, 1, 1, 1, 0.8, 2, 2, 2.5, 3, 0.5, 0.2)
+#' odds_age <- c(1, 1, 1, 1, 1, 1, 1, 0.8, 2, 2, 2.5, 3, 0.5, 0.2)
 #' prop_education <- c(0.1, 0.3, 0.4, 0.2)
-#' weight_education <- c(0.4, 0.5, 2, 2.5)
-#' mysurvey <- simulate_survey(prop_sex, weight_sex,
-#'                              prop_raceethnicity, weight_raceethnicity,
-#'                              prop_age, weight_age,
-#'                              prop_education, weight_education,
+#' odds_education <- c(0.4, 0.5, 2, 2.5)
+#' mysurvey <- simulate_survey(prop_sex, odds_sex,
+#'                              prop_raceethnicity, odds_raceethnicity,
+#'                              prop_age, odds_age,
+#'                              prop_education, odds_education,
 #'                              n = 900)
 #' 
 #' @export
 
-simulate_survey <- function(prop_sex, weight_sex,
-                            prop_raceethnicity, weight_raceethnicity,
-                            prop_age, weight_age,
-                            prop_education, weight_education,
+simulate_survey <- function(prop_sex, odds_sex,
+                            prop_raceethnicity, odds_raceethnicity,
+                            prop_age, odds_age,
+                            prop_education, odds_education,
                             n = 1000) {
         
         if (sum(prop_sex) != 1) stop("prop_sex does not sum to 1")
@@ -116,15 +116,15 @@ simulate_survey <- function(prop_sex, weight_sex,
         calc_response <- function(myDF, 
                                   sex_sample, raceethnicity_sample, 
                                   age_sample, education_sample,
-                                  weight_sex, weight_raceethnicity,
-                                  weight_age, weight_education) {
+                                  odds_sex, odds_raceethnicity,
+                                  odds_age, odds_education) {
                 # this function takes a 1 x 4 data frame with sex, race/ethnicity,
                 # age, and education and calculates the yes/no response
-                weight <- prod(weight_sex[which(sex_sample == myDF$sex)], 
-                                weight_raceethnicity[which(raceethnicity_sample == myDF$raceethnicity)],
-                                weight_age[which(age_sample == myDF$age)],
-                                weight_education[which(education_sample == myDF$education)])
-                prop_yes <- weight/(weight + 1)
+                odds <- prod(odds_sex[which(sex_sample == myDF$sex)], 
+                             odds_raceethnicity[which(raceethnicity_sample == myDF$raceethnicity)],
+                             odds_age[which(age_sample == myDF$age)],
+                             odds_education[which(education_sample == myDF$education)])
+                prop_yes <- odds/(odds + 1)
                 myDF <- myDF %>% mutate(response = sample(c("yes", "no"), 
                                                   size = 1,
                                                   prob = c(prop_yes, 1 - prop_yes)))
@@ -136,8 +136,8 @@ simulate_survey <- function(prop_sex, weight_sex,
         myList <- purrr::map(myList, calc_response, 
                              sex_sample, raceethnicity_sample, 
                              age_sample, education_sample,
-                             weight_sex, weight_raceethnicity,
-                             weight_age, weight_education)        
+                             odds_sex, odds_raceethnicity,
+                             odds_age, odds_education)        
         mySurvey <- purrr::map_df(myList, bind_rows)
         mySurvey        
 }
