@@ -27,8 +27,8 @@ or Latino, black alone, Asian alone, and other, for example,
 survey respondents by age in the following bins: under 5 years, 5 to 9 years, 
 10 to 14 years, 15 to 17 years, 18 and 19 years, 20 to 24 years, 25 to 29 
 years, 30 to 34 years, 35 to 44 years, 45 to 54 years, 55 to 64 years, 65 to 
-74 years, 75 to 84 years, 85 years and over, for example, \code{prob_age}, 
-for example, \code{c(1, 1, 1, 1, 1, 1, 1, 0.5, 2, 2, 2, 2.5, 0.5, 0.2)}.}
+74 years, 75 to 84 years, 85 years and over, for example, 
+\code{c(1, 1, 1, 1, 1, 1, 1, 0.5, 2, 2, 2, 2.5, 0.5, 0.2)}.}
 }
 \value{
 A data frame with 3 columns (\code{value}, \code{answer}, and 
