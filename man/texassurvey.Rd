@@ -25,7 +25,8 @@ texassurvey
 A simulated survey created using the \code{simulate_survey} function for the
 state of Texas. The respondents are biased compared to the real population
 of Texas (2014 population estimates) with respect to sex and race/ethnicity
-but are representative with respect to age and education.
+but are representative with respect to education and age (except no children 
+are in the survey).
 }
 \keyword{datasets}
 
