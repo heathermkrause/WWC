@@ -5,25 +5,25 @@
 \title{Simulate the true response to a yes/no response question in a given
 geography with specified opinions for sex, race/ethnicity, and education}
 \usage{
-simulate_true_response_education(geographyfetch, weight_sex,
-  weight_raceethnicity, weight_education)
+simulate_true_response_education(geographyfetch, odds_sex, odds_raceethnicity,
+  odds_education)
 }
 \arguments{
 \item{geographyfetch}{A geography created with the \code{geo.make()} function
 of the acs package. The geography must be the entire U.S. or a single state
 or a single county.}
 
-\item{weight_sex}{Numeric vector specifying the opinion weights of the survey
+\item{odds_sex}{Numeric vector specifying the opinion odds of the survey
 respondents by sex in the order male, then female. For example, \code{c(0.8,
 1.25)} means that men are 0.8 times as likely to approve the survey question
 and women are 1.25 times as likely to approve the survey question.}
 
-\item{weight_raceethnicity}{Numeric vector specifying the opinion weights of
+\item{odds_raceethnicity}{Numeric vector specifying the opinion odds of
 the survey respondents by race/ethnicity in the order white alone, Hispanic 
 or Latino, black alone, Asian alone, and other, for example, 
 \code{c(0.2, 2, 2.5, 1, 1)}.}
 
-\item{weight_education}{Numeric vector specifying the opinion weights of the 
+\item{odds_education}{Numeric vector specifying the opinion odds of the 
 survey respondents by educational attainment in the following bins: less than 
 high school diploma, high school graduate (includes equivalency), some 
 college or associate's degree, bachelor's degree or higher, for example, 
@@ -45,15 +45,15 @@ library(acs)
 # if you are new to using the acs package, you will need to get an API key
 # and run api.key.install() one time to install your key on your system
 unitedstates <- geo.make(us = TRUE)
-# weight_sex specifies the opinions of men/women
+# odds_sex specifies the opinions of men/women
 # in this example, women are twice as likely to approve and men half as likely
-weight_sex <- c(0.5, 2)
-weight_raceethnicity <- c(0.2, 2, 2.5, 1, 1)
-weight_education <- c(0.4, 0.5, 2, 2.5)
+odds_sex <- c(0.5, 2)
+odds_raceethnicity <- c(0.2, 2, 2.5, 1, 1)
+odds_education <- c(0.4, 0.5, 2, 2.5)
 opinionDF <- simulate_true_response_education(unitedstates, 
-                                     weight_sex, 
-                                     weight_raceethnicity,
-                                     weight_education)
+                                     odds_sex, 
+                                     odds_raceethnicity,
+                                     odds_education)
 }
 
 }
