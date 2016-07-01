@@ -49,7 +49,6 @@ weight_wwc <- function(mysurvey, geographyfetch, ...) {
 #' @export
 weight_wwc_ <- function(mysurvey, geographyfetch, dots) {
         
-        print(dots)
         # error handling for weighting indicator
         if (any(purrr::map(dots, function(x) 
         {x[[1]] %in% c("sex", "raceethnicity", "age", "education")}) == FALSE)) {
@@ -58,15 +57,16 @@ weight_wwc_ <- function(mysurvey, geographyfetch, dots) {
                 stop("indicators cannot include both age and education") }
         
         # download and process ACS data
-        if ("education" %in% dots)
-                acsDF <- process_acs_education(geographyfetch)
-        else
+        if ("education" %in% dots) {
+                acsDF <- process_acs_education(geographyfetch) 
+                } else {
                 acsDF <- process_acs_age(geographyfetch)
+                }
         
         # what are the population frequencies for post-stratification?
         popDF <- group_by_(acsDF, .dots = dots) %>%
                 summarise(Freq = sum(nrow(mysurvey)*population/geototal))
-        #print(popDF)
+        print(popDF)
         
         # what is the raw result on the survey question in the population?
         rawSurvey <- survey::svydesign(ids = ~0, data = mysurvey, weights = NULL)
