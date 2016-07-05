@@ -122,7 +122,6 @@ process_acs_education <- function(geographyfetch) {
         # what about "other" as a racial/ethnic group?
         educationother <- education %>% group_by(sex, education) %>% 
                 summarise(notother = sum(population)) %>% 
-                mutate(education = as.character(education)) %>%
                 left_join(totaleducation, by = c("sex", "education")) %>% 
                 mutate(raceethnicity = "Other", 
                        population = sextotal - notother) %>% 
@@ -130,7 +129,8 @@ process_acs_education <- function(geographyfetch) {
         education <- bind_rows(education, educationother)
         education <- left_join(education, totaleducation, 
                                by = c("sex", "education")) %>% 
-                mutate(prob = population/geototal)
+                mutate(prob = population/geototal) %>%
+                filter(education != "Total")
         education$raceethnicity <- toupper(education$raceethnicity)
 
         education        

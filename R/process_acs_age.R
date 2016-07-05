@@ -137,7 +137,8 @@ process_acs_age <- function(geographyfetch) {
                 select(sex, age, raceethnicity, population)
         age <- bind_rows(age, ageother)
         age <- left_join(age, totalage, by = c("sex", "age")) %>% 
-                mutate(prob = population/geototal)
+                mutate(prob = population/geototal) %>%
+                filter(age != "Total")
         age$raceethnicity <- toupper(age$raceethnicity)
         
         age        
