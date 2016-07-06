@@ -42,7 +42,7 @@
 #' calculated by taking the mean of \code{lambda} for that respondent's sex,
 #' race/ethnicity, etc. Use \code{NA} for \code{lambda} to indicate that an
 #' indicator does not effect the survey result, for example, 
-#' \code(lambda_education = rep(NA, 4)).
+#' \code{lambda_education = rep(NA, 4)}.
 #'
 #' @import dplyr
 #' @importFrom stats rpois
