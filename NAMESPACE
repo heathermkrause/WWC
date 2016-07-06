@@ -2,6 +2,7 @@
 
 export(process_acs_age)
 export(process_acs_education)
+export(simulate_response_age_continuous)
 export(simulate_survey)
 export(simulate_survey_continuous)
 export(simulate_true_response_age)
