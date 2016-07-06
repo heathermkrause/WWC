@@ -43,6 +43,7 @@
 #' race/ethnicity, etc.
 #'
 #' @import dplyr
+#' @importFrom stats rpois
 #'
 #' @name simulate_survey_continuous
 #' 
@@ -128,7 +129,8 @@ simulate_survey_continuous <- function(prop_sex, lambda_sex,
                 overalllambda <- mean(c(lambda_sex[which(sex_sample == myDF$sex)], 
                                     lambda_raceethnicity[which(raceethnicity_sample == myDF$raceethnicity)],
                                     lambda_age[which(age_sample == myDF$age)],
-                                    lambda_education[which(education_sample == myDF$education)]))
+                                    lambda_education[which(education_sample == myDF$education)]),
+                                    na.rm = TRUE)
                 myDF <- myDF %>% mutate(response = rpois(1, overalllambda))
                 myDF
         }
