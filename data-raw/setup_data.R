@@ -26,5 +26,3 @@ texassurvey <- simulate_survey(prop_sex, odds_sex,
                                prop_education, odds_education,
                                n = 1000)
 devtools::use_data(texassurvey, overwrite = TRUE)
-
-
