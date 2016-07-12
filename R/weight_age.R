@@ -3,9 +3,11 @@
 #' 
 #' @param mysurvey A survey data frame, such as that created by 
 #' \code{simulate_survey}
-#' @param geographyfetch A geography created with the \code{geo.make()} function
-#' of the acs package. The geography must be the entire U.S. or a single state
-#' or a single county.
+#' @param georegion A geographical region specified as a two letter abbreviation
+#' or a 5-digit FIPS code. The geography must be the entire U.S. (\code{US}) 
+#' or a single state (for example, \code{TX} or \code{CA}) or a single 
+#' county (for example, \code{49035}).
+#' @param georegion_ Geographical region as string.
 #' @param ... Weighting indicator(s) to be used for post-stratification.
 #' One or more of \code{sex}, \code{raceethnicity}, and \code{age}, which must 
 #' be columns in the survey data frame.
@@ -24,28 +26,22 @@
 #' @name weight_age
 #' 
 #' @examples 
-#' 
-#' \dontrun{
-#' library(acs)
-#' # if you are new to using the acs package, you will need to get an API key
-#' # and run api.key.install() one time to install your key on your system
-#' texas <- geo.make(state = "TX")
 #' data(texassurvey)
-#' weight_age(texassurvey, texas, sex, raceethnicity)
-#' }
+#' weight_age(texassurvey, TX, sex, raceethnicity)
 #' 
 #' @export
-weight_age <- function(mysurvey, geographyfetch, ...) {
+weight_age <- function(mysurvey, georegion, ...) {
         # NSE magic
+        georegion_ <- col_name(substitute(georegion))
         dots <- eval(substitute(alist(...)))
         dots <- purrr::map(dots, col_name)
         
-        weight_age_(mysurvey, geographyfetch, dots)
+        weight_age_(mysurvey, georegion_, dots)
 }
 
 #' @rdname weight_age
 #' @export
-weight_age_ <- function(mysurvey, geographyfetch, dots) {
+weight_age_ <- function(mysurvey, georegion_, dots) {
         
         # error handling for weighting indicator
         if (any(purrr::map(dots, function(x) 
@@ -53,7 +49,7 @@ weight_age_ <- function(mysurvey, geographyfetch, dots) {
                 stop("indicator must be one of sex, raceethnicity, or age") }
         
         # download and process ACS data
-        acsageDF <- process_acs_age(geographyfetch)
+        acsageDF <- acsagetable %>% filter(region == georegion_)
         
         # what are the population frequencies for post-stratification?
         popDF <- group_by_(acsageDF, .dots = dots) %>%
