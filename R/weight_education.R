@@ -33,7 +33,7 @@
 #' @export
 weight_education <- function(mysurvey, georegion, ...) {
         # NSE magic
-        georegion_ <- col_name(substitute(georegion))
+        georegion_ <- toupper(col_name(substitute(georegion)))
         dots <- eval(substitute(alist(...)))
         dots <- purrr::map(dots, col_name)
         
@@ -55,8 +55,9 @@ weight_education_ <- function(mysurvey, georegion_, dots) {
         
         # what are the population frequencies for post-stratification?
         popDF <- group_by_(acseducationDF, .dots = dots) %>%
-                summarise(Freq = sum(nrow(mysurvey)*population/geototal))
-        #print(popDF)
+                summarise(Freq = sum(nrow(mysurvey)*population/geototal)) %>%
+                ungroup()
+        print(popDF)
         
         # what is the raw result on the survey question in the population?
         rawSurvey <- survey::svydesign(ids = ~0, data = mysurvey, weights = NULL)
