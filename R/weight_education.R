@@ -57,7 +57,7 @@ weight_education_ <- function(mysurvey, georegion_, dots) {
         popDF <- group_by_(acseducationDF, .dots = dots) %>%
                 summarise(Freq = sum(nrow(mysurvey)*population/geototal)) %>%
                 ungroup()
-        print(popDF)
+        #print(popDF)
         
         # what is the raw result on the survey question in the population?
         rawSurvey <- survey::svydesign(ids = ~0, data = mysurvey, weights = NULL)
