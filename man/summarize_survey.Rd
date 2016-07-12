@@ -11,8 +11,8 @@ summarize_survey_(mysurvey, response_col)
 }
 \arguments{
 \item{mysurvey}{A survey data frame with post-stratification weights, such 
-as those created by \code{weight_age} or \code{weight_education}. There must
-be a column \code{weight} in the data frame.}
+as those created by \code{weight_wwc}. There must be a column \code{weight} 
+in the data frame.}
 
 \item{response}{A column in \code{mysurvey} that contains the quantity to be
 weighted, such as the response to a yes/no question as in 
@@ -41,7 +41,7 @@ library(acs)
 # and run api.key.install() one time to install your key on your system
 texas <- geo.make(state = "TX")
 data(texassurvey)
-summarize_survey(weight_age(texassurvey, texas, sex, raceethnicity), response)
+summarize_survey(weight_wwc(texassurvey, texas, sex, raceethnicity), response)
 }
 
 }
