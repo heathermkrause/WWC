@@ -41,11 +41,8 @@ ACS tables with educational attainment data
 programming with.
 }
 \examples{
-
-\dontrun{
 data(texassurvey)
 weight_education(texassurvey, TX, sex, raceethnicity)
-}
 
 }
 

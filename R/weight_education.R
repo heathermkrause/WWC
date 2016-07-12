@@ -27,7 +27,6 @@
 #' @name weight_education
 #' 
 #' @examples 
-#' 
 #' data(texassurvey)
 #' weight_education(texassurvey, TX, sex, raceethnicity)
 #' 
