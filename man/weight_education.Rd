@@ -6,23 +6,26 @@
 \title{Weight a survey using post-stratification for weighting indicator(s) from 
 ACS tables with educational attainment data}
 \usage{
-weight_education(mysurvey, geographyfetch, ...)
+weight_education(mysurvey, georegion, ...)
 
-weight_education_(mysurvey, geographyfetch, dots)
+weight_education_(mysurvey, georegion_, dots)
 }
 \arguments{
 \item{mysurvey}{A survey data frame, such as that created by 
 \code{simulate_survey}}
 
-\item{geographyfetch}{A geography created with the \code{geo.make()} function
-of the acs package. The geography must be the entire U.S. or a single state
-or a single county.}
+\item{georegion}{A geographical region specified as a two letter abbreviation
+or a 5-digit FIPS code. The geography must be the entire U.S. (\code{US}) 
+or a single state (for example, \code{TX} or \code{CA}) or a single 
+county (for example, \code{49035}).}
 
 \item{...}{Weighting indicator(s) to be used for post-stratification.
 One or more of \code{sex}, \code{raceethnicity}, and \code{education}, which 
 must be columns in the survey data frame.}
 
-\item{dots}{List of weighting indicator(s) as string(s)}
+\item{georegion_}{Geographical region as string.}
+
+\item{dots}{List of weighting indicator(s) as string(s).}
 }
 \value{
 The original survey data frame with 1 column added, \code{weight},
@@ -40,12 +43,8 @@ programming with.
 \examples{
 
 \dontrun{
-library(acs)
-# if you are new to using the acs package, you will need to get an API key
-# and run api.key.install() one time to install your key on your system
-texas <- geo.make(state = "TX")
 data(texassurvey)
-weight_education(texassurvey, texas, sex, raceethnicity)
+weight_education(texassurvey, TX, sex, raceethnicity)
 }
 
 }
