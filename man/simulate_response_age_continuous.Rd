@@ -6,13 +6,14 @@
 given geography with specified characteristics for sex, race/ethnicity, 
 and age}
 \usage{
-simulate_response_age_continuous(geographyfetch, lambda_sex,
-  lambda_raceethnicity, lambda_age)
+simulate_response_age_continuous(georegion, lambda_sex, lambda_raceethnicity,
+  lambda_age)
 }
 \arguments{
-\item{geographyfetch}{A geography created with the \code{geo.make()} function
-of the acs package. The geography must be the entire U.S. or a single state
-or a single county.}
+\item{georegion}{A geographical region specified as a two letter abbreviation
+or a 5-digit FIPS code. The geography must be the entire U.S. (\code{US}) 
+or a single state (for example, \code{TX} or \code{CA}) or a single 
+county (for example, \code{49035}).}
 
 \item{lambda_sex}{Numeric vector specifying lambda (Poisson distribution) 
 for the survey respondents by sex in the order male, then female, for 
@@ -41,22 +42,15 @@ given geography with specified characteristics for sex, race/ethnicity,
 and age
 }
 \examples{
-
-\dontrun{
-library(acs)
-# if you are new to using the acs package, you will need to get an API key
-# and run api.key.install() one time to install your key on your system
-unitedstates <- geo.make(us = TRUE)
 # lambda_sex specifies the response weights of men/women
 # in this example, women have a higher mean response than men
 lambda_sex <- c(25, 75)
 lambda_raceethnicity <- c(90, 10, 50, 50, 50)
 lambda_age <- c(50, 50, 50, 50, 50, 50, 50, 55, 55, 60, 65, 70, 75, 80)
-opinionDF <- simulate_response_age_continuous(unitedstates, 
+opinionDF <- simulate_response_age_continuous(US, 
                                              lambda_sex, 
                                              lambda_raceethnicity,
                                              lambda_age)
-}
 
 }
 
