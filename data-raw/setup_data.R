@@ -26,3 +26,21 @@ texassurvey <- simulate_survey(prop_sex, odds_sex,
                                prop_education, odds_education,
                                n = 1000)
 devtools::use_data(texassurvey, overwrite = TRUE)
+
+# tinysurvey data set -----------------------------------------------
+
+library(WWC)
+prop_sex <- c(0.5, 0.5)
+prop_raceethnicity <- c(0.2, 0.2, 0.2, 0.2, 0.2)
+prop_age <- c(0, 0, 0, 0, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1)
+prop_education <- c(0.25, 0.25, 0.25, 0.25)
+lambda_sex <- c(10, 20)
+lambda_raceethnicity <- c(5, 50, 5, 5, 5)
+lambda_age <- rep(NA, 14)
+lambda_education <- rep(NA, 4)
+tinysurvey <- simulate_survey_continuous(prop_sex, lambda_sex,
+                                         prop_raceethnicity, lambda_raceethnicity,
+                                         prop_age, lambda_age,
+                                         prop_education, lambda_education,
+                                         n = 20)
+devtools::use_data(tinysurvey, overwrite = TRUE)
