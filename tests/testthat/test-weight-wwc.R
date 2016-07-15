@@ -1,15 +1,23 @@
-context("Weighting by more than one indicator")
+context("Weighting by one or more indicators")
 
-suppressPackageStartupMessages(library(acs))
-texas <- geo.make(state = "TX")
-data(texassurvey)
+data(tinysurvey)
 
 test_that("error handling for weighting indicator names is working", {
-        expect_error(weight_wwc(texassurvey, texas, howabouthemapples),
+        expect_error(weight_wwc(tinysurvey, TX, howabouthemapples),
                      "indicators must be one or more of sex, raceethnicity, age, and education")
 })
 
 test_that("error handling for education + age is working", {
-        expect_error(weight_wwc(texassurvey, texas, age, education),
+        expect_error(weight_wwc(tinysurvey, TX, age, education),
                      "indicators cannot include both age and education")
+})
+
+test_that("can weight a survey", {
+        expect_warning(resultDF <- weight_wwc(tinysurvey, TX, 
+                                              sex, raceethnicity),
+                       "Some strata absent from sample: ignored")
+        expect_is(resultDF, "tbl_df")
+        expect_equal(length(tinysurvey) + 1, length(resultDF))
+        expect_true(all(tinysurvey$sex == resultDF$sex))
+        expect_is(resultDF$weight, "numeric")
 })
