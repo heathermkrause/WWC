@@ -6,7 +6,7 @@ WWC: Weighing the Wisdom of Crowds
 **Authors:** [Heather Krause](http://idatassist.com/), [Julia Silge](http://juliasilge.com/)<br/>
 **License:** [MIT](https://opensource.org/licenses/MIT)
 
-[![Build Status](https://travis-ci.org/heathermkrause/WWC.svg?branch=master)](https://travis-ci.org/heathermkrause/WWC)
+[![Travis-CI Build Status](https://travis-ci.org/heathermkrause/WWC.svg?branch=master)](https://travis-ci.org/heathermkrause/WWC)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/WWC)](https://cran.r-project.org/package=WWC)
 [![Coverage Status](https://img.shields.io/codecov/c/github/heathermkrause/WWC/master.svg)](https://codecov.io/github/heathermkrause/WWC?branch=master)
 
