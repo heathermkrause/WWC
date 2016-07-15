@@ -7,7 +7,6 @@ WWC: Weighing the Wisdom of Crowds
 **License:** [MIT](https://opensource.org/licenses/MIT)
 
 [![Build Status](https://travis-ci.org/heathermkrause/WWC.svg?branch=master)](https://travis-ci.org/heathermkrause/WWC)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/heathermkrause/WWC?branch=master&svg=true)](https://ci.appveyor.com/project/heathermkrause/WWC)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/WWC)](https://cran.r-project.org/package=WWC)
 [![Coverage Status](https://img.shields.io/codecov/c/github/heathermkrause/WWC/master.svg)](https://codecov.io/github/heathermkrause/WWC?branch=master)
 
