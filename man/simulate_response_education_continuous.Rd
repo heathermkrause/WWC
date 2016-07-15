@@ -6,10 +6,15 @@
 given geography with specified characteristics for sex, race/ethnicity, 
 and education}
 \usage{
-simulate_response_education_continuous(geographyfetch, lambda_sex,
+simulate_response_education_continuous(georegion, lambda_sex,
   lambda_raceethnicity, lambda_education)
 }
 \arguments{
+\item{georegion}{A geographical region specified as a two letter abbreviation
+or a 5-digit FIPS code. The geography must be the entire U.S. (\code{US}) 
+or a single state (for example, \code{TX} or \code{CA}) or a single 
+county (for example, \code{49035}).}
+
 \item{lambda_sex}{Numeric vector specifying lambda (Poisson distribution) 
 for the survey respondents by sex in the order male, then female, for 
 example, \code{c(25, 75)}.}
@@ -24,11 +29,6 @@ respondents by educational attainment in the following bins: less than
 high school diploma, high school graduate (includes equivalency), some 
 college or associate's degree, bachelor's degree or higher, for example, 
 \code{c(20, 40, 60, 80)}.}
-
-\item{georegion}{A geographical region specified as a two letter abbreviation
-or a 5-digit FIPS code. The geography must be the entire U.S. (\code{US}) 
-or a single state (for example, \code{TX} or \code{CA}) or a single 
-county (for example, \code{49035}).}
 }
 \value{
 A data frame with 3 columns (\code{value}, \code{answer}, and 
