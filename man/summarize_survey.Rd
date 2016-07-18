@@ -34,15 +34,10 @@ Summarize a survey data frame
 programming with.
 }
 \examples{
-
-\dontrun{
-library(acs)
-# if you are new to using the acs package, you will need to get an API key
-# and run api.key.install() one time to install your key on your system
-texas <- geo.make(state = "TX")
+library(dplyr) 
 data(texassurvey)
-summarize_survey(weight_wwc(texassurvey, texas, sex, raceethnicity), response)
-}
+weight_wwc(texassurvey, TX, sex, raceethnicity) \%>\%
+    summarize_survey(response)
 
 }
 
