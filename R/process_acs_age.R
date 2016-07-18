@@ -5,8 +5,11 @@
 #' @param geographyfetch A geography created with the \code{geo.make()} function
 #' of the acs package. The geography must be the entire U.S. or a single state
 #' or a single county.
+#' @param yearspan The span in years of the desired ACS data (should be 1 or
+#' 5). Default is 1. Not all county data is available as one-year estimates.
 #' 
-#' @details Uses ACS 1-year estimate for 2014
+#' @details Uses ACS 1-year estimate for 2014 by default; uses ACS 5-year 
+#' estimate for 2010-2014 with \code{yearspan = 5}.
 #' 
 #' @return A data frame with 7 columns that tabulates the sex by age population
 #' for five racial/ethnic groups: black alone, white alone (not Hispanic or 
@@ -31,19 +34,26 @@
 #' texas <- geo.make(state = "TX")
 #' txDF <- process_acs_age(texas)
 #' 
+#' # Cook County (Chicago) is populous enough that it has 1-year estimates
 #' cookcounty <- geo.make(state = "IL", county = 31)
 #' cookDF <- process_acs_age(cookcounty)
+#' 
+#' # Daggett County in rural Utah has only 5-year estimates
+#' daggettcounty <- geo.make(state = "UT", county = 9)
+#' daggettDF <- process_acs_age(daggettcounty, yearspan = 5)
 #' }
 #' 
 #' @export
 
-process_acs_age <- function(geographyfetch) {
+process_acs_age <- function(geographyfetch, yearspan = 1) {
 
         # get age for male/female population, not broken
         # down by race/ethnicity
-        totalagefetch <- acs::acs.fetch(geography = geographyfetch, endyear = 2014,
-                                         span = 1, table.number = "B01001",
-                                         col.names = "pretty")
+        totalagefetch <- acs::acs.fetch(geography = geographyfetch, 
+                                        endyear = 2014,
+                                        span = yearspan, 
+                                        table.number = "B01001",
+                                        col.names = "pretty")
         totalage <- reshape2::melt(acs::estimate(totalagefetch))
         totalage$age <- str_extract(as.character(totalage$Var2), 
                                            "(\\d+ (to|and) \\d+ years|\\d+ years and over|\\d+ years|Under \\d+ years)")
@@ -62,8 +72,11 @@ process_acs_age <- function(geographyfetch) {
         # by race/ethnicity
         tablenames <- paste0("B01001", c("B","D","H", "I"))
         agefetch <- purrr::map(tablenames, function(x) {
-                acs::acs.fetch(geography = geographyfetch, endyear = 2014, span = 1,
-                          table.number = x, col.names = "pretty")
+                acs::acs.fetch(geography = geographyfetch, 
+                               endyear = 2014, 
+                               span = yearspan,
+                               table.number = x, 
+                               col.names = "pretty")
         })
         
         process_fetch <- function(fetch) {

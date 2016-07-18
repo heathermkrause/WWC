@@ -6,12 +6,15 @@
 tables B01001 and B01001B/D/H/I and return a tidy data frame for a specified 
 single geography}
 \usage{
-process_acs_age(geographyfetch)
+process_acs_age(geographyfetch, yearspan = 1)
 }
 \arguments{
 \item{geographyfetch}{A geography created with the \code{geo.make()} function
 of the acs package. The geography must be the entire U.S. or a single state
 or a single county.}
+
+\item{yearspan}{The span in years of the desired ACS data (should be 1 or
+5). Default is 1. Not all county data is available as one-year estimates.}
 }
 \value{
 A data frame with 7 columns that tabulates the sex by age population
@@ -26,7 +29,8 @@ tables B01001 and B01001B/D/H/I and return a tidy data frame for a specified
 single geography
 }
 \details{
-Uses ACS 1-year estimate for 2014
+Uses ACS 1-year estimate for 2014 by default; uses ACS 5-year 
+estimate for 2010-2014 with \code{yearspan = 5}.
 }
 \examples{
 
@@ -40,8 +44,13 @@ usDF <- process_acs_age(unitedstates)
 texas <- geo.make(state = "TX")
 txDF <- process_acs_age(texas)
 
+# Cook County (Chicago) is populous enough that it has 1-year estimates
 cookcounty <- geo.make(state = "IL", county = 31)
 cookDF <- process_acs_age(cookcounty)
+
+# Daggett County in rural Utah has only 5-year estimates
+daggettcounty <- geo.make(state = "UT", county = 9)
+daggettDF <- process_acs_age(daggettcounty, yearspan = 5)
 }
 
 }
