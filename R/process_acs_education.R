@@ -44,9 +44,11 @@ process_acs_education <- function(geographyfetch) {
 
         # get education attainment for male/female population, not broken
         # down by race/ethnicity
-        totaleducationfetch <- acs::acs.fetch(geography = geographyfetch, endyear = 2014,
-                                         span = 1, table.number = "C15002",
-                                         col.names = "pretty")
+        totaleducationfetch <- acs::acs.fetch(geography = geographyfetch, 
+                                              endyear = 2014,
+                                              span = 1, 
+                                              table.number = "C15002",
+                                              col.names = "pretty")
         totaleducation <- reshape2::melt(acs::estimate(totaleducationfetch))
         totaleducation$Var2 <- str_extract(as.character(totaleducation$Var2), 
                                            "(Female:.+$|Female:|Male:.+$|Male:)")
@@ -64,8 +66,11 @@ process_acs_education <- function(geographyfetch) {
         # by race/ethnicity
         tablenames <- paste0("C15002", c("B","D","H", "I"))
         educationfetch <- purrr::map(tablenames, function(x) {
-                acs::acs.fetch(geography = geographyfetch, endyear = 2014, span = 1,
-                          table.number = x, col.names = "pretty")
+                acs::acs.fetch(geography = geographyfetch, 
+                               endyear = 2014, 
+                               span = 1,
+                               table.number = x, 
+                               col.names = "pretty")
         })
         
         process_fetch <- function(fetch) {
