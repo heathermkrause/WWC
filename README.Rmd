@@ -29,7 +29,46 @@ This open-source tool weights collected survey results for demographic and other
 
 ## Installation
 
+You can install the development version of this package from GitHub using [devtools](https://github.com/hadley/devtools):
+
+```{r}
+library(devtools)
+install_github("heathermkrause/WWC")
+```
+
 ## Examples
+
+This package contains a simulated survey called `texassurvey` that contains 1000 respondents that have answered a yes/no question. This example survey is *biased*, meaning that the population in the survey does not match the true population in Texas. It has different proportions with respect to sex and race/ethnicity compared to the real population in Texas (2014 1-year ACS population estimates). What does this survey look like?
+
+```{r}
+library(WWC)
+head(texassurvey)
+```
+
+What result would a person using the survey find if s/he looked at the raw result of the survey, without adjusting for the demographic differences between the survey respondents and the true population in Texas?
+
+```{r, fig.height=7, fig.width=7}
+library(dplyr)
+library(ggplot2)
+resultDF <- texassurvey %>% group_by(response) %>% summarize(n = n())
+ggplot(resultDF, aes(x = response, y = n)) +
+        geom_bar(stat = "identity", fill = "midnightblue")
+```
+
+Instead, the Veracio survey tool can be used to statistically weight each survey respondent according to what proportion of Texas' real proportion he or she represents.
+
+```{r}
+weighted <- weight_wwc(texassurvey, TX, sex, raceethnicity)
+head(weighted)
+```
+
+Now what result on the survey question will we find?
+
+```{r, fig.height=7, fig.width=7}
+resultDF <- weighted %>% group_by(response) %>% summarize(n = sum(weight))
+ggplot(resultDF, aes(x = response, y = n)) +
+        geom_bar(stat = "identity", fill = "midnightblue")
+```
 
 
 This project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

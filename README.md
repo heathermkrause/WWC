@@ -23,7 +23,86 @@ This open-source tool weights collected survey results for demographic and other
 
 ## Installation
 
+You can install the development version of this package from GitHub using [devtools](https://github.com/hadley/devtools):
+
+
+```r
+library(devtools)
+install_github("heathermkrause/WWC")
+#> Using GitHub PAT from envvar GITHUB_PAT
+#> Downloading GitHub repo heathermkrause/WWC@master
+#> from URL https://api.github.com/repos/heathermkrause/WWC/zipball/master
+#> Installing WWC
+#> '/Library/Frameworks/R.framework/Resources/bin/R' --no-site-file  \
+#>   --no-environ --no-save --no-restore --quiet CMD INSTALL  \
+#>   '/private/var/folders/0w/prb4hnss2gn1p7y34qb2stw00000gp/T/RtmpAUJvtE/devtools9eb5ea4b272/heathermkrause-WWC-9e93ab44d420eae1368d0d467707bd6728ec0b4a'  \
+#>   --library='/Library/Frameworks/R.framework/Versions/3.3/Resources/library'  \
+#>   --install-tests
+#> 
+#> Reloading installed WWC
+```
+
 ## Examples
+
+This package contains a simulated survey called `texassurvey` that contains 1000 respondents that have answered a yes/no question. This example survey is *biased*, meaning that the population in the survey does not match the true population in Texas. It has different proportions with respect to sex and race/ethnicity compared to the real population in Texas (2014 1-year ACS population estimates). What does this survey look like?
+
+
+```r
+library(WWC)
+head(texassurvey)
+#> # A tibble: 6 x 5
+#>      sex                       raceethnicity            age
+#>    <chr>                               <chr>          <chr>
+#> 1   Male WHITE ALONE, NOT HISPANIC OR LATINO 35 to 44 years
+#> 2 Female                         ASIAN ALONE 20 to 24 years
+#> 3 Female WHITE ALONE, NOT HISPANIC OR LATINO 65 to 74 years
+#> 4 Female WHITE ALONE, NOT HISPANIC OR LATINO 20 to 24 years
+#> 5   Male WHITE ALONE, NOT HISPANIC OR LATINO 20 to 24 years
+#> 6   Male WHITE ALONE, NOT HISPANIC OR LATINO 25 to 29 years
+#> # ... with 2 more variables: education <chr>, response <chr>
+```
+
+What result would a person using the survey find if s/he looked at the raw result of the survey, without adjusting for the demographic differences between the survey respondents and the true population in Texas?
+
+
+```r
+library(dplyr)
+library(ggplot2)
+resultDF <- texassurvey %>% group_by(response) %>% summarize(n = n())
+ggplot(resultDF, aes(x = response, y = n)) +
+        geom_bar(stat = "identity", fill = "midnightblue")
+```
+
+![plot of chunk unnamed-chunk-4](README-unnamed-chunk-4-1.png)
+
+Instead, the Veracio survey tool can be used to statistically weight each survey respondent according to what proportion of Texas' real proportion he or she represents.
+
+
+```r
+weighted <- weight_wwc(texassurvey, TX, sex, raceethnicity)
+head(weighted)
+#> # A tibble: 6 x 6
+#>      sex                       raceethnicity            age
+#>    <chr>                               <chr>          <chr>
+#> 1   Male WHITE ALONE, NOT HISPANIC OR LATINO 35 to 44 years
+#> 2 Female                         ASIAN ALONE 20 to 24 years
+#> 3 Female WHITE ALONE, NOT HISPANIC OR LATINO 65 to 74 years
+#> 4 Female WHITE ALONE, NOT HISPANIC OR LATINO 20 to 24 years
+#> 5   Male WHITE ALONE, NOT HISPANIC OR LATINO 20 to 24 years
+#> 6   Male WHITE ALONE, NOT HISPANIC OR LATINO 25 to 29 years
+#> # ... with 3 more variables: education <chr>, response <chr>, weight <dbl>
+```
+
+Now what result on the survey question will we find?
+
+
+```r
+resultDF <- weighted %>% group_by(response) %>% summarize(n = sum(weight))
+ggplot(resultDF, aes(x = response, y = n)) +
+        geom_bar(stat = "identity", fill = "midnightblue")
+```
+
+![plot of chunk unnamed-chunk-6](README-unnamed-chunk-6-1.png)
 
 
 This project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
