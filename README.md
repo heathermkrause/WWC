@@ -29,17 +29,6 @@ You can install the development version of this package from GitHub using [devto
 ```r
 library(devtools)
 install_github("heathermkrause/WWC")
-#> Using GitHub PAT from envvar GITHUB_PAT
-#> Downloading GitHub repo heathermkrause/WWC@master
-#> from URL https://api.github.com/repos/heathermkrause/WWC/zipball/master
-#> Installing WWC
-#> '/Library/Frameworks/R.framework/Resources/bin/R' --no-site-file  \
-#>   --no-environ --no-save --no-restore --quiet CMD INSTALL  \
-#>   '/private/var/folders/0w/prb4hnss2gn1p7y34qb2stw00000gp/T/RtmpAUJvtE/devtools9eb47d56522/heathermkrause-WWC-bbe400863b2d2ad87d74d59abbc65c0dfbec2442'  \
-#>   --library='/Library/Frameworks/R.framework/Versions/3.3/Resources/library'  \
-#>   --install-tests
-#> 
-#> Reloading installed WWC
 ```
 
 ## Examples

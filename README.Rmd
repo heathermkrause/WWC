@@ -15,7 +15,8 @@ WWC: Weighing the Wisdom of Crowds
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "README-"
+  fig.path = "README-",
+  dplyr.width = 180
 )
 ```
 
@@ -31,7 +32,7 @@ This open-source tool weights collected survey results for demographic and other
 
 You can install the development version of this package from GitHub using [devtools](https://github.com/hadley/devtools):
 
-```{r}
+```{r, eval=FALSE}
 library(devtools)
 install_github("heathermkrause/WWC")
 ```
@@ -47,7 +48,7 @@ head(texassurvey)
 
 What result would a person using the survey find if s/he looked at the raw result of the survey, without adjusting for the demographic differences between the survey respondents and the true population in Texas?
 
-```{r, fig.height=7, fig.width=7}
+```{r, fig.height=4, fig.width=4}
 library(dplyr)
 library(ggplot2)
 resultDF <- texassurvey %>% group_by(response) %>% summarize(n = n())
@@ -64,7 +65,7 @@ head(weighted)
 
 Now what result on the survey question will we find?
 
-```{r, fig.height=7, fig.width=7}
+```{r, fig.height=4, fig.width=4}
 resultDF <- weighted %>% group_by(response) %>% summarize(n = sum(weight))
 ggplot(resultDF, aes(x = response, y = n)) +
         geom_bar(stat = "identity", fill = "midnightblue")
