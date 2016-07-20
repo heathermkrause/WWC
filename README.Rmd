@@ -70,5 +70,8 @@ ggplot(resultDF, aes(x = response, y = n)) +
         geom_bar(stat = "identity", fill = "midnightblue")
 ```
 
+To learn more about the survey weighting algorithm, see the main vignette.
+
+## Code of Conduct
 
 This project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

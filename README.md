@@ -35,7 +35,7 @@ install_github("heathermkrause/WWC")
 #> Installing WWC
 #> '/Library/Frameworks/R.framework/Resources/bin/R' --no-site-file  \
 #>   --no-environ --no-save --no-restore --quiet CMD INSTALL  \
-#>   '/private/var/folders/0w/prb4hnss2gn1p7y34qb2stw00000gp/T/RtmpAUJvtE/devtools9eb5ea4b272/heathermkrause-WWC-9e93ab44d420eae1368d0d467707bd6728ec0b4a'  \
+#>   '/private/var/folders/0w/prb4hnss2gn1p7y34qb2stw00000gp/T/RtmpAUJvtE/devtools9eb47d56522/heathermkrause-WWC-bbe400863b2d2ad87d74d59abbc65c0dfbec2442'  \
 #>   --library='/Library/Frameworks/R.framework/Versions/3.3/Resources/library'  \
 #>   --install-tests
 #> 
@@ -104,5 +104,8 @@ ggplot(resultDF, aes(x = response, y = n)) +
 
 ![plot of chunk unnamed-chunk-6](README-unnamed-chunk-6-1.png)
 
+To learn more about the survey weighting algorithm, see the main vignette.
+
+## Code of Conduct
 
 This project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
