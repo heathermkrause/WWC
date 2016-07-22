@@ -19,7 +19,8 @@ Imports: purrr,
         stringr,
         reshape2,
         acs,
-        survey
+        survey,
+        readr
 Suggests: ggplot2,
         knitr,
         testthat
