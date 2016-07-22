@@ -43,7 +43,7 @@ This package contains a simulated survey called `texassurvey` that contains 1000
 
 ```{r}
 library(WWC)
-head(texassurvey)
+texassurvey
 ```
 
 What result would a person using the survey find if s/he looked at the raw result of the survey, without adjusting for the demographic differences between the survey respondents and the true population in Texas?
@@ -60,7 +60,7 @@ Instead, the Veracio survey tool can be used to statistically weight each survey
 
 ```{r}
 weighted <- weight_wwc(texassurvey, TX, sex, raceethnicity)
-head(weighted)
+weighted
 ```
 
 Now what result on the survey question will we find?
