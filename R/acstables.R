@@ -1,5 +1,5 @@
-#' Demographic and sex by age data from ACS tables for the states and the U.S.
-#' as a whole
+#' Demographic and sex by age data from ACS tables for counties, states, and 
+#' the U.S. as a whole
 #' 
 #' Demographic and sex by age data from ACS tables B01001 and B01001B/D/H/I for 
 #' the states and the U.S., fetched and processed by \code{process_acs_age}.
@@ -19,16 +19,17 @@
 #' region.}
 #' \item{prob}{\code{population/geototal}, or the proportion of the total that
 #' is in this demographic bin.}
-#' \item{region}{Geographic region, such as "US" for the entire United States or
-#' a two-letter abbrevation for a state ("TX" for Texas)}
+#' \item{region}{Geographic region, such as \code{US} for the entire United 
+#' States, a two-letter abbrevation for a state (\code{TX} for Texas), or a 
+#' 5-digit FIPS code for a county (\code{17031} for Cook County).}
 #' }
-#' @details Uses ACS 1-year estimate for 2014; the data from table B01001 is 
-#' rebinned and used to find the "other" population
+#' @details Uses ACS 5-year estimate for 2010-2014; the data from table B01001 
+#' is rebinned and used to find the "other" population
 #' 
 "acsagetable"
 
-#' Demographic and educational attainment data from ACS tables for the states 
-#' and the U.S. as a whole
+#' Demographic and educational attainment data from ACS tables for counties,
+#' states, and the U.S. as a whole
 #' 
 #' Demographic and educational attainment data from ACS tables C15002 and 
 #' C15002B/D/H/I for the states and the U.S., fetched and processed by 
@@ -48,10 +49,11 @@
 #' \item{geototal}{The total number of people tabulated in this geographic region.}
 #' \item{prob}{\code{population/geototal}, or the proportion of the total that
 #' is in this demographic bin.}
-#' \item{region}{Geographic region, such as "US" for the entire United States or
-#' a two-letter abbrevation for a state ("TX" for Texas)}
+#' \item{region}{Geographic region, such as \code{US} for the entire United 
+#' States, a two-letter abbrevation for a state (\code{TX} for Texas), or a 
+#' 5-digit FIPS code for a county (\code{17031} for Cook County).}
 #' }
-#' @details Uses ACS 1-year estimate for 2014; the data from table C15002 is 
-#' rebinned and used to find the "other" population.
+#' @details Uses ACS 5-year estimate for 2010-2014; the data from table C15002 
+#' is rebinned and used to find the "other" population.
 #' 
 "acsedutable"

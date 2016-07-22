@@ -3,8 +3,8 @@
 \docType{data}
 \name{acsedutable}
 \alias{acsedutable}
-\title{Demographic and educational attainment data from ACS tables for the states 
-and the U.S. as a whole}
+\title{Demographic and educational attainment data from ACS tables for counties,
+states, and the U.S. as a whole}
 \format{A data frame with 2080 rows and 8 variables:
 \describe{
 \item{sex}{Male or female.}
@@ -18,8 +18,9 @@ alone, or other.}
 \item{geototal}{The total number of people tabulated in this geographic region.}
 \item{prob}{\code{population/geototal}, or the proportion of the total that
 is in this demographic bin.}
-\item{region}{Geographic region, such as "US" for the entire United States or
-a two-letter abbrevation for a state ("TX" for Texas)}
+\item{region}{Geographic region, such as \code{US} for the entire United 
+States, a two-letter abbrevation for a state (\code{TX} for Texas), or a 
+5-digit FIPS code for a county (\code{17031} for Cook County).}
 }}
 \usage{
 acsedutable
@@ -31,8 +32,8 @@ C15002B/D/H/I for the states and the U.S., fetched and processed by
 the population 25 and over.
 }
 \details{
-Uses ACS 1-year estimate for 2014; the data from table C15002 is 
-rebinned and used to find the "other" population.
+Uses ACS 5-year estimate for 2010-2014; the data from table C15002 
+is rebinned and used to find the "other" population.
 }
 \keyword{datasets}
 
