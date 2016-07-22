@@ -71,7 +71,7 @@ ggplot(resultDF, aes(x = response, y = n)) +
 
 ![plot of chunk unnamed-chunk-4](README-unnamed-chunk-4-1.png)
 
-Instead, the Veracio survey tool can be used to statistically weight each survey respondent according to what proportion of Texas' real proportion he or she represents.
+Instead, the Veracio survey tool can be used to statistically weight each survey respondent relative to what proportion of Texas' real population he or she represents.
 
 
 ```r

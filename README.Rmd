@@ -56,7 +56,7 @@ ggplot(resultDF, aes(x = response, y = n)) +
         geom_bar(stat = "identity", fill = "midnightblue")
 ```
 
-Instead, the Veracio survey tool can be used to statistically weight each survey respondent according to what proportion of Texas' real proportion he or she represents.
+Instead, the Veracio survey tool can be used to statistically weight each survey respondent relative to what proportion of Texas' real population he or she represents.
 
 ```{r}
 weighted <- weight_wwc(texassurvey, TX, sex, raceethnicity)
