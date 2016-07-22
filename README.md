@@ -33,7 +33,7 @@ install_github("heathermkrause/WWC")
 
 ## Examples
 
-This package contains a simulated survey called `texassurvey` that contains 1000 respondents that have answered a yes/no question. This example survey is *biased*, meaning that the population in the survey does not match the true population in Texas. It has different proportions with respect to sex and race/ethnicity compared to the real population in Texas (2014 1-year ACS population estimates). What does this survey look like?
+This package contains a simulated survey called `texassurvey` that contains 1000 respondents that have answered a yes/no question. This example survey is *biased*, meaning that the population in the survey does not match the true population in Texas. It has different proportions with respect to sex and race/ethnicity compared to the real population in Texas (2010-2014 5-year ACS population estimates). What does this survey look like?
 
 
 ```r
@@ -48,7 +48,14 @@ head(texassurvey)
 #> 4 Female WHITE ALONE, NOT HISPANIC OR LATINO 20 to 24 years
 #> 5   Male WHITE ALONE, NOT HISPANIC OR LATINO 20 to 24 years
 #> 6   Male WHITE ALONE, NOT HISPANIC OR LATINO 25 to 29 years
-#> # ... with 2 more variables: education <chr>, response <chr>
+#>                                     education response
+#>                                         <chr>    <chr>
+#> 1                 Bachelor's degree or higher       no
+#> 2                 Bachelor's degree or higher       no
+#> 3               Less than high school diploma       no
+#> 4 High school graduate (includes equivalency)       no
+#> 5          Some college or associate's degree       no
+#> 6          Some college or associate's degree       no
 ```
 
 What result would a person using the survey find if s/he looked at the raw result of the survey, without adjusting for the demographic differences between the survey respondents and the true population in Texas?
@@ -79,7 +86,14 @@ head(weighted)
 #> 4 Female WHITE ALONE, NOT HISPANIC OR LATINO 20 to 24 years
 #> 5   Male WHITE ALONE, NOT HISPANIC OR LATINO 20 to 24 years
 #> 6   Male WHITE ALONE, NOT HISPANIC OR LATINO 25 to 29 years
-#> # ... with 3 more variables: education <chr>, response <chr>, weight <dbl>
+#>                                     education response    weight
+#>                                         <chr>    <chr>     <dbl>
+#> 1                 Bachelor's degree or higher       no 0.5445805
+#> 2                 Bachelor's degree or higher       no 3.7007638
+#> 3               Less than high school diploma       no 0.6192636
+#> 4 High school graduate (includes equivalency)       no 0.6192636
+#> 5          Some college or associate's degree       no 0.5445805
+#> 6          Some college or associate's degree       no 0.5445805
 ```
 
 Now what result on the survey question will we find?

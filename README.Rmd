@@ -15,9 +15,9 @@ WWC: Weighing the Wisdom of Crowds
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "README-",
-  dplyr.width = 180
+  fig.path = "README-"
 )
+options(dplyr.width = 180)
 ```
 
 This R package is part of the the Veracio survey tool developed by leaders from [Orb](http://www.orbmedia.org/), [Datassist](http://idatassist.com/), and [Cognite Labs](http://www.cognitelabs.com/), and supported by a [2016 Knight Foundation News Challenge on Data](http://idatassist.com/knight/). This survey tool provides a set of software tools and online services for nonprofits, local governments, social service agencies, and others to:
@@ -39,7 +39,7 @@ install_github("heathermkrause/WWC")
 
 ## Examples
 
-This package contains a simulated survey called `texassurvey` that contains 1000 respondents that have answered a yes/no question. This example survey is *biased*, meaning that the population in the survey does not match the true population in Texas. It has different proportions with respect to sex and race/ethnicity compared to the real population in Texas (2014 1-year ACS population estimates). What does this survey look like?
+This package contains a simulated survey called `texassurvey` that contains 1000 respondents that have answered a yes/no question. This example survey is *biased*, meaning that the population in the survey does not match the true population in Texas. It has different proportions with respect to sex and race/ethnicity compared to the real population in Texas (2010-2014 5-year ACS population estimates). What does this survey look like?
 
 ```{r}
 library(WWC)
@@ -48,7 +48,7 @@ head(texassurvey)
 
 What result would a person using the survey find if s/he looked at the raw result of the survey, without adjusting for the demographic differences between the survey respondents and the true population in Texas?
 
-```{r, fig.height=4, fig.width=4}
+```{r, fig.height=6, fig.width=6}
 library(dplyr)
 library(ggplot2)
 resultDF <- texassurvey %>% group_by(response) %>% summarize(n = n())
@@ -65,7 +65,7 @@ head(weighted)
 
 Now what result on the survey question will we find?
 
-```{r, fig.height=4, fig.width=4}
+```{r, fig.height=6, fig.width=6}
 resultDF <- weighted %>% group_by(response) %>% summarize(n = sum(weight))
 ggplot(resultDF, aes(x = response, y = n)) +
         geom_bar(stat = "identity", fill = "midnightblue")
