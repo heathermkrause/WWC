@@ -6,12 +6,15 @@
 tables B15002 and C15002B/D/H/I and return a tidy data frame for a specified 
 single geography}
 \usage{
-process_acs_education(geographyfetch)
+process_acs_education(geographyfetch, yearspan = 1)
 }
 \arguments{
 \item{geographyfetch}{A geography created with the \code{geo.make()} function
 of the acs package. The geography must be the entire U.S. or a single state
 or a single county.}
+
+\item{yearspan}{The span in years of the desired ACS data (should be 1 or
+5). Default is 1. Not all county data is available as one-year estimates.}
 }
 \value{
 A data frame with 7 columns that tabulates the educational attainment

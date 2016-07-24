@@ -5,6 +5,8 @@
 #' @param geographyfetch A geography created with the \code{geo.make()} function
 #' of the acs package. The geography must be the entire U.S. or a single state
 #' or a single county.
+#' @param yearspan The span in years of the desired ACS data (should be 1 or
+#' 5). Default is 1. Not all county data is available as one-year estimates.
 #' 
 #' @details Uses ACS 1-year estimate for 2014
 #' 
@@ -40,13 +42,13 @@
 #' 
 #' @export
 
-process_acs_education <- function(geographyfetch) {
+process_acs_education <- function(geographyfetch, yearspan = 1) {
 
         # get education attainment for male/female population, not broken
         # down by race/ethnicity
         totaleducationfetch <- acs::acs.fetch(geography = geographyfetch, 
                                               endyear = 2014,
-                                              span = 1, 
+                                              span = yearspan, 
                                               table.number = "B15002",
                                               col.names = "pretty")
         totaleducation <- reshape2::melt(acs::estimate(totaleducationfetch))
@@ -68,7 +70,7 @@ process_acs_education <- function(geographyfetch) {
         educationfetch <- purrr::map(tablenames, function(x) {
                 acs::acs.fetch(geography = geographyfetch, 
                                endyear = 2014, 
-                               span = 1,
+                               span = yearspan,
                                table.number = x, 
                                col.names = "pretty")
         })
