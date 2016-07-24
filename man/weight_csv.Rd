@@ -4,17 +4,17 @@
 \alias{weight_csv}
 \title{A wrapper for weight_wwc for CSV file input/output}
 \usage{
-weight_csv(file, path, ...)
+weight_csv(inputfile, outputpath, ...)
 }
 \arguments{
-\item{file}{A file containing the input survey data. Either a path to a file, 
-a connection, or literal data (either a single string or a raw vector). Files 
-starting with \code{http://}, \code{https://}, \code{ftp://}, or 
+\item{inputfile}{A file containing the input survey data. Either a path to a 
+file, a connection, or literal data (either a single string or a raw vector). 
+Files starting with \code{http://}, \code{https://}, \code{ftp://}, or 
 \code{ftps://} will be automatically downloaded, and zipped files wll be 
 uncompressed.}
 
-\item{path}{Path to write a csv file of the output weighted results. The new 
-file will contain the original survey data with 1 column added, 
+\item{outputpath}{Path to write a csv file of the output weighted results. 
+The new file will contain the original survey data with 1 column added, 
 \code{weight}, the post-stratification weight for each row in the survey.}
 
 \item{...}{Arguments to be passed to \code{weight_wwc}, geographical region 
