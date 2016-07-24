@@ -2,33 +2,35 @@
 % Please edit documentation in R/weight_csv.R
 \name{weight_csv}
 \alias{weight_csv}
-\title{A wrapper for weight_wwc for CSV file input}
+\title{A wrapper for weight_wwc for CSV file input/output}
 \usage{
-weight_csv(file, ...)
+weight_csv(file, path, ...)
 }
 \arguments{
-\item{file}{A file containing the survey data. Either a path to a file, a 
-connection, or literal data (either a single string or a raw vector). Files 
+\item{file}{A file containing the input survey data. Either a path to a file, 
+a connection, or literal data (either a single string or a raw vector). Files 
 starting with \code{http://}, \code{https://}, \code{ftp://}, or 
 \code{ftps://} will be automatically downloaded, and zipped files wll be 
 uncompressed.}
 
+\item{path}{Path to write a csv file of the output weighted results. The new 
+file will contain the original survey data with 1 column added, 
+\code{weight}, the post-stratification weight for each row in the survey.}
+
 \item{...}{Arguments to be passed to \code{weight_wwc}, geographical region 
 and weighting indicators. See \code{weight_wwc} for more details.}
 }
-\value{
-A data frame, the original survey data with 1 column added, 
-\code{weight}, the post-stratification weight for each row in the survey.
-}
 \description{
-A wrapper for weight_wwc for CSV file input
+A wrapper for weight_wwc for CSV file input/output
 }
 \details{
 See \code{weight_wwc} for more details on the weighting algorithm
 arguments
 }
 \examples{
-weight_csv(system.file("extdata/examplesurvey.csv", package = "WWC"), TX, sex, raceethnicity)
+tmp <- tempfile() 
+weight_csv(system.file("extdata/examplesurvey.csv", package = "WWC"), tmp,
+     TX, sex, raceethnicity)
 
 }
 
