@@ -8,6 +8,7 @@
 #' @param outputpath Path to write a csv file of the output weighted results. 
 #' The new file will contain the original survey data with 1 column added, 
 #' \code{weight}, the post-stratification weight for each row in the survey.
+#' Default will write a csv to the working directory.
 #' @param ... Arguments to be passed to \code{weight_wwc}, geographical region 
 #' and weighting indicators. See \code{weight_wwc} for more details.
 #' 
@@ -23,7 +24,7 @@
 #' 
 #' @export
 
-weight_csv <- function(inputfile, outputpath, ...) {
+weight_csv <- function(inputfile, outputpath = "./wwcresults.csv", ...) {
         mysurvey <- readr::read_csv(inputfile)
         readr::write_csv(weight_wwc(mysurvey, ...), outputpath)
 }

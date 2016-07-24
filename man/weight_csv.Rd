@@ -4,7 +4,7 @@
 \alias{weight_csv}
 \title{A wrapper for weight_wwc for CSV file input/output}
 \usage{
-weight_csv(inputfile, outputpath, ...)
+weight_csv(inputfile, outputpath = "./wwcresults.csv", ...)
 }
 \arguments{
 \item{inputfile}{A file containing the input survey data. Either a path to a 
@@ -15,7 +15,8 @@ uncompressed.}
 
 \item{outputpath}{Path to write a csv file of the output weighted results. 
 The new file will contain the original survey data with 1 column added, 
-\code{weight}, the post-stratification weight for each row in the survey.}
+\code{weight}, the post-stratification weight for each row in the survey.
+Default will write a csv to the working directory.}
 
 \item{...}{Arguments to be passed to \code{weight_wwc}, geographical region 
 and weighting indicators. See \code{weight_wwc} for more details.}
