@@ -1,5 +1,5 @@
 #' Fetch and process educational attainment and demographic data from ACS 
-#' tables C15002 and C15002B/D/H/I and return a tidy data frame for a specified 
+#' tables B15002 and C15002B/D/H/I and return a tidy data frame for a specified 
 #' single geography
 #' 
 #' @param geographyfetch A geography created with the \code{geo.make()} function
@@ -12,7 +12,7 @@
 #' by sex for five racial/ethnic groups: black alone, white alone (not Hispanic 
 #' or Latino), Hispanic or Latino, Asian alone, and other. The educational 
 #' attainment binning in this data frame is the same as in ACS tables 
-#' C15002B/D/H/I (the data from table C15002 is rebinned and used to find the 
+#' C15002B/D/H/I (the data from table B15002 is rebinned and used to find the 
 #' "other" population).
 #' 
 #' @import dplyr
@@ -47,7 +47,7 @@ process_acs_education <- function(geographyfetch) {
         totaleducationfetch <- acs::acs.fetch(geography = geographyfetch, 
                                               endyear = 2014,
                                               span = 1, 
-                                              table.number = "C15002",
+                                              table.number = "B15002",
                                               col.names = "pretty")
         totaleducation <- reshape2::melt(acs::estimate(totaleducationfetch))
         totaleducation$Var2 <- str_extract(as.character(totaleducation$Var2), 
@@ -100,8 +100,14 @@ process_acs_education <- function(geographyfetch) {
                                             summarize(sextotal = sum(population, na.rm = TRUE)) %>% 
                                             mutate(education = "Total"),
                                     totaleducation %>% group_by(sex) %>% 
-                                            filter(education == "Less than 9th grade" | 
-                                                           education == "9th to 12th grade, no diploma") %>% 
+                                            filter(education == "No schooling completed" | 
+                                                           education == "Nursery to 4th grade" |                                                           education == "11th grade" |
+                                                           education == "5th and 6th grade" |                                                           education == "11th grade" |
+                                                           education == "7th and 8th grade" |                                                           education == "11th grade" |
+                                                           education == "9th grade" |                                                           education == "11th grade" |
+                                                           education == "10th grade" |                                                           education == "11th grade" |
+                                                           education == "11th grade" |                                                           education == "11th grade" |
+                                                           education == "12th grade, no diploma") %>% 
                                             summarize(sextotal = sum(population, na.rm = TRUE)) %>% 
                                             mutate(education = "Less than high school diploma"),
                                     totaleducation %>% group_by(sex) %>% 
@@ -109,13 +115,16 @@ process_acs_education <- function(geographyfetch) {
                                             summarize(sextotal = sum(population, na.rm = TRUE)) %>% 
                                             mutate(education = "High school graduate (includes equivalency)"),
                                     totaleducation %>% group_by(sex) %>% 
-                                            filter(education == "Some college, no degree" | 
+                                            filter(education == "Some college, less than 1 year" | 
+                                                           education == "Some college, 1 or more years, no degree" |                                                           education == "11th grade" |
                                                            education == "Associate's degree") %>% 
                                             summarize(sextotal = sum(population, na.rm = TRUE)) %>% 
                                             mutate(education = "Some college or associate's degree"),
                                     totaleducation %>% group_by(sex) %>% 
                                             filter(education == "Bachelor's degree" | 
-                                                           education == "Graduate or professional degree") %>% 
+                                                           education == "Master's degree" |                                                           education == "11th grade" |
+                                                           education == "Professional school degree" |                                                           education == "11th grade" |
+                                                           education == "Doctorate degree") %>% 
                                             summarize(sextotal = sum(population, na.rm = TRUE)) %>% 
                                             mutate(education = "Bachelor's degree or higher"))
         geototal <- totaleducation %>% filter(education == "Total") %>% 

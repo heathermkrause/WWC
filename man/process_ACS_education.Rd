@@ -3,7 +3,7 @@
 \name{process_acs_education}
 \alias{process_acs_education}
 \title{Fetch and process educational attainment and demographic data from ACS 
-tables C15002 and C15002B/D/H/I and return a tidy data frame for a specified 
+tables B15002 and C15002B/D/H/I and return a tidy data frame for a specified 
 single geography}
 \usage{
 process_acs_education(geographyfetch)
@@ -18,12 +18,12 @@ A data frame with 7 columns that tabulates the educational attainment
 by sex for five racial/ethnic groups: black alone, white alone (not Hispanic 
 or Latino), Hispanic or Latino, Asian alone, and other. The educational 
 attainment binning in this data frame is the same as in ACS tables 
-C15002B/D/H/I (the data from table C15002 is rebinned and used to find the 
+C15002B/D/H/I (the data from table B15002 is rebinned and used to find the 
 "other" population).
 }
 \description{
 Fetch and process educational attainment and demographic data from ACS 
-tables C15002 and C15002B/D/H/I and return a tidy data frame for a specified 
+tables B15002 and C15002B/D/H/I and return a tidy data frame for a specified 
 single geography
 }
 \details{
