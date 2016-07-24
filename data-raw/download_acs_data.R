@@ -32,31 +32,36 @@ statesageDF <- map_df(unlist(states), function(x) {
 
 countiesageDF <- map_df(counties, function(x) {
          process_acs_age(geo.make(state = x$state, 
-                                  county = x$countyFIPS), yearspan = 5) %>% 
+                                  county = x$countyFIPS), 
+                         yearspan = 5) %>% 
                  mutate(region = x$FIPS)
          })
 
 #sapply(countiesageDF, function(y) sum(length(which(is.na(y)))))
 
-acsagetable <- bind_rows(usageDF, statesageDF, countiesageDF)
+#acsagetable <- bind_rows(usageDF, statesageDF, countiesageDF)
+acsagetable <- bind_rows(usageDF, statesageDF)
 devtools::use_data(acsagetable, overwrite = TRUE)
 
 
 
 # download education tables from ACS ------------------------------------------
 
-useduDF <- process_acs_education(unitedstates) %>% mutate(region = "US")
+useduDF <- process_acs_education(unitedstates, yearspan = 5) %>% mutate(region = "US")
 
 stateseduDF <- map_df(unlist(states), function(x) {
-        process_acs_education(geo.make(state = x)) %>% mutate(region = x)
+        process_acs_education(geo.make(state = x), yearspan = 5) %>% 
+                mutate(region = x)
         })
 
  countieseduDF <- map_df(counties, function(x) {
          process_acs_education(geo.make(state = x$state, 
-                                        county = x$countyFIPS)) %>% 
+                                        county = x$countyFIPS),
+                               yearspan = 5) %>% 
                  mutate(region = x$FIPS)
  })
 
-acsedutable <- bind_rows(useduDF, stateseduDF, countieseduDF)
+#acsedutable <- bind_rows(useduDF, stateseduDF, countieseduDF)
+acsedutable <- bind_rows(useduDF, stateseduDF)
 devtools::use_data(acsedutable, overwrite = TRUE)
 

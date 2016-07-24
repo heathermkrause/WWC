@@ -26,13 +26,13 @@ States, a two-letter abbrevation for a state (\code{TX} for Texas), or a
 acsedutable
 }
 \description{
-Demographic and educational attainment data from ACS tables C15002 and 
+Demographic and educational attainment data from ACS tables B15002 and 
 C15002B/D/H/I for the states and the U.S., fetched and processed by 
 \code{process_acs_education}. The educational attainment tables include only
 the population 25 and over.
 }
 \details{
-Uses ACS 5-year estimate for 2010-2014; the data from table C15002 
+Uses ACS 5-year estimate for 2010-2014; the data from table B15002 
 is rebinned and used to find the "other" population.
 }
 \keyword{datasets}
