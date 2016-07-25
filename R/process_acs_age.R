@@ -43,7 +43,6 @@
 #' daggettDF <- process_acs_age(daggettcounty, yearspan = 5)
 #' }
 #' 
-#' @export
 
 process_acs_age <- function(geographyfetch, yearspan = 1) {
 

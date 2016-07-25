@@ -40,7 +40,6 @@
 #' cookDF <- process_acs_education(cookcounty)
 #' }
 #' 
-#' @export
 
 process_acs_education <- function(geographyfetch, yearspan = 1) {
 
