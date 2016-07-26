@@ -5,7 +5,7 @@
 \alias{acsagetable}
 \title{Demographic and sex by age data from ACS tables for counties, states, and 
 the U.S. as a whole}
-\format{A data frame with 7280 rows and 8 variables:
+\format{A data frame with 458,080 rows and 8 variables:
 \describe{
 \item{sex}{Male or female.}
 \item{age}{Under 5 years, 5 to 
@@ -29,7 +29,8 @@ acsagetable
 }
 \description{
 Demographic and sex by age data from ACS tables B01001 and B01001B/D/H/I for 
-the states and the U.S., fetched and processed by \code{process_acs_age}.
+counties, states, and the U.S., fetched and processed by 
+\code{process_acs_age} and \code{process_acs_age_all}.
 }
 \details{
 Uses ACS 5-year estimate for 2010-2014; the data from table B01001 

@@ -16,7 +16,6 @@ counties <- countyFIPS %>% select(state, stateFIPS, countyFIPS) %>%
         select(-stateFIPS)
 
 
-# countieschunk <- counties[1:1000,] 
 counties <- split(counties, seq(nrow(counties)))
 
 
@@ -30,17 +29,13 @@ statesageDF <- map_df(unlist(states), function(x) {
         })
 #sapply(statesageDF, function(y) sum(length(which(is.na(y)))))
 
-countiesageDF <- map_df(counties, function(x) {
-         process_acs_age(geo.make(state = x$state, 
-                                  county = x$countyFIPS), 
-                         yearspan = 5) %>% 
-                 mutate(region = x$FIPS)
-         })
+countiesageDF <- process_acs_age_all(geo.make(state = "*", county = "*"), 
+                         yearspan = 5)
 
 #sapply(countiesageDF, function(y) sum(length(which(is.na(y)))))
 
-#acsagetable <- bind_rows(usageDF, statesageDF, countiesageDF)
-acsagetable <- bind_rows(usageDF, statesageDF)
+acsagetable <- bind_rows(usageDF, statesageDF, countiesageDF)
+#acsagetable <- bind_rows(usageDF, statesageDF)
 devtools::use_data(acsagetable, overwrite = TRUE)
 
 

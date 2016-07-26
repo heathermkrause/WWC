@@ -2,9 +2,10 @@
 #' the U.S. as a whole
 #' 
 #' Demographic and sex by age data from ACS tables B01001 and B01001B/D/H/I for 
-#' the states and the U.S., fetched and processed by \code{process_acs_age}.
+#' counties, states, and the U.S., fetched and processed by 
+#' \code{process_acs_age} and \code{process_acs_age_all}.
 #' 
-#' @format A data frame with 7280 rows and 8 variables:
+#' @format A data frame with 458,080 rows and 8 variables:
 #' \describe{
 #' \item{sex}{Male or female.}
 #' \item{age}{Under 5 years, 5 to 
