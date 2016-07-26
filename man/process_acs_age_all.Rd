@@ -32,7 +32,6 @@ Uses ACS 1-year estimate for 2014 by default; uses ACS 5-year
 estimate for 2010-2014 with \code{yearspan = 5}.
 }
 \examples{
-
 \dontrun{
 library(acs)
 # if you are new to using the acs package, you will need to get an API key

@@ -24,7 +24,6 @@
 #' @name process_acs_age_all
 #' 
 #' @examples 
-#' 
 #' \dontrun{
 #' library(acs)
 #' # if you are new to using the acs package, you will need to get an API key
