@@ -33,6 +33,7 @@
 #' countiesDF <- process_acs_age_all(allcounties, yearspan = 5)
 #' }
 #' 
+#' @export
 
 process_acs_age_all <- function(geographyfetch, yearspan = 1) {
         
@@ -104,35 +105,35 @@ process_acs_age_all <- function(geographyfetch, yearspan = 1) {
         # total age data frame above
         
         totalage <- bind_rows(totalage %>% filter(age %in% age$age),
-                              totalage %>% group_by(sex) %>% 
+                              totalage %>% group_by(sex, region) %>% 
                                       filter(age == "20 years" |
                                                      age == "21 years" |
                                                      age == "22 to 24 years") %>% 
                                       summarize(population = sum(population, na.rm = TRUE)) %>% 
                                       mutate(age = "20 to 24 years"),
-                              totalage %>% group_by(sex) %>% 
+                              totalage %>% group_by(sex, region) %>% 
                                       filter(age == "35 to 39 years" | 
                                                      age == "40 to 44 years") %>% 
                                       summarize(population = sum(population, na.rm = TRUE)) %>% 
                                       mutate(age = "35 to 44 years"),
-                              totalage %>% group_by(sex) %>%
+                              totalage %>% group_by(sex, region) %>%
                                       filter(age == "45 to 49 years" |
                                                      age == "50 to 54 years") %>%
                                       summarize(population = sum(population, na.rm = TRUE)) %>% 
                                       mutate(age = "45 to 54 years"),
-                              totalage %>% group_by(sex) %>% 
+                              totalage %>% group_by(sex, region) %>% 
                                       filter(age == "55 to 59 years" | 
                                                      age == "60 and 61 years" |
                                                      age == "62 to 64 years") %>% 
                                       summarize(population = sum(population, na.rm = TRUE)) %>% 
                                       mutate(age = "55 to 64 years"),
-                              totalage %>% group_by(sex) %>% 
+                              totalage %>% group_by(sex, region) %>% 
                                       filter(age == "65 and 66 years" | 
                                                      age == "67 to 69 years" |
                                                      age == "70 to 74 years") %>% 
                                       summarize(population = sum(population, na.rm = TRUE)) %>% 
                                       mutate(age = "65 to 74 years"),
-                              totalage %>% group_by(sex) %>% 
+                              totalage %>% group_by(sex, region) %>% 
                                       filter(age == "75 to 79 years" | 
                                                      age == "80 to 84 years") %>% 
                                       summarize(population = sum(population, na.rm = TRUE)) %>% 
@@ -144,7 +145,7 @@ process_acs_age_all <- function(geographyfetch, yearspan = 1) {
         
         # what about "other" as a racial/ethnic group?
         ageother <- age %>% group_by(sex, age, region) %>% 
-                summarise(notother = sum(population)) %>% 
+                summarise(notother = sum(population, na.rm = TRUE)) %>% 
                 ungroup() %>%
                 mutate(age = as.character(age)) %>%
                 left_join(totalage, by = c("sex", "age", "region")) %>% 
