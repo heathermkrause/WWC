@@ -30,7 +30,8 @@ tables B15002 and C15002B/D/H/I and return a tidy data frame for a specified
 single geography
 }
 \details{
-Uses ACS 1-year estimate for 2014
+Uses ACS 1-year estimate for 2014 by default; uses ACS 5-year 
+estimate for 2010-2014 with \code{yearspan = 5}.
 }
 \examples{
 
@@ -45,8 +46,13 @@ usDF <- process_acs_education(unitedstates)
 texas <- geo.make(state = "TX")
 txDF <- process_acs_education(texas)
 
+# Cook County (Chicago) is populous enough that it has 1-year estimates
 cookcounty <- geo.make(state = "IL", county = 31)
 cookDF <- process_acs_education(cookcounty)
+
+# Daggett County in rural Utah has only 5-year estimates
+daggettcounty <- geo.make(state = "UT", county = 9)
+daggettDF <- process_acs_education(daggettcounty, yearspan = 5)
 }
 
 }

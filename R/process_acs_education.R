@@ -8,7 +8,8 @@
 #' @param yearspan The span in years of the desired ACS data (should be 1 or
 #' 5). Default is 1. Not all county data is available as one-year estimates.
 #' 
-#' @details Uses ACS 1-year estimate for 2014
+#' @details Uses ACS 1-year estimate for 2014 by default; uses ACS 5-year 
+#' estimate for 2010-2014 with \code{yearspan = 5}.
 #' 
 #' @return A data frame with 7 columns that tabulates the educational attainment
 #' by sex for five racial/ethnic groups: black alone, white alone (not Hispanic 
@@ -36,10 +37,16 @@
 #' texas <- geo.make(state = "TX")
 #' txDF <- process_acs_education(texas)
 #' 
+#' # Cook County (Chicago) is populous enough that it has 1-year estimates
 #' cookcounty <- geo.make(state = "IL", county = 31)
 #' cookDF <- process_acs_education(cookcounty)
+#' 
+#' # Daggett County in rural Utah has only 5-year estimates
+#' daggettcounty <- geo.make(state = "UT", county = 9)
+#' daggettDF <- process_acs_education(daggettcounty, yearspan = 5)
 #' }
 #' 
+#' @export
 
 process_acs_education <- function(geographyfetch, yearspan = 1) {
 
