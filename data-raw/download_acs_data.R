@@ -49,14 +49,11 @@ stateseduDF <- map_df(unlist(states), function(x) {
                 mutate(region = x)
         })
 
- countieseduDF <- map_df(counties, function(x) {
-         process_acs_education(geo.make(state = x$state, 
-                                        county = x$countyFIPS),
-                               yearspan = 5) %>% 
-                 mutate(region = x$FIPS)
- })
+countieseduDF <- process_acs_edu_all(geo.make(state = "*", county = "*"), 
+                                     yearspan = 5)
 
-#acsedutable <- bind_rows(useduDF, stateseduDF, countieseduDF)
-acsedutable <- bind_rows(useduDF, stateseduDF)
+acsedutable <- bind_rows(useduDF, stateseduDF, countieseduDF)
+#sapply(acsedutable, function(y) sum(length(which(is.na(y)))))
+#acsedutable <- bind_rows(useduDF, stateseduDF)
 devtools::use_data(acsedutable, overwrite = TRUE)
 
