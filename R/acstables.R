@@ -33,11 +33,11 @@
 #' states, and the U.S. as a whole
 #' 
 #' Demographic and educational attainment data from ACS tables B15002 and 
-#' C15002B/D/H/I for the states and the U.S., fetched and processed by 
-#' \code{process_acs_education}. The educational attainment tables include only
-#' the population 25 and over.
+#' C15002B/D/H/I for counties, states, and the U.S., fetched and processed by 
+#' \code{process_acs_education} and \code{process_acs_edu_all}. The educational 
+#' attainment tables include only the population 25 and over.
 #' 
-#' @format A data frame with 2080 rows and 8 variables:
+#' @format A data frame with 130,880 rows and 8 variables:
 #' \describe{
 #' \item{sex}{Male or female.}
 #' \item{education}{Less than high school diploma, high school graduate 
