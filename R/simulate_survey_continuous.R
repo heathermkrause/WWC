@@ -77,10 +77,10 @@ simulate_survey_continuous <- function(prop_sex, lambda_sex,
                             prop_education, lambda_education,
                             n = 1000) {
         
-        if (sum(prop_sex) != 1) stop("prop_sex does not sum to 1")
-        if (sum(prop_raceethnicity) != 1) stop("prop_raceethnicity does not sum to 1")
-        if (sum(prop_age) != 1) stop("prop_age does not sum to 1")
-        if (sum(prop_education) != 1) stop("prop_education does not sum to 1")
+        if (!near(sum(prop_sex), 1)) stop("prop_sex does not sum to 1")
+        if (!near(sum(prop_raceethnicity), 1)) stop("prop_raceethnicity does not sum to 1")
+        if (!near(sum(prop_age), 1)) stop("prop_age does not sum to 1")
+        if (!near(sum(prop_education), 1)) stop("prop_education does not sum to 1")
         
         sex_sample <- c("Male", "Female")
         raceethnicity_sample <- c("WHITE ALONE, NOT HISPANIC OR LATINO", 
