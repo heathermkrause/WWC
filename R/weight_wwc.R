@@ -24,6 +24,7 @@
 #' @import dplyr
 #' @importFrom reshape2 melt
 #' @importFrom stats as.formula
+#' @importFrom stats complete.cases
 #' 
 #' @name weight_wwc
 #' 
@@ -63,6 +64,11 @@ weight_wwc_ <- function(mysurvey, georegion_, dots) {
         popDF <- group_by_(acsDF, .dots = dots) %>%
                 summarise(Freq = sum(nrow(mysurvey)*population/geototal))
         #print(popDF)
+        
+        # exclude rows/observations/respondents who have not answered all 
+        # the demographic questions, i.e. have NAs in the weighting indicator
+        # columns
+        mysurvey <- mysurvey[complete.cases(mysurvey[,(colnames(mysurvey) %in% dots)]),]
         
         # what is the raw result on the survey question in the population?
         rawSurvey <- survey::svydesign(ids = ~0, data = mysurvey, weights = NULL)
