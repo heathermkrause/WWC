@@ -21,3 +21,11 @@ test_that("can weight a survey", {
         expect_true(all(tinysurvey$sex == resultDF$sex))
         expect_is(resultDF$weight, "numeric")
 })
+
+test_that("can weight a survey with missing data", {
+        resultDF <- weight_wwc(surveymissing, TX, sex, raceethnicity)
+        expect_is(resultDF, "tbl_df")
+        expect_equal(length(surveymissing) + 1, length(resultDF))
+        expect_equal(dim(resultDF)[1], 620)
+        expect_is(resultDF$weight, "numeric")
+})
