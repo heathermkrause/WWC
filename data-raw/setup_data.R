@@ -26,6 +26,13 @@ texassurvey <- simulate_survey(prop_sex, odds_sex,
                                prop_education, odds_education,
                                n = 1000)
 devtools::use_data(texassurvey, overwrite = TRUE)
+surveymissing <- map_df(texassurvey, 
+                        function(x) {x[sample(c(TRUE, NA), 
+                                              prob = c(0.8, 0.2), 
+                                              size = length(x), 
+                                              replace = TRUE)]})
+#sapply(surveymissing, function(y) sum(length(which(is.na(y)))))
+devtools::use_data(surveymissing, overwrite = TRUE)
 
 # tinysurvey data set -----------------------------------------------
 
