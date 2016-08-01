@@ -59,6 +59,11 @@ weight_education_ <- function(mysurvey, georegion_, dots) {
                 ungroup()
         #print(popDF)
         
+        # exclude rows/observations/respondents who have not answered all 
+        # the demographic questions, i.e. have NAs in the weighting indicator
+        # columns
+        mysurvey <- mysurvey[complete.cases(mysurvey[,(colnames(mysurvey) %in% dots)]),]
+        
         # what is the raw result on the survey question in the population?
         rawSurvey <- survey::svydesign(ids = ~0, data = mysurvey, weights = NULL)
         
