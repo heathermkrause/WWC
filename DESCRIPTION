@@ -2,6 +2,7 @@ Package: WWC
 Type: Package
 Title: Weighing the Wisdom of the Crowd
 Version: 0.1.0
+Date: 2016-08-03
 Authors@R: c(person("Heather", "Krause", email = "heather@idatassist.com", role = c("aut")),
              person("Julia", "Silge", email = "julia.silge@gmail.com", role = c("aut", "cre")))
 Description: Functions for Datassist's Knight Foundation project for weighting 
