@@ -1,7 +1,5 @@
 context("Simulating the true response for sex by age data")
 
-suppressPackageStartupMessages(library(acs))
-texas <- geo.make(state = "TX")
 data(texassurvey)
 
 test_that("error handling for sex odds is working", {
