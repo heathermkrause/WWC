@@ -5,7 +5,8 @@
 \title{Simulate a single survey to a yes/no response question according to inputs}
 \usage{
 simulate_survey(prop_sex, odds_sex, prop_raceethnicity, odds_raceethnicity,
-  prop_age, odds_age, prop_education, odds_education, n = 1000)
+  prop_age, odds_age, prop_education, odds_education, prop_geography,
+  odds_geography, n = 1000)
 }
 \arguments{
 \item{prop_sex}{Numeric vector specifying the gender characteristics of the
@@ -51,6 +52,16 @@ into one of these educational attainment bins.}
 respondents by educational attainment in the same order bins as 
 \code{prop_education}, for example, \code{c(0.4, 0.5, 2, 2.5)}.}
 
+\item{prop_geography}{Numeric vector specifying the geography distribution
+of the survey respondents as proportions in the following bins: Texas, 
+California, Utah, for example,
+\code{c(0.5, 0, 0.5)}. Must sum to 1, i.e., all respondents must fall
+into one of these geography bins.}
+
+\item{odds_geography}{Numeric vector specifying the opinion odds of the 
+survey respondents by educational attainment in the same order bins as 
+\code{prop_education}, for example, \code{c(2, 1, 0.5)}.}
+
 \item{n}{Number of respondents in the survey (default is 1000)}
 }
 \description{
@@ -70,10 +81,13 @@ prop_age <- c(0, 0, 0, 0.04, 0.1, 0.1, 0.12, 0.13, 0.12, 0.11, 0.11, 0.09, 0.06,
 odds_age <- c(1, 1, 1, 1, 1, 1, 1, 0.8, 2, 2, 2.5, 3, 0.5, 0.2)
 prop_education <- c(0.1, 0.3, 0.4, 0.2)
 odds_education <- c(0.4, 0.5, 2, 2.5)
+prop_geography <- c(0.4, 0.3, 0.3)
+odds_geography <- c(2, 1, 0.5)
 mysurvey <- simulate_survey(prop_sex, odds_sex,
                              prop_raceethnicity, odds_raceethnicity,
                              prop_age, odds_age,
                              prop_education, odds_education,
+                             prop_geography, odds_geography,
                              n = 900)
 
 }

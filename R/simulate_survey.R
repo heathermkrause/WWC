@@ -35,6 +35,14 @@
 #' @param odds_education Numeric vector specifying the opinion odds of the survey
 #' respondents by educational attainment in the same order bins as 
 #' \code{prop_education}, for example, \code{c(0.4, 0.5, 2, 2.5)}.
+#' @param prop_geography Numeric vector specifying the geography distribution
+#' of the survey respondents as proportions in the following bins: Texas, 
+#' California, Utah, for example,
+#' \code{c(0.5, 0, 0.5)}. Must sum to 1, i.e., all respondents must fall
+#' into one of these geography bins.
+#' @param odds_geography Numeric vector specifying the opinion odds of the 
+#' survey respondents by educational attainment in the same order bins as 
+#' \code{prop_education}, for example, \code{c(2, 1, 0.5)}.
 #' @param n Number of respondents in the survey (default is 1000)
 #' 
 #' @import dplyr
@@ -55,10 +63,13 @@
 #' odds_age <- c(1, 1, 1, 1, 1, 1, 1, 0.8, 2, 2, 2.5, 3, 0.5, 0.2)
 #' prop_education <- c(0.1, 0.3, 0.4, 0.2)
 #' odds_education <- c(0.4, 0.5, 2, 2.5)
+#' prop_geography <- c(0.4, 0.3, 0.3)
+#' odds_geography <- c(2, 1, 0.5)
 #' mysurvey <- simulate_survey(prop_sex, odds_sex,
 #'                              prop_raceethnicity, odds_raceethnicity,
 #'                              prop_age, odds_age,
 #'                              prop_education, odds_education,
+#'                              prop_geography, odds_geography,
 #'                              n = 900)
 #' 
 #' @export
@@ -67,13 +78,15 @@ simulate_survey <- function(prop_sex, odds_sex,
                             prop_raceethnicity, odds_raceethnicity,
                             prop_age, odds_age,
                             prop_education, odds_education,
+                            prop_geography, odds_geography,
                             n = 1000) {
         
         if (!near(sum(prop_sex), 1)) stop("prop_sex does not sum to 1")
         if (!near(sum(prop_raceethnicity), 1)) stop("prop_raceethnicity does not sum to 1")
         if (!near(sum(prop_age), 1)) stop("prop_age does not sum to 1")
         if (!near(sum(prop_education), 1)) stop("prop_education does not sum to 1")
-                
+        if (!near(sum(prop_geography), 1)) stop("prop_geography does not sum to 1")
+        
         sex_sample <- c("Male", "Female")
         raceethnicity_sample <- c("WHITE ALONE, NOT HISPANIC OR LATINO", 
                                   "HISPANIC OR LATINO", 
@@ -98,6 +111,7 @@ simulate_survey <- function(prop_sex, odds_sex,
                               "High school graduate (includes equivalency)",
                               "Some college or associate's degree",
                               "Bachelor's degree or higher")
+        geography_sample <- c("TX", "CA", "UT")
 
         myList <- purrr::rerun(n, 
                                data_frame(sex = sample(sex_sample,
@@ -111,19 +125,25 @@ simulate_survey <- function(prop_sex, odds_sex,
                                                            prob = prop_age)) %>%
                                        mutate(education = sample(education_sample,
                                                                  size = 1,
-                                                                 prob = prop_education)))
+                                                                 prob = prop_education)) %>%
+                                       mutate(geography = sample(geography_sample,
+                                                                 size = 1,
+                                                                 prob = prop_geography)))
         
         calc_response <- function(myDF, 
                                   sex_sample, raceethnicity_sample, 
-                                  age_sample, education_sample,
+                                  age_sample, education_sample, 
+                                  geography_sample,
                                   odds_sex, odds_raceethnicity,
-                                  odds_age, odds_education) {
+                                  odds_age, odds_education,
+                                  odds_geography) {
                 # this function takes a 1 x 4 data frame with sex, race/ethnicity,
-                # age, and education and calculates the yes/no response
+                # age, education, and geography and calculates the yes/no response
                 odds <- prod(odds_sex[which(sex_sample == myDF$sex)], 
                              odds_raceethnicity[which(raceethnicity_sample == myDF$raceethnicity)],
                              odds_age[which(age_sample == myDF$age)],
-                             odds_education[which(education_sample == myDF$education)])
+                             odds_education[which(education_sample == myDF$education)],
+                             odds_geography[which(geography_sample == myDF$geography)])
                 prop_yes <- odds/(odds + 1)
                 myDF <- myDF %>% mutate(response = sample(c("yes", "no"), 
                                                   size = 1,
@@ -135,9 +155,9 @@ simulate_survey <- function(prop_sex, odds_sex,
         
         myList <- purrr::map(myList, calc_response, 
                              sex_sample, raceethnicity_sample, 
-                             age_sample, education_sample,
+                             age_sample, education_sample, geography_sample,
                              odds_sex, odds_raceethnicity,
-                             odds_age, odds_education)        
+                             odds_age, odds_education, odds_geography)        
         mySurvey <- purrr::map_df(myList, bind_rows)
         mySurvey        
 }
