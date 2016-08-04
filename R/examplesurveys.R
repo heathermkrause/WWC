@@ -36,6 +36,7 @@
 #' \item{education}{Less than high school diploma, high school graduate 
 #' (includes equivalency), some college or associate's degree, bachelor's 
 #' degree or higher}
+#' \item{geography}{\code{TX} only}
 #' \item{response}{Yes or no}
 #' }
 "surveymissing"
