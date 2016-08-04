@@ -15,6 +15,7 @@
 #' \item{education}{Less than high school diploma, high school graduate 
 #' (includes equivalency), some college or associate's degree, bachelor's 
 #' degree or higher}
+#' \item{geography}{\code{UT} only}
 #' \item{response}{A numerical, continuous response to a survey question}
 #' }
 "tinysurvey"
