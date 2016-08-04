@@ -41,8 +41,8 @@
 #' \code{c(0.5, 0, 0.5)}. Must sum to 1, i.e., all respondents must fall
 #' into one of these geography bins.
 #' @param odds_geography Numeric vector specifying the opinion odds of the 
-#' survey respondents by educational attainment in the same order bins as 
-#' \code{prop_education}, for example, \code{c(2, 1, 0.5)}.
+#' survey respondents by geography in the same order bins as 
+#' \code{prop_geography}, for example, \code{c(2, 1, 0.5)}.
 #' @param n Number of respondents in the survey (default is 1000)
 #' 
 #' @import dplyr
