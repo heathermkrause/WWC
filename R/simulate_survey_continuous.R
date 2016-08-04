@@ -35,6 +35,14 @@
 #' @param lambda_education Numeric vector specifying lambda for the survey 
 #' respondents by educational attainment in the same order bins as 
 #' \code{prop_education}, for example, \code{c(20, 40, 60, 80)}.
+#' @param prop_geography Numeric vector specifying the geography distribution
+#' of the survey respondents as proportions in the following bins: Texas, 
+#' California, Utah, for example,
+#' \code{c(0.5, 0, 0.5)}. Must sum to 1, i.e., all respondents must fall
+#' into one of these geography bins.
+#' @param lambda_geography Numeric vector specifying lambda for the 
+#' survey respondents by geography in the same order bins as 
+#' \code{prop_geography}, for example, \code{c(10, 50, 90)}.
 #' @param n Number of respondents in the survey (default is 1000)
 #' 
 #' @details The numerical value for each survey respondent is simulated using
@@ -63,10 +71,13 @@
 #' lambda_age <- c(50, 50, 50, 50, 50, 50, 50, 55, 55, 60, 65, 70, 75, 80)
 #' prop_education <- c(0.1, 0.3, 0.4, 0.2)
 #' lambda_education <- c(20, 40, 60, 80)
+#' prop_geography <- c(0.4, 0.3, 0.3)
+#' lambda_geography <- c(80, 60, 40)
 #' mysurvey <- simulate_survey_continuous(prop_sex, lambda_sex,
 #'                                      prop_raceethnicity, lambda_raceethnicity,
 #'                                      prop_age, lambda_age,
 #'                                      prop_education, lambda_education,
+#'                                      prop_geography, lambda_geography,
 #'                                      n = 900)
 #' 
 #' @export
@@ -75,12 +86,14 @@ simulate_survey_continuous <- function(prop_sex, lambda_sex,
                             prop_raceethnicity, lambda_raceethnicity,
                             prop_age, lambda_age,
                             prop_education, lambda_education,
+                            prop_geography, lambda_geography,
                             n = 1000) {
         
         if (!near(sum(prop_sex), 1)) stop("prop_sex does not sum to 1")
         if (!near(sum(prop_raceethnicity), 1)) stop("prop_raceethnicity does not sum to 1")
         if (!near(sum(prop_age), 1)) stop("prop_age does not sum to 1")
         if (!near(sum(prop_education), 1)) stop("prop_education does not sum to 1")
+        if (!near(sum(prop_geography), 1)) stop("prop_geography does not sum to 1")
         
         sex_sample <- c("Male", "Female")
         raceethnicity_sample <- c("WHITE ALONE, NOT HISPANIC OR LATINO", 
@@ -106,6 +119,7 @@ simulate_survey_continuous <- function(prop_sex, lambda_sex,
                               "High school graduate (includes equivalency)",
                               "Some college or associate's degree",
                               "Bachelor's degree or higher")
+        geography_sample <- c("TX", "CA", "UT")
         
         myList <- purrr::rerun(n, 
                                data_frame(sex = sample(sex_sample,
@@ -119,19 +133,25 @@ simulate_survey_continuous <- function(prop_sex, lambda_sex,
                                                            prob = prop_age)) %>%
                                        mutate(education = sample(education_sample,
                                                                  size = 1,
-                                                                 prob = prop_education)))
+                                                                 prob = prop_education)) %>%
+                                       mutate(geography = sample(geography_sample,
+                                                                 size = 1,
+                                                                 prob = prop_geography)))
         
         calc_response <- function(myDF, 
                                   sex_sample, raceethnicity_sample, 
-                                  age_sample, education_sample,
+                                  age_sample, education_sample, 
+                                  geography_sample,
                                   lambda_sex, lambda_raceethnicity,
-                                  lambda_age, lambda_education) {
-                # this function takes a 1 x 4 data frame with sex, race/ethnicity,
-                # age, and education and calculates the yes/no response
+                                  lambda_age, lambda_education, 
+                                  lambda_geography) {
+                # this function takes a 1 x 5 data frame with sex, race/ethnicity,
+                # age, education, and geography and calculates the yes/no response
                 overalllambda <- mean(c(lambda_sex[which(sex_sample == myDF$sex)], 
                                     lambda_raceethnicity[which(raceethnicity_sample == myDF$raceethnicity)],
                                     lambda_age[which(age_sample == myDF$age)],
-                                    lambda_education[which(education_sample == myDF$education)]),
+                                    lambda_education[which(education_sample == myDF$education)],
+                                    lambda_geography[which(geography_sample == myDF$geography)]),
                                     na.rm = TRUE)
                 myDF <- myDF %>% mutate(response = rpois(1, overalllambda))
                 myDF
@@ -141,9 +161,9 @@ simulate_survey_continuous <- function(prop_sex, lambda_sex,
         
         myList <- purrr::map(myList, calc_response, 
                              sex_sample, raceethnicity_sample, 
-                             age_sample, education_sample,
+                             age_sample, education_sample, geography_sample,
                              lambda_sex, lambda_raceethnicity,
-                             lambda_age, lambda_education)        
+                             lambda_age, lambda_education, lambda_geography)        
         mySurvey <- purrr::map_df(myList, bind_rows)
         mySurvey        
 }

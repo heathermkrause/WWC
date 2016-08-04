@@ -7,7 +7,7 @@ according to inputs}
 \usage{
 simulate_survey_continuous(prop_sex, lambda_sex, prop_raceethnicity,
   lambda_raceethnicity, prop_age, lambda_age, prop_education, lambda_education,
-  n = 1000)
+  prop_geography, lambda_geography, n = 1000)
 }
 \arguments{
 \item{prop_sex}{Numeric vector specifying the gender characteristics of the
@@ -52,6 +52,16 @@ into one of these educational attainment bins.}
 respondents by educational attainment in the same order bins as 
 \code{prop_education}, for example, \code{c(20, 40, 60, 80)}.}
 
+\item{prop_geography}{Numeric vector specifying the geography distribution
+of the survey respondents as proportions in the following bins: Texas, 
+California, Utah, for example,
+\code{c(0.5, 0, 0.5)}. Must sum to 1, i.e., all respondents must fall
+into one of these geography bins.}
+
+\item{lambda_geography}{Numeric vector specifying lambda for the 
+survey respondents by geography in the same order bins as 
+\code{prop_geography}, for example, \code{c(10, 50, 90)}.}
+
 \item{n}{Number of respondents in the survey (default is 1000)}
 }
 \description{
@@ -80,10 +90,13 @@ prop_age <- c(0, 0, 0, 0.04, 0.1, 0.1, 0.12, 0.13, 0.12, 0.11, 0.11, 0.09, 0.06,
 lambda_age <- c(50, 50, 50, 50, 50, 50, 50, 55, 55, 60, 65, 70, 75, 80)
 prop_education <- c(0.1, 0.3, 0.4, 0.2)
 lambda_education <- c(20, 40, 60, 80)
+prop_geography <- c(0.4, 0.3, 0.3)
+lambda_geography <- c(80, 60, 40)
 mysurvey <- simulate_survey_continuous(prop_sex, lambda_sex,
                                      prop_raceethnicity, lambda_raceethnicity,
                                      prop_age, lambda_age,
                                      prop_education, lambda_education,
+                                     prop_geography, lambda_geography,
                                      n = 900)
 
 }
