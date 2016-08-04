@@ -50,7 +50,7 @@ simulate_true_response_age <- function(geovector, odds_geography, odds_sex,
                                        odds_raceethnicity, odds_age) {
 
         if (length(geovector) != length(odds_geography))
-                stop("geovector, prop_geography, and odds_geography must have the same length")
+                stop("geovector and prop_geography must have the same length")
         if (length(odds_sex) != 2) 
                 stop("odds_sex must be a vector of length 2")
         if (length(odds_raceethnicity) != 5) 
