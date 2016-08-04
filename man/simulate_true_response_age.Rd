@@ -3,15 +3,20 @@
 \name{simulate_true_response_age}
 \alias{simulate_true_response_age}
 \title{Simulate the true response to a yes/no response question in a given
-geography with specified opinions for sex, race/ethnicity, and age}
+population with specified opinions for sex, race/ethnicity, age, and 
+geography}
 \usage{
-simulate_true_response_age(geographyfetch, odds_sex, odds_raceethnicity,
-  odds_age)
+simulate_true_response_age(geovector, odds_geography, odds_sex,
+  odds_raceethnicity, odds_age)
 }
 \arguments{
-\item{geographyfetch}{A geography created with the \code{geo.make()} function
-of the acs package. The geography must be the entire U.S. or a single state
-or a single county.}
+\item{geovector}{A vector of geographies specified as a two letter 
+abbreviation or a 5-digit FIPS code. Each geography must be the entire U.S. 
+(\code{US}) or a single state (for example, \code{TX} or \code{CA}) or a 
+single county (for example, \code{49035}). For example, \code{c("TX", "UT")}.}
+
+\item{odds_geography}{Numeric vector specifying the opinion odds of the 
+survey respondents by geography in the same bins as \code{geovector}.}
 
 \item{odds_sex}{Numeric vector specifying the opinion odds of the survey
 respondents by sex in the order male, then female. For example, \code{c(0.8,
@@ -33,29 +38,24 @@ years, 30 to 34 years, 35 to 44 years, 45 to 54 years, 55 to 64 years, 65 to
 \value{
 A data frame with 3 columns (\code{value}, \code{answer}, and 
 \code{result}) that tabulates the true opinion on the yes/no question 
-in the given geography.
+in the given population.
 }
 \description{
 Simulate the true response to a yes/no response question in a given
-geography with specified opinions for sex, race/ethnicity, and age
+population with specified opinions for sex, race/ethnicity, age, and 
+geography
 }
 \examples{
-
-\dontrun{
-library(acs)
-# if you are new to using the acs package, you will need to get an API key
-# and run api.key.install() one time to install your key on your system
-unitedstates <- geo.make(us = TRUE)
-# odds_sex specifies the opinions of men/women
-# in this example, women are twice as likely to approve and men half as likely
+geovector <- c("AL", "CT")
+odds_geography <- c(1.5, 0.8)
 odds_sex <- c(0.5, 2)
 odds_raceethnicity <- c(0.2, 2, 2.5, 1, 1)
 odds_age <- c(1, 1, 1, 1, 1, 1, 1, 0.8, 2, 2, 2.5, 3, 0.5, 0.2)
-opinionDF <- simulate_true_response_age(unitedstates, 
+opinionDF <- simulate_true_response_age(geovector,
+                                     odds_geography, 
                                      odds_sex, 
                                      odds_raceethnicity,
                                      odds_age)
-}
 
 }
 
