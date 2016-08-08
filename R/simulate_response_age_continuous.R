@@ -89,7 +89,7 @@ simulate_response_age_continuous <- function(geovector, lambda_geography,
                               "Bachelor's degree or higher")
         lambda_education <- rep(NA, 4)
         names(lambda_education) <- education_sample
-        names(odds_geography) <- geovector
+        names(lambda_geography) <- geovector
 
         # fetch ACS age data tables
         acsDF <- acsagetable %>% filter(region %in% geovector)
