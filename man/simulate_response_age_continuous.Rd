@@ -3,17 +3,21 @@
 \name{simulate_response_age_continuous}
 \alias{simulate_response_age_continuous}
 \title{Simulate the true response to a continuous numerical response question in a 
-given geography with specified characteristics for sex, race/ethnicity, 
-and age}
+given population with specified characteristics for sex, race/ethnicity, 
+age, and geography}
 \usage{
-simulate_response_age_continuous(georegion, lambda_sex, lambda_raceethnicity,
-  lambda_age)
+simulate_response_age_continuous(geovector, lambda_geography, lambda_sex,
+  lambda_raceethnicity, lambda_age)
 }
 \arguments{
-\item{georegion}{A geographical region specified as a two letter abbreviation
-or a 5-digit FIPS code. The geography must be the entire U.S. (\code{US}) 
-or a single state (for example, \code{TX} or \code{CA}) or a single 
-county (for example, \code{49035}).}
+\item{geovector}{A vector of geographies specified as a two letter 
+abbreviation or a 5-digit FIPS code. Each geography must be the entire U.S. 
+(\code{US}) or a single state (for example, \code{TX} or \code{CA}) or a 
+single county (for example, \code{49035}). For example, \code{c("TX", "UT")}.}
+
+\item{lambda_geography}{Numeric vector specifying lambda (Poisson 
+distribution) for the survey respondents by geography in the same bins as 
+\code{geovector}.}
 
 \item{lambda_sex}{Numeric vector specifying lambda (Poisson distribution) 
 for the survey respondents by sex in the order male, then female, for 
@@ -34,20 +38,23 @@ years, 85 years and over, for example,
 \value{
 A data frame with 3 columns (\code{value}, \code{answer}, and 
 \code{result}) that tabulates the true response to the continuous, numerical 
-survey question in the given geography.
+survey question in the given population.
 }
 \description{
 Simulate the true response to a continuous numerical response question in a 
-given geography with specified characteristics for sex, race/ethnicity, 
-and age
+given population with specified characteristics for sex, race/ethnicity, 
+age, and geography
 }
 \examples{
+geovector <- c("WI", "WV")
+lambda_geography <- c(50, 10)
 # lambda_sex specifies the response weights of men/women
 # in this example, women have a higher mean response than men
 lambda_sex <- c(25, 75)
 lambda_raceethnicity <- c(90, 10, 50, 50, 50)
 lambda_age <- c(50, 50, 50, 50, 50, 50, 50, 55, 55, 60, 65, 70, 75, 80)
-opinionDF <- simulate_response_age_continuous(US, 
+opinionDF <- simulate_response_age_continuous(geovector,
+                                             lambda_geography, 
                                              lambda_sex, 
                                              lambda_raceethnicity,
                                              lambda_age)
