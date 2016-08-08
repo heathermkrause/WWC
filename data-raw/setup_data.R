@@ -58,3 +58,26 @@ tinysurvey <- simulate_survey_continuous(prop_sex, lambda_sex,
                                          prop_geography, lambda_geography,
                                          n = 20)
 devtools::use_data(tinysurvey, overwrite = TRUE)
+
+# twostatessurvey data set -------------------------------------------
+
+library(WWC)
+prop_sex <- c(0.6, 0.4)
+prop_raceethnicity <- c(0.7, 0.2, 0.03, 0.02, 0.05)
+prop_age <- c(0, 0, 0, 0, 0.05, 0.09, 0.09, 0.1, 0.18, 0.16, 0.14, 0.09, 0.06, 0.04)
+prop_education <- c(0.15, 0.25, 0.3, 0.3)
+prop_geography <- c(0.6, 0.4, 0)
+lambda_sex <- c(20, 70)
+lambda_raceethnicity <- c(50, 10, 10, 10, 10)
+lambda_age <- rep(NA, 14)
+lambda_education <- rep(NA, 4)
+lambda_geography <- rep(NA, 3)
+twostatessurvey <- simulate_survey_continuous(prop_sex, lambda_sex,
+                                              prop_raceethnicity, lambda_raceethnicity,
+                                              prop_age, lambda_age,
+                                              prop_education, lambda_education,
+                                              prop_geography, lambda_geography,
+                                              n = 1000)
+devtools::use_data(twostatessurvey, overwrite = TRUE)
+
+
