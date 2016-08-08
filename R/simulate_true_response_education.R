@@ -1,9 +1,13 @@
 #' Simulate the true response to a yes/no response question in a given
-#' geography with specified opinions for sex, race/ethnicity, and education
+#' population with specified opinions for sex, race/ethnicity, age, and 
+#' geography
 #' 
-#' @param geographyfetch A geography created with the \code{geo.make()} function
-#' of the acs package. The geography must be the entire U.S. or a single state
-#' or a single county.
+#' @param geovector A vector of geographies specified as a two letter 
+#' abbreviation or a 5-digit FIPS code. Each geography must be the entire U.S. 
+#' (\code{US}) or a single state (for example, \code{TX} or \code{CA}) or a 
+#' single county (for example, \code{49035}). For example, \code{c("TX", "UT")}.
+#' @param odds_geography Numeric vector specifying the opinion odds of the 
+#' survey respondents by geography in the same bins as \code{geovector}.
 #' @param odds_sex Numeric vector specifying the opinion odds of the survey
 #' respondents by sex in the order male, then female. For example, \code{c(0.8,
 #' 1.25)} means that men are 0.8 times as likely to approve the survey question
@@ -20,38 +24,33 @@
 #' 
 #' @return A data frame with 3 columns (\code{value}, \code{answer}, and 
 #' \code{result}) that tabulates the true opinion on the yes/no question 
-#' in the given geography.
+#' in the given population.
 #' 
 #' @import dplyr
 #' 
 #' @name simulate_true_response_education
 #' 
 #' @examples 
-#' 
-#' \dontrun{
-#' library(acs)
-#' # if you are new to using the acs package, you will need to get an API key
-#' # and run api.key.install() one time to install your key on your system
-#' unitedstates <- geo.make(us = TRUE)
-#' # odds_sex specifies the opinions of men/women
-#' # in this example, women are twice as likely to approve and men half as likely
+#' geovector <- c("AL", "CT")
+#' odds_geography <- c(1.5, 0.8)
 #' odds_sex <- c(0.5, 2)
 #' odds_raceethnicity <- c(0.2, 2, 2.5, 1, 1)
 #' odds_education <- c(0.4, 0.5, 2, 2.5)
-#' opinionDF <- simulate_true_response_education(unitedstates, 
+#' opinionDF <- simulate_true_response_education(geovector,
+#'                                      odds_geography, 
 #'                                      odds_sex, 
 #'                                      odds_raceethnicity,
 #'                                      odds_education)
-#' }
 #' 
 #' @export
 
 
-simulate_true_response_education <- function(geographyfetch, 
-                                             odds_sex, 
-                                             odds_raceethnicity, 
+simulate_true_response_education <- function(geovector, odds_geography, 
+                                             odds_sex, odds_raceethnicity, 
                                              odds_education) {
         
+        if (length(geovector) != length(odds_geography))
+                stop("geovector and prop_geography must have the same length")
         if (length(odds_sex) != 2) 
                 stop("odds_sex must be a vector of length 2")
         if (length(odds_raceethnicity) != 5) 
@@ -87,29 +86,39 @@ simulate_true_response_education <- function(geographyfetch,
                               "Some college or associate's degree",
                               "Bachelor's degree or higher")
         names(odds_education) <- education_sample
+        names(odds_geography) <- geovector
         
         
-        # fetch education and age data tables from ACS
-        acseducationDF <- process_acs_education(geographyfetch)
-        # acsageDF <- process_acs_age(geographyfetch)
+        
+        # fetch ACS education data tables
+        acsDF <- acsedutable %>% filter(region %in% geovector)
         
         # find yes/no opinion proportions for education data table
-        acsDF <- acseducationDF %>% 
+        acsDF <- acsDF %>% 
                 mutate(sex_od = odds_sex[sex], 
                        race_od = odds_raceethnicity[raceethnicity],
                        edu_od = odds_education[education],
-                       odds = sex_od * race_od * edu_od,
+                       geo_od = odds_geography[region],
+                       odds = sex_od * race_od * edu_od * geo_od,
                        yes = odds / (odds + 1),
                        no = 1 - yes) %>%
                 select(-contains("odds"))
         
+        totalpop <- as.numeric(acsDF %>% distinct(geototal) %>% 
+                                       summarise(sum = sum(geototal)))
+        totals <- acsDF %>% group_by(region) %>% distinct(geototal) %>% 
+                ungroup %>% 
+                mutate(geoprob = geototal / totalpop)
+        
+        acsDF <- acsDF %>% left_join(totals, by = "region")
+        
         opinionDF <- bind_rows(acsDF %>% 
                                        filter(education != "Total") %>%
-                                       summarise(value = sum(yes*prob)) %>% 
+                                       summarise(value = sum(yes*prob*geoprob)) %>% 
                                        mutate(answer = "responseyes", result = "Population"),
                                acsDF %>% 
                                        filter(education != "Total") %>%
-                                       summarise(value = sum(no*prob)) %>% 
+                                       summarise(value = sum(no*prob*geoprob)) %>% 
                                        mutate(answer = "responseno", result = "Population"))
         opinionDF
 }
