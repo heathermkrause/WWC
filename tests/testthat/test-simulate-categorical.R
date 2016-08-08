@@ -17,7 +17,7 @@ test_that("error handling for geography odds is working", {
                                                 odds_sex, 
                                                 odds_raceethnicity,
                                                 odds_age),
-                     "geovector and prop_geography must have the same length")
+                     "geovector and odds_geography must have the same length")
 })
 
 test_that("error handling for sex odds is working", {
@@ -74,7 +74,7 @@ test_that("error handling for geography odds is working", {
                                                       odds_sex, 
                                                       odds_raceethnicity,
                                                       odds_education),
-                     "geovector and prop_geography must have the same length")
+                     "geovector and odds_geography must have the same length")
 })
 
 test_that("error handling for sex odds is working", {
