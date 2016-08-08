@@ -52,8 +52,8 @@ simulate_response_age_continuous <- function(geovector, lambda_geography,
                                              lambda_sex, lambda_raceethnicity, 
                                              lambda_age) {
         
-        if (length(geovector) != length(odds_geography))
-                stop("geovector and prop_geography must have the same length")
+        if (length(geovector) != length(lambda_geography))
+                stop("geovector and lambda_geography must have the same length")
         if (length(lambda_sex) != 2) 
                 stop("lambda_sex must be a vector of length 2")
         if (length(lambda_raceethnicity) != 5) 
