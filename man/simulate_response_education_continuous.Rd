@@ -3,17 +3,21 @@
 \name{simulate_response_education_continuous}
 \alias{simulate_response_education_continuous}
 \title{Simulate the true response to a continuous numerical response question in a 
-given geography with specified characteristics for sex, race/ethnicity, 
-and education}
+given population with specified characteristics for sex, race/ethnicity, 
+education, and population}
 \usage{
-simulate_response_education_continuous(georegion, lambda_sex,
+simulate_response_education_continuous(geovector, lambda_geography, lambda_sex,
   lambda_raceethnicity, lambda_education)
 }
 \arguments{
-\item{georegion}{A geographical region specified as a two letter abbreviation
-or a 5-digit FIPS code. The geography must be the entire U.S. (\code{US}) 
-or a single state (for example, \code{TX} or \code{CA}) or a single 
-county (for example, \code{49035}).}
+\item{geovector}{A vector of geographies specified as a two letter 
+abbreviation or a 5-digit FIPS code. Each geography must be the entire U.S. 
+(\code{US}) or a single state (for example, \code{TX} or \code{CA}) or a 
+single county (for example, \code{49035}). For example, \code{c("TX", "UT")}.}
+
+\item{lambda_geography}{Numeric vector specifying lambda (Poisson 
+distribution) for the survey respondents by geography in the same bins as 
+\code{geovector}.}
 
 \item{lambda_sex}{Numeric vector specifying lambda (Poisson distribution) 
 for the survey respondents by sex in the order male, then female, for 
@@ -37,19 +41,22 @@ survey question in the given geography.
 }
 \description{
 Simulate the true response to a continuous numerical response question in a 
-given geography with specified characteristics for sex, race/ethnicity, 
-and education
+given population with specified characteristics for sex, race/ethnicity, 
+education, and population
 }
 \examples{
+geovector <- c("WI", "WV")
+lambda_geography <- c(50, 10)
 # lambda_sex specifies the response weights of men/women
 # in this example, women have a higher mean response than men
 lambda_sex <- c(25, 75)
 lambda_raceethnicity <- c(90, 10, 50, 50, 50)
 lambda_education <- c(20, 40, 60, 80)
-opinionDF <- simulate_response_education_continuous(US, 
-                                                     lambda_sex, 
-                                                     lambda_raceethnicity,
-                                                     lambda_education)
+opinionDF <- simulate_response_education_continuous(geovector,
+                                             lambda_geography, 
+                                             lambda_sex, 
+                                             lambda_raceethnicity,
+                                             lambda_education)
 
 }
 

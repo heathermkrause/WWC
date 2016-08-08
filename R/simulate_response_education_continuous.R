@@ -1,11 +1,14 @@
 #' Simulate the true response to a continuous numerical response question in a 
-#' given geography with specified characteristics for sex, race/ethnicity, 
-#' and education
+#' given population with specified characteristics for sex, race/ethnicity, 
+#' education, and population
 #' 
-#' @param georegion A geographical region specified as a two letter abbreviation
-#' or a 5-digit FIPS code. The geography must be the entire U.S. (\code{US}) 
-#' or a single state (for example, \code{TX} or \code{CA}) or a single 
-#' county (for example, \code{49035}).
+#' @param geovector A vector of geographies specified as a two letter 
+#' abbreviation or a 5-digit FIPS code. Each geography must be the entire U.S. 
+#' (\code{US}) or a single state (for example, \code{TX} or \code{CA}) or a 
+#' single county (for example, \code{49035}). For example, \code{c("TX", "UT")}.
+#' @param lambda_geography Numeric vector specifying lambda (Poisson 
+#' distribution) for the survey respondents by geography in the same bins as 
+#' \code{geovector}.
 #' @param lambda_sex Numeric vector specifying lambda (Poisson distribution) 
 #' for the survey respondents by sex in the order male, then female, for 
 #' example, \code{c(25, 75)}.
@@ -28,24 +31,30 @@
 #' @name simulate_response_education_continuous
 #' 
 #' @examples 
+#' geovector <- c("WI", "WV")
+#' lambda_geography <- c(50, 10)
 #' # lambda_sex specifies the response weights of men/women
 #' # in this example, women have a higher mean response than men
 #' lambda_sex <- c(25, 75)
 #' lambda_raceethnicity <- c(90, 10, 50, 50, 50)
 #' lambda_education <- c(20, 40, 60, 80)
-#' opinionDF <- simulate_response_education_continuous(US, 
-#'                                                      lambda_sex, 
-#'                                                      lambda_raceethnicity,
-#'                                                      lambda_education)
+#' opinionDF <- simulate_response_education_continuous(geovector,
+#'                                              lambda_geography, 
+#'                                              lambda_sex, 
+#'                                              lambda_raceethnicity,
+#'                                              lambda_education)
 #' 
 #' @export
 
 
-simulate_response_education_continuous <- function(georegion, 
+simulate_response_education_continuous <- function(geovector, 
+                                                   lambda_geography,
                                                    lambda_sex, 
                                                    lambda_raceethnicity, 
                                                    lambda_education) {
         
+        if (length(geovector) != length(lambda_geography))
+                stop("geovector and lambda_geography must have the same length")
         if (length(lambda_sex) != 2) 
                 stop("lambda_sex must be a vector of length 2")
         if (length(lambda_raceethnicity) != 5) 
@@ -81,26 +90,34 @@ simulate_response_education_continuous <- function(georegion,
                               "Some college or associate's degree",
                               "Bachelor's degree or higher")
         names(lambda_education) <- education_sample
+        names(lambda_geography) <- geovector
         
-        # NSE magic
-        georegion_ <- toupper(col_name(substitute(georegion)))
-        
-        # ACS education data tables
-        acseducationDF <- acsedutable %>% filter(region == georegion_)
+        # fetch ACS education data tables
+        acsDF <- acsedutable %>% filter(region %in% geovector)
         
         # find response in education data table
-        acsDF <- acseducationDF %>% 
+        acsDF <- acsDF %>% 
                 mutate(sex_lambda = lambda_sex[sex], 
                        race_lambda = lambda_raceethnicity[raceethnicity],
-                       education_lambda = lambda_education[education]) %>%
+                       education_lambda = lambda_education[education],
+                       geo_lambda = lambda_geography[region]) %>%
                 rowwise() %>%
                 mutate(response = mean(c(sex_lambda, 
                                          race_lambda, 
-                                         education_lambda), na.rm = TRUE)) %>%
+                                         education_lambda,
+                                         geo_lambda), na.rm = TRUE)) %>%
                 select(-contains("lambda")) %>%
                 ungroup()
         
-        opinionDF <- acsDF %>% summarise(value = sum(response*prob)) %>% 
+        totalpop <- as.numeric(acsDF %>% distinct(geototal) %>% 
+                                       summarise(sum = sum(geototal)))
+        totals <- acsDF %>% group_by(region) %>% distinct(geototal) %>% 
+                ungroup %>% 
+                mutate(geoprob = geototal / totalpop)
+        
+        acsDF <- acsDF %>% left_join(totals, by = "region")
+
+        opinionDF <- acsDF %>% summarise(value = sum(response*prob*geoprob)) %>% 
                 mutate(answer = "response", result = "Population")
         opinionDF
 }
