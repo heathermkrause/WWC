@@ -73,7 +73,7 @@ weight_age_ <- function(mysurvey, dots) {
                            by = c("geography" = "region")) %>% 
                 rename(mysurvey = data.x, acsDF = data.y)
 
-        ret <- map2_df(nestedDF$mysurvey, nestedDF$acsDF, weight_skeleton_, dots, 
+        ret <- purrr::map2_df(nestedDF$mysurvey, nestedDF$acsDF, weight_skeleton_, dots, 
                        .id = "geography") %>%
                 mutate(geography = as.character(factor(geography, 
                                                        labels = nestedDF$geography))) %>%
