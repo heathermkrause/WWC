@@ -8,12 +8,13 @@ WWC: Weighing the Wisdom of Crowds
 
 [![Travis-CI Build Status](https://travis-ci.org/heathermkrause/WWC.svg?branch=master)](https://travis-ci.org/heathermkrause/WWC)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/WWC)](https://cran.r-project.org/package=WWC)
-[![Coverage Status](https://img.shields.io/codecov/c/github/heathermkrause/WWC/master.svg)](https://codecov.io/github/heathermkrause/WWC?branch=master)
+[![Codecov](https://codecov.io/gh/heathermkrause/WWC/branch/master/graph/badge.svg)](https://codecov.io/gh/heathermkrause/WWC)
 
 
 
 
-This R package is part of the the Veracio survey tool developed by leaders from [Orb](http://www.orbmedia.org/), [Datassist](http://idatassist.com/), and [Cognite Labs](http://www.cognitelabs.com/), and supported by a [2016 Knight Foundation News Challenge on Data](http://idatassist.com/knight/). This survey tool provides a set of software tools and online services for nonprofits, local governments, social service agencies, and others to:
+
+This R package is part of the the Veracio survey tool developed by leaders from [Orb](http://www.orbmedia.org/), [Datassist](http://idatassist.com/), and [Cognite Labs](http://www.cognitelabs.com/), and supported by a [2016 Knight Foundation News Challenge on Data](http://idatassist.com/knight/). This survey tool provides a set of software tools and online services for nonprofits, local governments, social service agencies, journalists, and others to:
 
 - frame proper sampling questions,
 - help construct, link, and embed them into existing survey and Q&A platforms, and 
@@ -39,31 +40,31 @@ This package contains a simulated survey called `texassurvey` that contains 1000
 ```r
 library(WWC)
 texassurvey
-#> # A tibble: 1,000 x 5
-#>       sex                       raceethnicity            age
-#>     <chr>                               <chr>          <chr>
-#> 1    Male WHITE ALONE, NOT HISPANIC OR LATINO 35 to 44 years
-#> 2  Female                         ASIAN ALONE 20 to 24 years
-#> 3  Female WHITE ALONE, NOT HISPANIC OR LATINO 65 to 74 years
-#> 4  Female WHITE ALONE, NOT HISPANIC OR LATINO 20 to 24 years
-#> 5    Male WHITE ALONE, NOT HISPANIC OR LATINO 20 to 24 years
-#> 6    Male WHITE ALONE, NOT HISPANIC OR LATINO 25 to 29 years
-#> 7    Male WHITE ALONE, NOT HISPANIC OR LATINO 75 to 84 years
-#> 8  Female WHITE ALONE, NOT HISPANIC OR LATINO 35 to 44 years
-#> 9    Male WHITE ALONE, NOT HISPANIC OR LATINO 65 to 74 years
-#> 10 Female WHITE ALONE, NOT HISPANIC OR LATINO 55 to 64 years
-#>                                      education response
-#>                                          <chr>    <chr>
-#> 1                  Bachelor's degree or higher       no
-#> 2                  Bachelor's degree or higher       no
-#> 3                Less than high school diploma       no
-#> 4  High school graduate (includes equivalency)       no
-#> 5           Some college or associate's degree       no
-#> 6           Some college or associate's degree       no
-#> 7  High school graduate (includes equivalency)       no
-#> 8                  Bachelor's degree or higher      yes
-#> 9  High school graduate (includes equivalency)       no
-#> 10          Some college or associate's degree      yes
+#> # A tibble: 1,000 x 6
+#>       sex                       raceethnicity               age
+#>     <chr>                               <chr>             <chr>
+#> 1    Male WHITE ALONE, NOT HISPANIC OR LATINO    30 to 34 years
+#> 2  Female WHITE ALONE, NOT HISPANIC OR LATINO    45 to 54 years
+#> 3    Male WHITE ALONE, NOT HISPANIC OR LATINO    45 to 54 years
+#> 4  Female                               OTHER   18 and 19 years
+#> 5    Male WHITE ALONE, NOT HISPANIC OR LATINO    20 to 24 years
+#> 6    Male WHITE ALONE, NOT HISPANIC OR LATINO 85 years and over
+#> 7  Female                  HISPANIC OR LATINO   18 and 19 years
+#> 8    Male WHITE ALONE, NOT HISPANIC OR LATINO    75 to 84 years
+#> 9  Female                  HISPANIC OR LATINO 85 years and over
+#> 10 Female                  HISPANIC OR LATINO    25 to 29 years
+#>                                      education geography response
+#>                                          <chr>     <chr>    <chr>
+#> 1                Less than high school diploma        TX       no
+#> 2           Some college or associate's degree        TX       no
+#> 3           Some college or associate's degree        TX      yes
+#> 4           Some college or associate's degree        TX       no
+#> 5                  Bachelor's degree or higher        TX       no
+#> 6           Some college or associate's degree        TX       no
+#> 7                Less than high school diploma        TX      yes
+#> 8  High school graduate (includes equivalency)        TX       no
+#> 9                  Bachelor's degree or higher        TX      yes
+#> 10          Some college or associate's degree        TX      yes
 #> # ... with 990 more rows
 ```
 
@@ -84,33 +85,33 @@ Instead, the Veracio survey tool can be used to statistically weight each survey
 
 
 ```r
-weighted <- weight_wwc(texassurvey, TX, sex, raceethnicity)
+weighted <- weight_wwc(texassurvey, sex, raceethnicity)
 weighted
-#> # A tibble: 1,000 x 6
-#>       sex                       raceethnicity            age
-#>     <chr>                               <chr>          <chr>
-#> 1    Male WHITE ALONE, NOT HISPANIC OR LATINO 35 to 44 years
-#> 2  Female                         ASIAN ALONE 20 to 24 years
-#> 3  Female WHITE ALONE, NOT HISPANIC OR LATINO 65 to 74 years
-#> 4  Female WHITE ALONE, NOT HISPANIC OR LATINO 20 to 24 years
-#> 5    Male WHITE ALONE, NOT HISPANIC OR LATINO 20 to 24 years
-#> 6    Male WHITE ALONE, NOT HISPANIC OR LATINO 25 to 29 years
-#> 7    Male WHITE ALONE, NOT HISPANIC OR LATINO 75 to 84 years
-#> 8  Female WHITE ALONE, NOT HISPANIC OR LATINO 35 to 44 years
-#> 9    Male WHITE ALONE, NOT HISPANIC OR LATINO 65 to 74 years
-#> 10 Female WHITE ALONE, NOT HISPANIC OR LATINO 55 to 64 years
+#> # A tibble: 1,000 x 7
+#>    geography    sex                       raceethnicity               age
+#>        <chr>  <chr>                               <chr>             <chr>
+#> 1         TX   Male WHITE ALONE, NOT HISPANIC OR LATINO    30 to 34 years
+#> 2         TX Female WHITE ALONE, NOT HISPANIC OR LATINO    45 to 54 years
+#> 3         TX   Male WHITE ALONE, NOT HISPANIC OR LATINO    45 to 54 years
+#> 4         TX Female                               OTHER   18 and 19 years
+#> 5         TX   Male WHITE ALONE, NOT HISPANIC OR LATINO    20 to 24 years
+#> 6         TX   Male WHITE ALONE, NOT HISPANIC OR LATINO 85 years and over
+#> 7         TX Female                  HISPANIC OR LATINO   18 and 19 years
+#> 8         TX   Male WHITE ALONE, NOT HISPANIC OR LATINO    75 to 84 years
+#> 9         TX Female                  HISPANIC OR LATINO 85 years and over
+#> 10        TX Female                  HISPANIC OR LATINO    25 to 29 years
 #>                                      education response    weight
 #>                                          <chr>    <chr>     <dbl>
-#> 1                  Bachelor's degree or higher       no 0.5445805
-#> 2                  Bachelor's degree or higher       no 3.7007638
-#> 3                Less than high school diploma       no 0.6192636
-#> 4  High school graduate (includes equivalency)       no 0.6192636
-#> 5           Some college or associate's degree       no 0.5445805
-#> 6           Some college or associate's degree       no 0.5445805
-#> 7  High school graduate (includes equivalency)       no 0.5445805
-#> 8                  Bachelor's degree or higher      yes 0.6192636
-#> 9  High school graduate (includes equivalency)       no 0.5445805
-#> 10          Some college or associate's degree      yes 0.6192636
+#> 1                Less than high school diploma       no 0.5523019
+#> 2           Some college or associate's degree       no 0.6083621
+#> 3           Some college or associate's degree      yes 0.5523019
+#> 4           Some college or associate's degree       no 0.3937006
+#> 5                  Bachelor's degree or higher       no 0.5523019
+#> 6           Some college or associate's degree       no 0.5523019
+#> 7                Less than high school diploma      yes 2.6344291
+#> 8  High school graduate (includes equivalency)       no 0.5523019
+#> 9                  Bachelor's degree or higher      yes 2.6344291
+#> 10          Some college or associate's degree      yes 2.6344291
 #> # ... with 990 more rows
 ```
 

@@ -8,7 +8,8 @@ WWC: Weighing the Wisdom of Crowds
 
 [![Travis-CI Build Status](https://travis-ci.org/heathermkrause/WWC.svg?branch=master)](https://travis-ci.org/heathermkrause/WWC)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/WWC)](https://cran.r-project.org/package=WWC)
-[![Coverage Status](https://img.shields.io/codecov/c/github/heathermkrause/WWC/master.svg)](https://codecov.io/github/heathermkrause/WWC?branch=master)
+[![Codecov](https://codecov.io/gh/heathermkrause/WWC/branch/master/graph/badge.svg)](https://codecov.io/gh/heathermkrause/WWC)
+
 
 
 ```{r, echo = FALSE}
@@ -20,7 +21,7 @@ knitr::opts_chunk$set(
 options(dplyr.width = 180)
 ```
 
-This R package is part of the the Veracio survey tool developed by leaders from [Orb](http://www.orbmedia.org/), [Datassist](http://idatassist.com/), and [Cognite Labs](http://www.cognitelabs.com/), and supported by a [2016 Knight Foundation News Challenge on Data](http://idatassist.com/knight/). This survey tool provides a set of software tools and online services for nonprofits, local governments, social service agencies, and others to:
+This R package is part of the the Veracio survey tool developed by leaders from [Orb](http://www.orbmedia.org/), [Datassist](http://idatassist.com/), and [Cognite Labs](http://www.cognitelabs.com/), and supported by a [2016 Knight Foundation News Challenge on Data](http://idatassist.com/knight/). This survey tool provides a set of software tools and online services for nonprofits, local governments, social service agencies, journalists, and others to:
 
 - frame proper sampling questions,
 - help construct, link, and embed them into existing survey and Q&A platforms, and 
@@ -59,7 +60,7 @@ ggplot(resultDF, aes(x = response, y = n)) +
 Instead, the Veracio survey tool can be used to statistically weight each survey respondent relative to what proportion of Texas' real population he or she represents.
 
 ```{r}
-weighted <- weight_wwc(texassurvey, TX, sex, raceethnicity)
+weighted <- weight_wwc(texassurvey, sex, raceethnicity)
 weighted
 ```
 
