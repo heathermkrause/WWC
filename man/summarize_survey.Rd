@@ -36,7 +36,7 @@ programming with.
 \examples{
 library(dplyr) 
 data(texassurvey)
-weight_wwc(texassurvey, TX, sex, raceethnicity) \%>\%
+weight_wwc(texassurvey, sex, raceethnicity) \%>\%
     summarize_survey(response)
 
 }
