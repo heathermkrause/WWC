@@ -6,24 +6,17 @@
 \title{Weight a survey using post-stratification for weighting indicator(s) from 
 ACS tables with educational attainment data}
 \usage{
-weight_education(mysurvey, georegion, ...)
+weight_education(mysurvey, ...)
 
-weight_education_(mysurvey, georegion_, dots)
+weight_education_(mysurvey, dots)
 }
 \arguments{
 \item{mysurvey}{A survey data frame, such as that created by 
 \code{simulate_survey}}
 
-\item{georegion}{A geographical region specified as a two letter abbreviation
-or a 5-digit FIPS code. The geography must be the entire U.S. (\code{US}) 
-or a single state (for example, \code{TX} or \code{CA}) or a single 
-county (for example, \code{49035}).}
-
 \item{...}{Weighting indicator(s) to be used for post-stratification.
 One or more of \code{sex}, \code{raceethnicity}, and \code{education}, which 
 must be columns in the survey data frame.}
-
-\item{georegion_}{Geographical region as string.}
 
 \item{dots}{List of weighting indicator(s) as string(s).}
 }
@@ -38,11 +31,12 @@ ACS tables with educational attainment data
 \details{
 \code{weight_education} is given bare names while 
 \code{weight_education_} is given strings and is therefore suitable for 
-programming with.
+programming with. One column of \code{mysurvey} must be \code{geography}, to 
+indicate what ACS data to use for post-stratification weighting.
 }
 \examples{
 data(texassurvey)
-weight_education(texassurvey, TX, sex, raceethnicity)
+weight_education(texassurvey, sex, raceethnicity)
 
 }
 
