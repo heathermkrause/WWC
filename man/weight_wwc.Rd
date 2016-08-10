@@ -6,26 +6,19 @@
 \title{Weight a survey using post-stratification with weighting indicator(s) from 
 ACS tables}
 \usage{
-weight_wwc(mysurvey, georegion, ...)
+weight_wwc(mysurvey, ...)
 
-weight_wwc_(mysurvey, georegion_, dots)
+weight_wwc_(mysurvey, dots)
 }
 \arguments{
 \item{mysurvey}{A survey data frame, such as that created by 
 \code{simulate_survey}}
-
-\item{georegion}{A geographical region specified as a two letter abbreviation
-or a 5-digit FIPS code. The geography must be the entire U.S. (\code{US}) 
-or a single state (for example, \code{TX} or \code{CA}) or a single 
-county (for example, \code{49035}).}
 
 \item{...}{Weighting indicator(s) to be used for post-stratification.
 One or more of \code{sex}, \code{raceethnicity}, \code{age}, and/or 
 \code{education} which must be columns in the survey data frame. Both 
 \code{age} and \code{education} cannot be used for post-stratification at the
 same time because of how the ACS tables are organized.}
-
-\item{georegion_}{Geographical region as string.}
 
 \item{dots}{List of weighting indicator(s) as string(s)}
 }
@@ -39,11 +32,15 @@ ACS tables
 }
 \details{
 \code{weight_wwc} is given bare names while \code{weight_wwc_} is 
-given strings and is therefore suitable for programming with.
+given strings and is therefore suitable for programming with. One column of 
+\code{mysurvey} must be \code{geography}, to indicate what ACS data to use 
+for post-stratification weighting.
 }
 \examples{
 data(texassurvey)
-weight_wwc(texassurvey, TX, sex, raceethnicity)
+weight_wwc(texassurvey, sex, raceethnicity)
+data(twostatessurvey)
+weight_wwc(twostatessurvey, sex, education)
 
 }
 

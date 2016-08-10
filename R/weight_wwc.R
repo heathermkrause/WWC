@@ -3,11 +3,6 @@
 #' 
 #' @param mysurvey A survey data frame, such as that created by 
 #' \code{simulate_survey}
-#' @param georegion A geographical region specified as a two letter abbreviation
-#' or a 5-digit FIPS code. The geography must be the entire U.S. (\code{US}) 
-#' or a single state (for example, \code{TX} or \code{CA}) or a single 
-#' county (for example, \code{49035}).
-#' @param georegion_ Geographical region as string.
 #' @param ... Weighting indicator(s) to be used for post-stratification.
 #' One or more of \code{sex}, \code{raceethnicity}, \code{age}, and/or 
 #' \code{education} which must be columns in the survey data frame. Both 
@@ -19,7 +14,9 @@
 #' the post-stratification weight for each row in the survey.
 #' 
 #' @details \code{weight_wwc} is given bare names while \code{weight_wwc_} is 
-#' given strings and is therefore suitable for programming with.
+#' given strings and is therefore suitable for programming with. One column of 
+#' \code{mysurvey} must be \code{geography}, to indicate what ACS data to use 
+#' for post-stratification weighting.
 #' 
 #' @import dplyr
 #' @importFrom reshape2 melt
@@ -30,21 +27,22 @@
 #' 
 #' @examples 
 #' data(texassurvey)
-#' weight_wwc(texassurvey, TX, sex, raceethnicity)
+#' weight_wwc(texassurvey, sex, raceethnicity)
+#' data(twostatessurvey)
+#' weight_wwc(twostatessurvey, sex, education)
 #' 
 #' @export
-weight_wwc <- function(mysurvey, georegion, ...) {
+weight_wwc <- function(mysurvey, ...) {
         # NSE magic
-        georegion_ <- toupper(col_name(substitute(georegion)))
         dots <- eval(substitute(alist(...)))
         dots <- purrr::map(dots, col_name)
         
-        weight_wwc_(mysurvey, georegion_, dots)
+        weight_wwc_(mysurvey, dots)
 }
 
 #' @rdname weight_wwc
 #' @export
-weight_wwc_ <- function(mysurvey, georegion_, dots) {
+weight_wwc_ <- function(mysurvey, dots) {
         
         # error handling for weighting indicator
         if (any(purrr::map(dots, function(x) 
@@ -53,33 +51,48 @@ weight_wwc_ <- function(mysurvey, georegion_, dots) {
         if (sum(purrr::map_lgl(dots, function(x) {x[[1]] %in% c("age", "education")})) > 1) {
                 stop("indicators cannot include both age and education") }
         
+        # exclude rows/observations/respondents who have NA for geography
+        mysurvey <- mysurvey[!is.na(mysurvey$geography),]
+        
+        # what is the population of the survey by geography?
+        surveytotals <- mysurvey %>% group_by(geography) %>% 
+                summarise(surveytotal = n())
+        totalsurvey <- nrow(mysurvey)
+
         # download and process ACS data
+        geovector <- mysurvey %>% distinct(geography)
         if ("education" %in% dots) {
-                acsDF <- acsedutable %>% filter(region == georegion_) 
-                } else {
-                acsDF <- acsagetable %>% filter(region == georegion_)
-                }
+                acsDF <- acsedutable %>% 
+                        filter(region %in% geovector$geography) 
+        } else {
+                acsDF <- acsagetable %>% 
+                        filter(region %in% geovector$geography)
+        }
+        totalpop <- as.numeric(acsDF %>% distinct(geototal) %>% 
+                                       summarise(sum = sum(geototal)))
         
-        # what are the population frequencies for post-stratification?
-        popDF <- group_by_(acsDF, .dots = dots) %>%
-                summarise(Freq = sum(nrow(mysurvey)*population/geototal))
-        #print(popDF)
+                
+        # find the relative weights for each geography in the survey
+        totals <- acsDF %>% group_by(region) %>% distinct(geototal) %>% 
+                ungroup %>% 
+                left_join(surveytotals, by = c("region" = "geography")) %>%
+                mutate(geototal = geototal/totalpop,
+                       surveytotal = surveytotal/totalsurvey,
+                       geoweight = geototal/surveytotal)
         
-        # exclude rows/observations/respondents who have not answered all 
-        # the demographic questions, i.e. have NAs in the weighting indicator
-        # columns
-        mysurvey <- mysurvey[complete.cases(mysurvey[,(colnames(mysurvey) %in% dots)]),]
+        # separate the survey into geographical groups, then find weights
+        mysurvey <- mysurvey %>% group_by(geography) %>% tidyr::nest()
+        acsDF <- acsDF %>% group_by(region) %>% tidyr::nest()
+        nestedDF <- left_join(mysurvey, acsDF, 
+                              by = c("geography" = "region")) %>% 
+                rename(mysurvey = data.x, acsDF = data.y)
         
-        # what is the raw result on the survey question in the population?
-        rawSurvey <- survey::svydesign(ids = ~0, data = mysurvey, weights = NULL)
-        
-        # now do the post-stratification
-        dots <- unlist(dots)
-        vars <- paste(dots, collapse="+")
-        indicatorform <- as.formula(paste("~", vars))
-        psSurvey <- survey::postStratify(rawSurvey, indicatorform, 
-                                         population = popDF,
-                                         partial = TRUE)
-        psSurvey <- survey::as.svrepdesign(psSurvey)
-        mysurvey %>% mutate(weight = psSurvey$pweights)
+        ret <- purrr::map2_df(nestedDF$mysurvey, nestedDF$acsDF, weight_skeleton_, dots, 
+                              .id = "geography") %>%
+                mutate(geography = as.character(factor(geography, 
+                                                       labels = nestedDF$geography))) %>%
+                left_join(totals, by = c("geography" = "region")) %>% 
+                mutate(weight = weight * geoweight) %>% # weight each respondent by geography
+                select(-geototal, -surveytotal, -geoweight)
+        ret
 }
