@@ -18,8 +18,8 @@ The new file will contain the original survey data with 1 column added,
 \code{weight}, the post-stratification weight for each row in the survey.
 Default will write a csv to the working directory.}
 
-\item{...}{Arguments to be passed to \code{weight_wwc}, geographical region 
-and weighting indicators. See \code{weight_wwc} for more details.}
+\item{...}{Arguments to be passed to \code{weight_wwc}, the weighting 
+indicators. See \code{weight_wwc} for more details.}
 }
 \description{
 A wrapper for weight_wwc for CSV file input/output
@@ -31,7 +31,7 @@ arguments
 \examples{
 tmp <- tempfile() 
 weight_csv(system.file("extdata/examplesurvey.csv", package = "WWC"), tmp,
-     TX, sex, raceethnicity)
+     sex, raceethnicity)
 
 }
 
