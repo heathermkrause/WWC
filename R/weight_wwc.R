@@ -9,6 +9,9 @@
 #' \code{age} and \code{education} cannot be used for post-stratification at the
 #' same time because of how the ACS tables are organized.
 #' @param dots List of weighting indicator(s) as string(s)
+#' @param force_edu Should the weighting be done with the ACS education tables? 
+#' Defaults to \code{FALSE}; cannot be \code{TRUE} if \code{age} is one of the
+#' weighting indicators
 #' 
 #' @return The original survey data frame with 1 column added, \code{weight},
 #' the post-stratification weight for each row in the survey.
@@ -32,17 +35,17 @@
 #' weight_wwc(twostatessurvey, sex, education)
 #' 
 #' @export
-weight_wwc <- function(mysurvey, ...) {
+weight_wwc <- function(mysurvey, ..., force_edu = FALSE) {
         # NSE magic
         dots <- eval(substitute(alist(...)))
         dots <- purrr::map(dots, col_name)
         
-        weight_wwc_(mysurvey, dots)
+        weight_wwc_(mysurvey, dots, force_edu)
 }
 
 #' @rdname weight_wwc
 #' @export
-weight_wwc_ <- function(mysurvey, dots) {
+weight_wwc_ <- function(mysurvey, dots, force_edu = FALSE) {
         
         # error handling for weighting indicator
         if (any(purrr::map(dots, function(x) 
@@ -50,6 +53,8 @@ weight_wwc_ <- function(mysurvey, dots) {
                 stop("indicators must be one or more of sex, raceethnicity, age, and education") }
         if (sum(purrr::map_lgl(dots, function(x) {x[[1]] %in% c("age", "education")})) > 1) {
                 stop("indicators cannot include both age and education") }
+        if ("age" %in% dots & force_edu) {
+                stop("force_edu cannot be TRUE if age is one of the indicators") }
         
         # exclude rows/observations/respondents who have NA for geography
         mysurvey <- mysurvey[!is.na(mysurvey$geography),]
@@ -61,7 +66,7 @@ weight_wwc_ <- function(mysurvey, dots) {
 
         # download and process ACS data
         geovector <- mysurvey %>% distinct(geography)
-        if ("education" %in% dots) {
+        if ("education" %in% dots | force_edu) {
                 acsDF <- acsedutable %>% 
                         filter(region %in% geovector$geography) 
         } else {

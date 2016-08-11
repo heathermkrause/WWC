@@ -6,9 +6,9 @@
 \title{Weight a survey using post-stratification with weighting indicator(s) from 
 ACS tables}
 \usage{
-weight_wwc(mysurvey, ...)
+weight_wwc(mysurvey, ..., force_edu = FALSE)
 
-weight_wwc_(mysurvey, dots)
+weight_wwc_(mysurvey, dots, force_edu = FALSE)
 }
 \arguments{
 \item{mysurvey}{A survey data frame, such as that created by 
@@ -19,6 +19,10 @@ One or more of \code{sex}, \code{raceethnicity}, \code{age}, and/or
 \code{education} which must be columns in the survey data frame. Both 
 \code{age} and \code{education} cannot be used for post-stratification at the
 same time because of how the ACS tables are organized.}
+
+\item{force_edu}{Should the weighting be done with the ACS education tables? 
+Defaults to \code{FALSE}; cannot be \code{TRUE} if \code{age} is one of the
+weighting indicators}
 
 \item{dots}{List of weighting indicator(s) as string(s)}
 }

@@ -11,6 +11,11 @@ test_that("error handling for education + age is working", {
                      "indicators cannot include both age and education")
 })
 
+test_that("error handling for force_edu + age is working", {
+        expect_error(weight_wwc(tinysurvey, age, force_edu = TRUE),
+                     "force_edu cannot be TRUE if age is one of the indicators")
+})
+
 test_that("can weight a survey", {
         expect_warning(resultDF <- weight_wwc(tinysurvey, 
                                               sex, raceethnicity),
