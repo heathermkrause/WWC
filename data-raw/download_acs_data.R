@@ -19,6 +19,7 @@ counties <- countyFIPS %>% select(state, stateFIPS, countyFIPS) %>%
 counties <- split(counties, seq(nrow(counties)))
 
 
+# process_acs_* are in files data-raw/process_acs.R and data-raw/process_all.R
 # download age tables from ACS ------------------------------------------------
 
 usageDF <- process_acs_age(unitedstates, yearspan = 5) %>% mutate(region = "US")
