@@ -220,12 +220,12 @@ process_acs_edu_all <- function(geographyfetch, yearspan = 1) {
                                             mutate(education = "Total"),
                                     totaleducation %>% group_by(sex, region) %>% 
                                             filter(education == "No schooling completed" | 
-                                                           education == "Nursery to 4th grade" |                                                           education == "11th grade" |
-                                                           education == "5th and 6th grade" |                                                           education == "11th grade" |
-                                                           education == "7th and 8th grade" |                                                           education == "11th grade" |
-                                                           education == "9th grade" |                                                           education == "11th grade" |
-                                                           education == "10th grade" |                                                           education == "11th grade" |
-                                                           education == "11th grade" |                                                           education == "11th grade" |
+                                                           education == "Nursery to 4th grade" |
+                                                           education == "5th and 6th grade" |
+                                                           education == "7th and 8th grade" |
+                                                           education == "9th grade" |
+                                                           education == "10th grade" |
+                                                           education == "11th grade" |
                                                            education == "12th grade, no diploma") %>% 
                                             summarize(sextotal = sum(population, na.rm = TRUE)) %>% 
                                             mutate(education = "Less than high school diploma"),
@@ -235,14 +235,14 @@ process_acs_edu_all <- function(geographyfetch, yearspan = 1) {
                                             mutate(education = "High school graduate (includes equivalency)"),
                                     totaleducation %>% group_by(sex, region) %>% 
                                             filter(education == "Some college, less than 1 year" | 
-                                                           education == "Some college, 1 or more years, no degree" |                                                           education == "11th grade" |
+                                                           education == "Some college, 1 or more years, no degree" |
                                                            education == "Associate's degree") %>% 
                                             summarize(sextotal = sum(population, na.rm = TRUE)) %>% 
                                             mutate(education = "Some college or associate's degree"),
                                     totaleducation %>% group_by(sex, region) %>% 
                                             filter(education == "Bachelor's degree" | 
-                                                           education == "Master's degree" |                                                           education == "11th grade" |
-                                                           education == "Professional school degree" |                                                           education == "11th grade" |
+                                                           education == "Master's degree" |
+                                                           education == "Professional school degree" |
                                                            education == "Doctorate degree") %>% 
                                             summarize(sextotal = sum(population, na.rm = TRUE)) %>% 
                                             mutate(education = "Bachelor's degree or higher"))
