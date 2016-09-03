@@ -20,11 +20,11 @@ Imports: purrr,
         stringr,
         tidyr,
         reshape2,
-        acs,
         survey,
         readr
 Suggests: ggplot2,
         knitr,
-        testthat
+        testthat,
+        acs
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1
