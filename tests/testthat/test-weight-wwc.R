@@ -17,9 +17,7 @@ test_that("error handling for force_edu + age is working", {
 })
 
 test_that("can weight a survey", {
-        expect_warning(resultDF <- weight_wwc(tinysurvey, 
-                                              sex, raceethnicity),
-                       "Some strata absent from sample: ignored")
+        resultDF <- weight_wwc(tinysurvey, sex, raceethnicity)
         expect_is(resultDF, "tbl_df")
         expect_equal(length(tinysurvey) + 1, length(resultDF))
         expect_true(all(tinysurvey$sex == resultDF$sex))
