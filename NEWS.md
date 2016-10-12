@@ -6,6 +6,9 @@ or multiple counties)
 functions to `data-raw`.
 * Deprecated separate versions of main weighting function; all 
 post-stratification weighting now done with `weight_wwc`.
+* Changed weighing algorithm to remove strata with no survey respondents from 
+population frequency table used for weighting (to avoid bias problem found in
+simulations).
 * Added codecov and Travis.
 
 # WWC 0.1.0
