@@ -10,6 +10,14 @@ weight_skeleton_ <- function(mysurvey, acsDF, dots) {
         # columns
         mysurvey <- mysurvey[complete.cases(mysurvey[,(colnames(mysurvey) %in% dots)]),]
 
+        # remove bins from popDF that have zero respondents in survey to avoid
+        # bias in weighting algorithm from too many empty strata
+        popDF <- popDF %>% 
+                left_join(group_by_(mysurvey, .dots = dots) %>%
+                                  summarise(n = n())) %>%
+                filter(n != 0) %>%
+                select(-n)
+        
         # what is the raw result on the survey question in the population?
         rawSurvey <- survey::svydesign(ids = ~0, data = mysurvey, weights = NULL)
 
