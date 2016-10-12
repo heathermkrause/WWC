@@ -60,12 +60,14 @@ weight_wwc_ <- function(mysurvey, dots, force_edu = FALSE) {
         mysurvey <- mysurvey[!is.na(mysurvey$geography),]
         
         # what is the population of the survey by geography?
-        surveytotals <- mysurvey %>% group_by(geography) %>% 
+        surveytotals <- mysurvey %>% 
+                group_by(geography) %>% 
                 summarise(surveytotal = n())
         totalsurvey <- nrow(mysurvey)
 
-        # download and process ACS data
-        geovector <- mysurvey %>% distinct(geography)
+        # load and process ACS data
+        geovector <- mysurvey %>% 
+                distinct(geography)
         if ("education" %in% dots | force_edu) {
                 acsDF <- acsedutable %>% 
                         filter(region %in% geovector$geography) 
@@ -73,12 +75,15 @@ weight_wwc_ <- function(mysurvey, dots, force_edu = FALSE) {
                 acsDF <- acsagetable %>% 
                         filter(region %in% geovector$geography)
         }
-        totalpop <- as.numeric(acsDF %>% distinct(geototal) %>% 
+        totalpop <- as.numeric(acsDF %>% 
+                                       distinct(geototal) %>% 
                                        summarise(sum = sum(geototal)))
         
                 
         # find the relative weights for each geography in the survey
-        totals <- acsDF %>% group_by(region) %>% distinct(geototal) %>% 
+        totals <- acsDF %>% 
+                group_by(region) %>% 
+                distinct(geototal) %>% 
                 ungroup %>% 
                 left_join(surveytotals, by = c("region" = "geography")) %>%
                 mutate(geototal = geototal/totalpop,
@@ -86,8 +91,12 @@ weight_wwc_ <- function(mysurvey, dots, force_edu = FALSE) {
                        geoweight = geototal/surveytotal)
         
         # separate the survey into geographical groups, then find weights
-        mysurvey <- mysurvey %>% group_by(geography) %>% tidyr::nest()
-        acsDF <- acsDF %>% group_by(region) %>% tidyr::nest()
+        mysurvey <- mysurvey %>% 
+                group_by(geography) %>% 
+                tidyr::nest()
+        acsDF <- acsDF %>% 
+                group_by(region) %>% 
+                tidyr::nest()
         nestedDF <- left_join(mysurvey, acsDF, 
                               by = c("geography" = "region")) %>% 
                 rename(mysurvey = data.x, acsDF = data.y)
