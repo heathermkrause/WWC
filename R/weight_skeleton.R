@@ -29,5 +29,8 @@ weight_skeleton_ <- function(mysurvey, acsDF, dots) {
                                          population = popDF,
                                          partial = TRUE)
         psSurvey <- survey::as.svrepdesign(psSurvey)
-        mysurvey %>% mutate(weight = psSurvey$pweights)
+
+        # trim weights above 3
+        mysurvey %>% mutate(weight = if_else(psSurvey$pweights < 3, 
+                                             psSurvey$pweights, 3))
 }
