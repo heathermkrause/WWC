@@ -29,11 +29,8 @@ black alone, Asian alone, and other, for example,
 \code{c(90, 10, 50, 50, 50)}.}
 
 \item{lambda_age}{Numeric vector specifying lambda for survey respondents by 
-age in the following bins: under 5 years, 5 to 9 years, 10 to 14 years, 15 
-to 17 years, 18 and 19 years, 20 to 24 years, 25 to 29 years, 30 to 34 years, 
-35 to 44 years, 45 to 54 years, 55 to 64 years, 65 to 74 years, 75 to 84 
-years, 85 years and over, for example, 
-\code{c(50, 50, 50, 50, 50, 50, 50, 55, 55, 55, 65, 75, 85, 95)}.}
+age in the following bins: under 18 years, 18 to 24 years, 25 to 44 years, 
+45 to 64 years, 65 years and over, for example, \code{c(50, 55, 65, 75, 85)}.}
 }
 \value{
 A data frame with 3 columns (\code{value}, \code{answer}, and 
@@ -52,7 +49,7 @@ lambda_geography <- c(50, 10)
 # in this example, women have a higher mean response than men
 lambda_sex <- c(25, 75)
 lambda_raceethnicity <- c(90, 10, 50, 50, 50)
-lambda_age <- c(50, 50, 50, 50, 50, 50, 50, 55, 55, 60, 65, 70, 75, 80)
+lambda_age <- c(50, 60, 70, 75, 80)
 opinionDF <- simulate_response_age_continuous(geovector,
                                              lambda_geography, 
                                              lambda_sex, 

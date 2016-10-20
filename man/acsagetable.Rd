@@ -5,13 +5,11 @@
 \alias{acsagetable}
 \title{Demographic and sex by age data from ACS tables for counties, states, and 
 the U.S. as a whole}
-\format{A data frame with 458,080 rows and 8 variables:
+\format{A data frame with 163,600 rows and 8 variables:
 \describe{
 \item{sex}{Male or female.}
-\item{age}{Under 5 years, 5 to 
-9 years, 10 to 14 years, 15 to 17 years, 18 and 19 years, 20 to 24 years, 25 
-to 29 years, 30 to 34 years, 35 to 44 years, 45 to 54 years, 55 to 64 years, 
-65 to 74 years, 75 to 84 years, or 85 years and over.}
+\item{age}{Under 18 years, 18 to 24 years, 25 to 44 years, 45 to 64 years,  
+or 65 years and over.}
 \item{raceethnicity}{White alone, Hispanic or Latino, black alone, Asian 
 alone, or other.}
 \item{population}{The number of people in this demographic bin.}

@@ -22,8 +22,7 @@ weighted, such as the response to a yes/no question as in
 }
 \value{
 A data frame with 3 columns (\code{answer}, \code{value}, and 
-\code{result}) that tabulates the weighted response on the yes/no question 
-in the given geography.
+\code{result}) that tabulates the weighted response on the survey question.
 }
 \description{
 Summarize a survey data frame
