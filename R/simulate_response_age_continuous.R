@@ -17,11 +17,8 @@
 #' black alone, Asian alone, and other, for example, 
 #' \code{c(90, 10, 50, 50, 50)}.
 #' @param lambda_age Numeric vector specifying lambda for survey respondents by 
-#' age in the following bins: under 5 years, 5 to 9 years, 10 to 14 years, 15 
-#' to 17 years, 18 and 19 years, 20 to 24 years, 25 to 29 years, 30 to 34 years, 
-#' 35 to 44 years, 45 to 54 years, 55 to 64 years, 65 to 74 years, 75 to 84 
-#' years, 85 years and over, for example, 
-#' \code{c(50, 50, 50, 50, 50, 50, 50, 55, 55, 55, 65, 75, 85, 95)}.
+#' age in the following bins: under 18 years, 18 to 24 years, 25 to 44 years, 
+#' 45 to 64 years, 65 years and over, for example, \code{c(50, 55, 65, 75, 85)}.
 #' 
 #' @return A data frame with 3 columns (\code{value}, \code{answer}, and 
 #' \code{result}) that tabulates the true response to the continuous, numerical 
@@ -38,7 +35,7 @@
 #' # in this example, women have a higher mean response than men
 #' lambda_sex <- c(25, 75)
 #' lambda_raceethnicity <- c(90, 10, 50, 50, 50)
-#' lambda_age <- c(50, 50, 50, 50, 50, 50, 50, 55, 55, 60, 65, 70, 75, 80)
+#' lambda_age <- c(50, 60, 70, 75, 80)
 #' opinionDF <- simulate_response_age_continuous(geovector,
 #'                                              lambda_geography, 
 #'                                              lambda_sex, 
@@ -58,8 +55,8 @@ simulate_response_age_continuous <- function(geovector, lambda_geography,
                 stop("lambda_sex must be a vector of length 2")
         if (length(lambda_raceethnicity) != 5) 
                 stop("lambda_raceethnicity must be a vector of length 5")
-        if (length(lambda_age) != 14) 
-                stop("lambda_age must be a vector of length 14")
+        if (length(lambda_age) != 5) 
+                stop("lambda_age must be a vector of length 5")
         sex_sample <- c("Male", "Female")
         names(lambda_sex) <- sex_sample
         raceethnicity_sample <- c("WHITE ALONE, NOT HISPANIC OR LATINO", 
@@ -68,20 +65,11 @@ simulate_response_age_continuous <- function(geovector, lambda_geography,
                                   "ASIAN ALONE", 
                                   "OTHER")
         names(lambda_raceethnicity) <- raceethnicity_sample
-        age_sample <- c("Under 5 years",
-                        "5 to 9 years",
-                        "10 to 14 years",
-                        "15 to 17 years",
-                        "18 and 19 years",
-                        "20 to 24 years",
-                        "25 to 29 years",
-                        "30 to 34 years",
-                        "35 to 44 years",
-                        "45 to 54 years",
-                        "55 to 64 years",
-                        "65 to 74 years",
-                        "75 to 84 years",
-                        "85 years and over")
+        age_sample <- c("Under 18 years",
+                        "18 to 24 years",
+                        "25 to 44 years",
+                        "45 to 64 years",
+                        "65 years and over")
         names(lambda_age) <- age_sample
         education_sample <- c("Less than high school diploma",
                               "High school graduate (includes equivalency)",
