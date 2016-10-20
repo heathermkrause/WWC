@@ -5,7 +5,7 @@
 
 
 # Fetch and process educational tables B01001 and B01001B/D/H/I
-# Binning in this data frame is the same as in ACS tables 
+# Binning for race/ethnicity in this data frame is the same as in ACS tables 
 # B01001B/D/H/I; the data from table B01001 is rebinned and used to find the 
 # "other" population
 
@@ -75,47 +75,83 @@ process_acs_age_all <- function(geographyfetch, yearspan = 1) {
         age <- age[!is.na(age$sex),] %>%
                 mutate(age = as.character(age))
         
-        # unfortunately, it is not the same age bins as the
-        # total age data frame above
+        # now we will rebin BOTH data frames to 5 age bins
         
-        totalage <- bind_rows(totalage %>% filter(age %in% age$age),
+        totalage <- bind_rows(totalage %>% group_by(sex, region) %>% 
+                                      filter(age == "Under 5 years" |
+                                                     age == "5 to 9 years" |
+                                                     age == "10 to 14 years" |
+                                                     age == "15 to 17 years") %>% 
+                                      summarize(population = sum(population, na.rm = TRUE)) %>% 
+                                      mutate(age = "Under 18 years"),
                               totalage %>% group_by(sex, region) %>% 
-                                      filter(age == "20 years" |
+                                      filter(age == "18 and 19 years" | 
+                                                     age == "20 years" |
                                                      age == "21 years" |
                                                      age == "22 to 24 years") %>% 
                                       summarize(population = sum(population, na.rm = TRUE)) %>% 
-                                      mutate(age = "20 to 24 years"),
-                              totalage %>% group_by(sex, region) %>% 
-                                      filter(age == "35 to 39 years" | 
-                                                     age == "40 to 44 years") %>% 
-                                      summarize(population = sum(population, na.rm = TRUE)) %>% 
-                                      mutate(age = "35 to 44 years"),
+                                      mutate(age = "18 to 24 years"),
                               totalage %>% group_by(sex, region) %>%
-                                      filter(age == "45 to 49 years" |
-                                                     age == "50 to 54 years") %>%
+                                      filter(age == "25 to 29 years" |
+                                                     age == "30 to 34 years" |
+                                                     age == "35 to 39 years" |
+                                                     age == "40 to 44 years") %>%
                                       summarize(population = sum(population, na.rm = TRUE)) %>% 
-                                      mutate(age = "45 to 54 years"),
+                                      mutate(age = "25 to 44 years"),
                               totalage %>% group_by(sex, region) %>% 
-                                      filter(age == "55 to 59 years" | 
+                                      filter(age == "45 to 49 years" |
+                                                     age == "50 to 54 years" |
+                                                     age == "55 to 59 years" | 
                                                      age == "60 and 61 years" |
                                                      age == "62 to 64 years") %>% 
                                       summarize(population = sum(population, na.rm = TRUE)) %>% 
-                                      mutate(age = "55 to 64 years"),
+                                      mutate(age = "45 to 64 years"),
                               totalage %>% group_by(sex, region) %>% 
-                                      filter(age == "65 and 66 years" | 
+                                      filter(age == "65 and 66 years" |
                                                      age == "67 to 69 years" |
-                                                     age == "70 to 74 years") %>% 
+                                                     age == "70 to 74 years" |
+                                                     age == "75 to 79 years" |
+                                                     age == "80 to 84 years" |
+                                                     age == "85 years and over") %>% 
                                       summarize(population = sum(population, na.rm = TRUE)) %>% 
-                                      mutate(age = "65 to 74 years"),
-                              totalage %>% group_by(sex, region) %>% 
-                                      filter(age == "75 to 79 years" | 
-                                                     age == "80 to 84 years") %>% 
-                                      summarize(population = sum(population, na.rm = TRUE)) %>% 
-                                      mutate(age = "75 to 84 years")) %>%
+                                      mutate(age = "65 years and over")) %>%
+                ungroup %>%
                 select(sex, age, sextotal = population, region) %>%
                 left_join(geototal, by = "region")
         
-        # now both age and totalage have the same bins
+        age <- bind_rows(age %>% group_by(sex, raceethnicity, region) %>% 
+                                 filter(age == "Under 5 years" |
+                                                age == "5 to 9 years" |
+                                                age == "10 to 14 years" |
+                                                age == "15 to 17 years") %>% 
+                                 summarize(population = sum(population, na.rm = TRUE)) %>% 
+                                 mutate(age = "Under 18 years"),
+                         age %>% group_by(sex, raceethnicity, region) %>% 
+                                 filter(age == "18 and 19 years" | 
+                                                age == "20 to 24 years") %>% 
+                                 summarize(population = sum(population, na.rm = TRUE)) %>% 
+                                 mutate(age = "18 to 24 years"),
+                         age %>% group_by(sex, raceethnicity, region) %>%
+                                 filter(age == "25 to 29 years" |
+                                                age == "30 to 34 years" |
+                                                age == "35 to 44 years") %>%
+                                 summarize(population = sum(population, na.rm = TRUE)) %>% 
+                                 mutate(age = "25 to 44 years"),
+                         age %>% group_by(sex, raceethnicity, region) %>% 
+                                 filter(age == "45 to 54 years" | 
+                                                age == "55 to 64 years") %>% 
+                                 summarize(population = sum(population, na.rm = TRUE)) %>% 
+                                 mutate(age = "45 to 64 years"),
+                         age %>% group_by(sex, raceethnicity, region) %>% 
+                                 filter(age == "65 to 74 years" |
+                                                age == "75 to 84 years" |
+                                                age == "85 years and over") %>% 
+                                 summarize(population = sum(population, na.rm = TRUE)) %>% 
+                                 mutate(age = "65 years and over")) %>%
+                ungroup %>%
+                select(sex, raceethnicity, age, population, region)
+        
+        # now both age and totalage have the same 5 bins
         
         # what about "other" as a racial/ethnic group?
         ageother <- age %>% group_by(sex, age, region) %>% 
