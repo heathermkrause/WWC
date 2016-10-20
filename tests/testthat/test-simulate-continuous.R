@@ -4,7 +4,7 @@ geovector <- c("TX", "TN")
 lambda_geography <- c(20, 10)
 lambda_sex <- c(40, 20)
 lambda_raceethnicity <- c(90, 10, 50, 50, 50)
-lambda_age <- c(50, 50, 50, 50, 50, 50, 50, 55, 55, 60, 65, 70, 75, 80)
+lambda_age <- c(50, 60, 70, 75, 80)
 resultDF <- simulate_response_age_continuous(geovector,
                                              lambda_geography, 
                                              lambda_sex, 
@@ -44,7 +44,7 @@ test_that("error handling for age odds is working", {
                                                       lambda_sex, 
                                                       lambda_raceethnicity,
                                                       rep(1, 10)),
-                     "lambda_age must be a vector of length 14")
+                     "lambda_age must be a vector of length 5")
 })
 
 test_that("can simulate the true response", {

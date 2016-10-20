@@ -4,7 +4,7 @@ geovector <- c("NY", "NC")
 odds_geography <- c(2, 0.2)
 odds_sex <- c(0.5, 2)
 odds_raceethnicity <- c(0.2, 2, 2.5, 1, 1)
-odds_age <- c(1, 1, 1, 1, 1, 1, 1, 0.8, 2, 2, 2.5, 3, 0.5, 0.2)
+odds_age <- c(1, 0.8, 2, 2.5, 3)
 resultDF <- simulate_true_response_age(geovector,
                                      odds_geography, 
                                      odds_sex, 
@@ -44,7 +44,7 @@ test_that("error handling for age odds is working", {
                                                 odds_sex, 
                                                 odds_raceethnicity,
                                                 rep(1, 10)),
-                     "odds_age must be a vector of length 14")
+                     "odds_age must be a vector of length 5")
 })
 
 test_that("can simulate the true response", {

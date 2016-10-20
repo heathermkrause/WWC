@@ -28,7 +28,7 @@ test_that("can weight a survey with missing data", {
         resultDF <- weight_wwc(surveymissing, sex, raceethnicity)
         expect_is(resultDF, "tbl_df")
         expect_equal(length(surveymissing) + 1, length(resultDF))
-        expect_equal(dim(resultDF)[1], 521)
+        expect_equal(dim(resultDF)[1], 526)
         expect_is(resultDF$weight, "numeric")
 })
 
