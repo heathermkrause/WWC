@@ -13,7 +13,7 @@
 #' \item{raceethnicity}{White alone (not Hispanic or 
 #' Latino), Hispanic or Latino, black alone, Asian alone, or other}
 #' \item{age}{Under 18 years, 18 to 24 years, 25 to 44 years, 45 to 64 years,  
-#' or 65 years and over.}
+#' or 65 years and over}
 #' \item{education}{Less than high school diploma, high school graduate 
 #' (includes equivalency), some college or associate's degree, bachelor's 
 #' degree or higher}
