@@ -9,8 +9,7 @@
 #' @param response_col Response column as string
 #' 
 #' @return A data frame with 3 columns (\code{answer}, \code{value}, and 
-#' \code{result}) that tabulates the weighted response on the yes/no question 
-#' in the given geography.
+#' \code{result}) that tabulates the weighted response on the survey question. 
 #' 
 #' @details \code{summarize_survey} is given bare names while 
 #' \code{summarize_survey_} is given strings and is therefore suitable for 
@@ -50,11 +49,14 @@ summarize_survey_ <- function(mysurvey, response_col) {
         psresult <- survey::svymean(responseform, psSurvey)
         
         # bind raw and post-stratified results together
-        results <- bind_rows(data_frame(answer = rownames(melt(rawresult))) %>% 
-                                     mutate(value = melt(rawresult)$value) %>%
-                                     mutate(result = "Raw"),
-                             data_frame(answer = rownames(melt(psresult))) %>% 
-                                     mutate(value = melt(psresult)$value) %>%
-                                     mutate(result = "Weighted"))
-        results
+        results <- bind_rows(data.frame(rawresult) %>% 
+                                     cbind(answer = rownames(data.frame(rawresult))) %>% 
+                                     mutate(result = "Raw") %>% 
+                                     select(answer, everything()),
+                             data.frame(psresult) %>% 
+                                     cbind(answer = rownames(data.frame(psresult))) %>% 
+                                     mutate(result = "Weighted") %>% 
+                                     select(answer, everything()))
+        colnames(results) <- c("answer", "mean", "se", "result")
+        tbl_df(results)
 }

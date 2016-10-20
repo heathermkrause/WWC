@@ -5,4 +5,4 @@ globalVariables(c("FIPS", "acsagetable", "acsedutable", "age", "age_lambda",
                   "population", "prob", "race_lambda", "race_od", 
                   "raceethnicity", "region", "response", "sex", "sex_lambda", 
                   "sex_od", "sextotal", "state", "surveytotal", "value", 
-                  "weight", "yes"))
+                  "weight", "yes", "answer"))
