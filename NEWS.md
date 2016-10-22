@@ -1,14 +1,15 @@
 # WWC 0.1.1
 
 * Now allow multiple geographical areas per survey (for example, multiple states 
-or multiple counties)
+or multiple counties).
+* Change binning of age data from ACS tables to new, bigger bins (only 5 age 
+bins now).
 * Deprecated functions that query Census API and process ACS data; moved those
 functions to `data-raw`.
 * Deprecated separate versions of main weighting function; all 
 post-stratification weighting now done with `weight_wwc`.
 * Changed weighting algorithm to remove strata with no survey respondents from 
-population frequency table used for weighting (to avoid bias problem found in
-simulations).
+population frequency table used for weighting.
 * Added codecov and Travis.
 
 # WWC 0.1.0
