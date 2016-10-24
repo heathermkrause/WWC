@@ -8,8 +8,9 @@
 #' \code{simulate_survey}
 #' @param response_col Response column as string
 #' 
-#' @return A data frame with 3 columns (\code{answer}, \code{value}, and 
-#' \code{result}) that tabulates the weighted response on the survey question. 
+#' @return A data frame with 4 columns (\code{answer}, \code{value}, \code{se}, 
+#' and \code{result}) that tabulates the weighted response on the survey 
+#' question. 
 #' 
 #' @details \code{summarize_survey} is given bare names while 
 #' \code{summarize_survey_} is given strings and is therefore suitable for 
@@ -57,6 +58,6 @@ summarize_survey_ <- function(mysurvey, response_col) {
                                      cbind(answer = rownames(data.frame(psresult))) %>% 
                                      mutate(result = "Weighted") %>% 
                                      select(answer, everything()))
-        colnames(results) <- c("answer", "mean", "se", "result")
+        colnames(results) <- c("answer", "value", "se", "result")
         tbl_df(results)
 }

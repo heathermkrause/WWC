@@ -21,8 +21,9 @@ weighted, such as the response to a yes/no question as in
 \item{response_col}{Response column as string}
 }
 \value{
-A data frame with 3 columns (\code{answer}, \code{value}, and 
-\code{result}) that tabulates the weighted response on the survey question.
+A data frame with 4 columns (\code{answer}, \code{value}, \code{se}, 
+and \code{result}) that tabulates the weighted response on the survey 
+question.
 }
 \description{
 Summarize a survey data frame
