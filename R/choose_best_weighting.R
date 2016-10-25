@@ -60,7 +60,8 @@ choose_best_weighting_ <- function(mysurvey, response_col, dots) {
                         filter(result == "Weighted") %>% 
                         group_by(result, answer) %>% 
                         summarise(mean = mean(value), 
-                                  stddev = stats::sd(value))
+                                  stddev = stats::sd(value)) %>%
+                        ungroup
                 ret
         }
         
