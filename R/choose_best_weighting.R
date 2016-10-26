@@ -2,6 +2,8 @@
 #' 
 #' @param mysurvey A survey data frame, such as that created by 
 #' \code{simulate_survey}
+#' @param n Number of bootstrap resamplings to generate in order to find the
+#' best weighting indicators
 #' @param response A column in \code{mysurvey} that contains the quantity to be
 #' weighted, such as the response to a yes/no question as in 
 #' \code{simulate_survey}
@@ -26,23 +28,23 @@
 #' 
 #' @examples 
 #' data(texassurvey)
-#' choose_best_weighting(texassurvey, response, sex, raceethnicity)
+#' choose_best_weighting(texassurvey, 10, response, sex, raceethnicity)
 #' data(twostatessurvey)
-#' choose_best_weighting(twostatessurvey, response, sex, education)
+#' choose_best_weighting(twostatessurvey, 10, response, sex, education)
 #' 
 #' @export
-choose_best_weighting <- function(mysurvey, response, ...) {
+choose_best_weighting <- function(mysurvey, n, response, ...) {
         # NSE magic
         dots <- eval(substitute(alist(...)))
         dots <- purrr::map(dots, col_name)
         response_col <- col_name(substitute(response))
         
-        choose_best_weighting_(mysurvey, response_col, dots)
+        choose_best_weighting_(mysurvey, n, response_col, dots)
 }
 
 #' @rdname choose_best_weighting
 #' @export
-choose_best_weighting_ <- function(mysurvey, response_col, dots) {
+choose_best_weighting_ <- function(mysurvey, n, response_col, dots) {
         
         # error handling for weighting indicator
         force_edu <- FALSE
@@ -51,8 +53,8 @@ choose_best_weighting_ <- function(mysurvey, response_col, dots) {
         # exclude rows/observations/respondents who have NA for geography
         mysurvey <- mysurvey[!is.na(mysurvey$geography),]
 
-        weight_and_process <- function(mysurvey, response_col, dots) {
-                boot <- modelr::bootstrap(mysurvey, 10)
+        weight_and_process <- function(mysurvey, n, response_col, dots) {
+                boot <- modelr::bootstrap(mysurvey, n)
                 boot <- purrr::map(boot$strap, weight_wwc_, dots)
                 ret <- purrr::map(boot, summarize_survey_, response_col)
                 ret <- purrr::map_df(ret, bind_rows)
@@ -65,5 +67,5 @@ choose_best_weighting_ <- function(mysurvey, response_col, dots) {
                 ret
         }
         
-        weight_and_process(mysurvey, response_col, dots)
+        weight_and_process(mysurvey, n, response_col, dots)
 }

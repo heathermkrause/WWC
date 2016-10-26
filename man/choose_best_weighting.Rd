@@ -5,13 +5,16 @@
 \alias{choose_best_weighting_}
 \title{Use bootstrap resampling of survey to find best weighting indicators}
 \usage{
-choose_best_weighting(mysurvey, response, ...)
+choose_best_weighting(mysurvey, n, response, ...)
 
-choose_best_weighting_(mysurvey, response_col, dots)
+choose_best_weighting_(mysurvey, n, response_col, dots)
 }
 \arguments{
 \item{mysurvey}{A survey data frame, such as that created by 
 \code{simulate_survey}}
+
+\item{n}{Number of bootstrap resamplings to generate in order to find the
+best weighting indicators}
 
 \item{response}{A column in \code{mysurvey} that contains the quantity to be
 weighted, such as the response to a yes/no question as in 
@@ -41,9 +44,9 @@ indicate what ACS data to use for post-stratification weighting.
 }
 \examples{
 data(texassurvey)
-choose_best_weighting(texassurvey, response, sex, raceethnicity)
+choose_best_weighting(texassurvey, 10, response, sex, raceethnicity)
 data(twostatessurvey)
-choose_best_weighting(twostatessurvey, response, sex, education)
+choose_best_weighting(twostatessurvey, 10, response, sex, education)
 
 }
 
