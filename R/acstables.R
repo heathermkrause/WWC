@@ -23,7 +23,9 @@
 #' 5-digit FIPS code for a county (\code{17031} for Cook County).}
 #' }
 #' @details Uses ACS 5-year estimate for 2010-2014; the data from table B01001 
-#' is rebinned and used to find the "other" population
+#' is rebinned and used to find the "other" population. The "other" population
+#' is set to 1 when it turns out negative because of measurement uncertainty.
+#' (This is rare and more common in low population counties.)
 #' 
 "acsagetable"
 
@@ -53,6 +55,8 @@
 #' 5-digit FIPS code for a county (\code{17031} for Cook County).}
 #' }
 #' @details Uses ACS 5-year estimate for 2010-2014; the data from table B15002 
-#' is rebinned and used to find the "other" population.
+#' is rebinned and used to find the "other" population. The "other" population
+#' is set to 1 when it turns out negative because of measurement uncertainty.
+#' (This is rare and more common in low population counties.)
 #' 
 "acsedutable"
