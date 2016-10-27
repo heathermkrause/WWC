@@ -36,10 +36,14 @@ statesageDF <- map_df(unlist(states), function(x) {
 countiesageDF <- process_acs_age_all(geo.make(state = "*", county = "*"), 
                          yearspan = 5)
 
-#sapply(countiesageDF, function(y) sum(length(which(is.na(y)))))
 
 acsagetable <- bind_rows(usageDF, statesageDF, countiesageDF)
-#acsagetable <- bind_rows(usageDF, statesageDF)
+acsagetable[acsagetable < 0] <- 1
+
+#sapply(acsagetable, function(x) sum(x < 0))
+#sapply(countiesageDF, function(y) sum(length(which(is.na(y)))))
+
+
 devtools::use_data(acsagetable, overwrite = TRUE)
 
 
@@ -57,7 +61,10 @@ countieseduDF <- process_acs_edu_all(geo.make(state = "*", county = "*"),
                                      yearspan = 5)
 
 acsedutable <- bind_rows(useduDF, stateseduDF, countieseduDF)
+acsedutable[acsedutable < 0] <- 1
+
 #sapply(acsedutable, function(y) sum(length(which(is.na(y)))))
-#acsedutable <- bind_rows(useduDF, stateseduDF)
+#sapply(acsedutable, function(x) sum(x < 0))
+
 devtools::use_data(acsedutable, overwrite = TRUE)
 
