@@ -40,31 +40,31 @@ This package contains a simulated survey called `texassurvey` that contains 1000
 ```r
 library(WWC)
 texassurvey
-#> # A tibble: 1,000 x 6
+#> # A tibble: 1,000 × 6
 #>       sex                       raceethnicity               age
 #>     <chr>                               <chr>             <chr>
-#> 1    Male WHITE ALONE, NOT HISPANIC OR LATINO    30 to 34 years
-#> 2  Female WHITE ALONE, NOT HISPANIC OR LATINO    45 to 54 years
-#> 3    Male WHITE ALONE, NOT HISPANIC OR LATINO    45 to 54 years
-#> 4  Female                               OTHER   18 and 19 years
-#> 5    Male WHITE ALONE, NOT HISPANIC OR LATINO    20 to 24 years
-#> 6    Male WHITE ALONE, NOT HISPANIC OR LATINO 85 years and over
-#> 7  Female                  HISPANIC OR LATINO   18 and 19 years
-#> 8    Male WHITE ALONE, NOT HISPANIC OR LATINO    75 to 84 years
-#> 9  Female                  HISPANIC OR LATINO 85 years and over
-#> 10 Female                  HISPANIC OR LATINO    25 to 29 years
+#> 1    Male WHITE ALONE, NOT HISPANIC OR LATINO    25 to 44 years
+#> 2  Female WHITE ALONE, NOT HISPANIC OR LATINO 65 years and over
+#> 3  Female WHITE ALONE, NOT HISPANIC OR LATINO    25 to 44 years
+#> 4    Male WHITE ALONE, NOT HISPANIC OR LATINO 65 years and over
+#> 5    Male WHITE ALONE, NOT HISPANIC OR LATINO    25 to 44 years
+#> 6    Male WHITE ALONE, NOT HISPANIC OR LATINO    25 to 44 years
+#> 7  Female WHITE ALONE, NOT HISPANIC OR LATINO    45 to 64 years
+#> 8    Male                         ASIAN ALONE 65 years and over
+#> 9  Female WHITE ALONE, NOT HISPANIC OR LATINO 65 years and over
+#> 10 Female WHITE ALONE, NOT HISPANIC OR LATINO    25 to 44 years
 #>                                      education geography response
 #>                                          <chr>     <chr>    <chr>
-#> 1                Less than high school diploma        TX       no
+#> 1  High school graduate (includes equivalency)        TX       no
 #> 2           Some college or associate's degree        TX       no
-#> 3           Some college or associate's degree        TX      yes
-#> 4           Some college or associate's degree        TX       no
+#> 3                  Bachelor's degree or higher        TX       no
+#> 4                  Bachelor's degree or higher        TX      yes
 #> 5                  Bachelor's degree or higher        TX       no
-#> 6           Some college or associate's degree        TX       no
-#> 7                Less than high school diploma        TX      yes
-#> 8  High school graduate (includes equivalency)        TX       no
-#> 9                  Bachelor's degree or higher        TX      yes
-#> 10          Some college or associate's degree        TX      yes
+#> 6                  Bachelor's degree or higher        TX       no
+#> 7  High school graduate (includes equivalency)        TX       no
+#> 8           Some college or associate's degree        TX      yes
+#> 9  High school graduate (includes equivalency)        TX       no
+#> 10 High school graduate (includes equivalency)        TX       no
 #> # ... with 990 more rows
 ```
 
@@ -86,32 +86,33 @@ Instead, the Veracio survey tool can be used to statistically weight each survey
 
 ```r
 weighted <- weight_wwc(texassurvey, sex, raceethnicity)
+#> Joining, by = c("sex", "raceethnicity")
 weighted
-#> # A tibble: 1,000 x 7
+#> # A tibble: 1,000 × 7
 #>    geography    sex                       raceethnicity               age
 #>        <chr>  <chr>                               <chr>             <chr>
-#> 1         TX   Male WHITE ALONE, NOT HISPANIC OR LATINO    30 to 34 years
-#> 2         TX Female WHITE ALONE, NOT HISPANIC OR LATINO    45 to 54 years
-#> 3         TX   Male WHITE ALONE, NOT HISPANIC OR LATINO    45 to 54 years
-#> 4         TX Female                               OTHER   18 and 19 years
-#> 5         TX   Male WHITE ALONE, NOT HISPANIC OR LATINO    20 to 24 years
-#> 6         TX   Male WHITE ALONE, NOT HISPANIC OR LATINO 85 years and over
-#> 7         TX Female                  HISPANIC OR LATINO   18 and 19 years
-#> 8         TX   Male WHITE ALONE, NOT HISPANIC OR LATINO    75 to 84 years
-#> 9         TX Female                  HISPANIC OR LATINO 85 years and over
-#> 10        TX Female                  HISPANIC OR LATINO    25 to 29 years
+#> 1         TX   Male WHITE ALONE, NOT HISPANIC OR LATINO    25 to 44 years
+#> 2         TX Female WHITE ALONE, NOT HISPANIC OR LATINO 65 years and over
+#> 3         TX Female WHITE ALONE, NOT HISPANIC OR LATINO    25 to 44 years
+#> 4         TX   Male WHITE ALONE, NOT HISPANIC OR LATINO 65 years and over
+#> 5         TX   Male WHITE ALONE, NOT HISPANIC OR LATINO    25 to 44 years
+#> 6         TX   Male WHITE ALONE, NOT HISPANIC OR LATINO    25 to 44 years
+#> 7         TX Female WHITE ALONE, NOT HISPANIC OR LATINO    45 to 64 years
+#> 8         TX   Male                         ASIAN ALONE 65 years and over
+#> 9         TX Female WHITE ALONE, NOT HISPANIC OR LATINO 65 years and over
+#> 10        TX Female WHITE ALONE, NOT HISPANIC OR LATINO    25 to 44 years
 #>                                      education response    weight
 #>                                          <chr>    <chr>     <dbl>
-#> 1                Less than high school diploma       no 0.5523019
-#> 2           Some college or associate's degree       no 0.6083621
-#> 3           Some college or associate's degree      yes 0.5523019
-#> 4           Some college or associate's degree       no 0.3937006
-#> 5                  Bachelor's degree or higher       no 0.5523019
-#> 6           Some college or associate's degree       no 0.5523019
-#> 7                Less than high school diploma      yes 2.6344291
-#> 8  High school graduate (includes equivalency)       no 0.5523019
-#> 9                  Bachelor's degree or higher      yes 2.6344291
-#> 10          Some college or associate's degree      yes 2.6344291
+#> 1  High school graduate (includes equivalency)       no 0.5296229
+#> 2           Some college or associate's degree       no 0.7062374
+#> 3                  Bachelor's degree or higher       no 0.7062374
+#> 4                  Bachelor's degree or higher      yes 0.5296229
+#> 5                  Bachelor's degree or higher       no 0.5296229
+#> 6                  Bachelor's degree or higher       no 0.5296229
+#> 7  High school graduate (includes equivalency)       no 0.7062374
+#> 8           Some college or associate's degree      yes 1.9861542
+#> 9  High school graduate (includes equivalency)       no 0.7062374
+#> 10 High school graduate (includes equivalency)       no 0.7062374
 #> # ... with 990 more rows
 ```
 
@@ -119,7 +120,9 @@ Now what result on the survey question will we find?
 
 
 ```r
-resultDF <- weighted %>% group_by(response) %>% summarize(n = sum(weight))
+resultDF <- weighted %>% 
+        group_by(response) %>% 
+        summarize(n = sum(weight))
 ggplot(resultDF, aes(x = response, y = n)) +
         geom_bar(stat = "identity", fill = "midnightblue")
 ```
