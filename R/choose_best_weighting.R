@@ -53,7 +53,7 @@ choose_best_weighting_ <- function(mysurvey, n, response_col, dots) {
         # exclude rows/observations/respondents who have NA for geography
         mysurvey <- mysurvey[!is.na(mysurvey$geography),]
 
-        weight_and_process <- function(mysurvey, n, response_col, dots) {
+        weight_and_process <- function(dots, mysurvey, n, response_col) {
                 boot <- modelr::bootstrap(mysurvey, n)
                 boot <- purrr::map(boot$strap, weight_wwc_, dots)
                 ret <- purrr::map(boot, summarize_survey_, response_col)
@@ -67,5 +67,43 @@ choose_best_weighting_ <- function(mysurvey, n, response_col, dots) {
                 ret
         }
         
-        weight_and_process(mysurvey, n, response_col, dots)
+        if (length(dots) == 1) {
+                ret <- weight_wwc_(mysurvey, dots, force_edu = FALSE)
+        } else if (length(dots) == 2) {
+
+                list_of_dots <- c(dots, 
+                                  list(dots))
+                results <- data_frame(dots = list_of_dots) %>%
+                        mutate(results = purrr::map(list_of_dots, 
+                                                    weight_and_process, 
+                                                    mysurvey, n, response_col)) %>%
+                        tidyr::unnest(results, .drop = FALSE)
+                
+                dots <- results %>% 
+                        top_n(-1, stddev) 
+                dots <- dots$dots
+                ret <- weight_wwc_(mysurvey, dots, force_edu = FALSE)
+                
+        } else if (length(dots) == 3) {
+
+                list_of_dots <- c(dots, 
+                                  utils::combn(dots, 2, simplify = FALSE), 
+                                  list(dots))
+                results <- data_frame(dots = list_of_dots) %>%
+                        mutate(results = purrr::map(list_of_dots, 
+                                                    weight_and_process, 
+                                                    mysurvey, n, response_col)) %>%
+                        tidyr::unnest(results, .drop = FALSE)
+                
+                dots <- results %>% 
+                        top_n(-1, stddev) 
+                dots <- dots$dots
+                ret <- weight_wwc_(mysurvey, dots, force_edu = FALSE)
+                
+        } else {
+                stop("indicators can only include three of sex, raceethnicity, age, and education")
+                
+        }
+        
+        ret
 }
