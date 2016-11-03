@@ -1,7 +1,15 @@
 #' Use bootstrap resampling of survey to find best weighting indicators
 #' 
-#' @param mysurvey A survey data frame, such as that created by 
-#' \code{simulate_survey}
+#' @param inputfile A file containing the input survey data (a survey data 
+#' frame, such as that created by \code{simulate_survey}). Either a path to a 
+#' file, a connection, or literal data (either a single string or a raw vector). 
+#' Files starting with \code{http://}, \code{https://}, \code{ftp://}, or 
+#' \code{ftps://} will be automatically downloaded, and zipped files wll be 
+#' uncompressed. 
+#' @param outputpath Path to write a csv file of the output weighted results. 
+#' The new file will contain the original survey data with 1 column added, 
+#' \code{weight}, the post-stratification weight for each row in the survey.
+#' Default will write a csv to the working directory.
 #' @param n Number of bootstrap resamplings to generate in order to find the
 #' best weighting indicators
 #' @param response A column in \code{mysurvey} that contains the quantity to be
@@ -15,37 +23,42 @@
 #' same time because of how the ACS tables are organized.
 #' @param dots List of weighting indicator(s) as string(s)
 #' 
-#' @return ??? WHAT WILL IT RETURN ???
+#' @return ??? WHAT WILL IT RETURN ??? Right now, a list of the best indicators.
 #' 
 #' @details \code{choose_best_weighting} is given bare names while 
 #' \code{choose_best_weighting_} is given strings and is therefore suitable for 
-#' programming with. One column of \code{mysurvey} must be \code{geography}, to 
-#' indicate what ACS data to use for post-stratification weighting.
+#' programming with. One column of the survey data in \code{inputfile} must be 
+#' \code{geography}, to indicate what ACS data to use for post-stratification 
+#' weighting.
 #' 
 #' @import dplyr
 #' 
 #' @name choose_best_weighting
 #' 
-#' @examples 
-#' data(texassurvey)
-#' choose_best_weighting(texassurvey, 10, response, sex, raceethnicity)
-#' data(twostatessurvey)
-#' choose_best_weighting(twostatessurvey, 10, response, sex, education)
+#' @examples
+#'  
+#' \dontrun{
+#' tmp <- tempfile() 
+#' choose_best_weighting(system.file("extdata/examplesurvey.csv", package = "WWC"), 
+#'                       tmp, 5, response, sex, raceethnicity)
+#' }
 #' 
 #' @export
-choose_best_weighting <- function(mysurvey, n, response, ...) {
+choose_best_weighting <- function(inputfile, outputpath, n, response, ...) {
         # NSE magic
         dots <- eval(substitute(alist(...)))
         dots <- purrr::map(dots, col_name)
         response_col <- col_name(substitute(response))
         
-        choose_best_weighting_(mysurvey, n, response_col, dots)
+        choose_best_weighting_(inputfile, outputpath, n, response_col, dots)
 }
 
 #' @rdname choose_best_weighting
 #' @export
-choose_best_weighting_ <- function(mysurvey, n, response_col, dots) {
+choose_best_weighting_ <- function(inputfile, outputpath = "./wwc_weighted.csv", 
+                                   n, response_col, dots) {
         
+        mysurvey <- readr::read_csv(inputfile)
         # error handling for weighting indicator
         force_edu <- FALSE
         test_indicators(dots, force_edu)
@@ -69,10 +82,11 @@ choose_best_weighting_ <- function(mysurvey, n, response_col, dots) {
         
         if (length(dots) == 1) {
                 ret <- weight_wwc_(mysurvey, dots, force_edu = FALSE)
+                best_dots <- dots
         } else if (length(dots) == 2) {
 
                 list_of_dots <- c(dots, 
-                                  list(dots))
+                                  list(as.character(dots)))
                 results <- data_frame(dots = list_of_dots) %>%
                         mutate(results = purrr::map(list_of_dots, 
                                                     weight_and_process, 
@@ -81,14 +95,14 @@ choose_best_weighting_ <- function(mysurvey, n, response_col, dots) {
                 
                 dots <- results %>% 
                         top_n(-1, stddev) 
-                dots <- dots$dots
-                ret <- weight_wwc_(mysurvey, dots, force_edu = FALSE)
-                
+                best_dots <- dots$dots
+                ret <- weight_wwc_(mysurvey, best_dots, force_edu = FALSE)
+
         } else if (length(dots) == 3) {
 
                 list_of_dots <- c(dots, 
                                   utils::combn(dots, 2, simplify = FALSE), 
-                                  list(dots))
+                                  list(as.character(dots)))
                 results <- data_frame(dots = list_of_dots) %>%
                         mutate(results = purrr::map(list_of_dots, 
                                                     weight_and_process, 
@@ -97,13 +111,18 @@ choose_best_weighting_ <- function(mysurvey, n, response_col, dots) {
                 
                 dots <- results %>% 
                         top_n(-1, stddev) 
-                dots <- dots$dots
-                ret <- weight_wwc_(mysurvey, dots, force_edu = FALSE)
-                
+                best_dots <- dots$dots
+                ret <- weight_wwc_(mysurvey, best_dots, force_edu = FALSE)
+
         } else {
                 stop("indicators can only include three of sex, raceethnicity, age, and education")
                 
         }
-        
-        ret
+
+   
+        readr::write_csv(ret, outputpath)
+        message("The set of indicators best suited to this survey is")
+        message(unlist(best_dots))
+
+        return(best_dots)
 }

@@ -5,13 +5,23 @@
 \alias{choose_best_weighting_}
 \title{Use bootstrap resampling of survey to find best weighting indicators}
 \usage{
-choose_best_weighting(mysurvey, n, response, ...)
+choose_best_weighting(inputfile, outputpath, n, response, ...)
 
-choose_best_weighting_(mysurvey, n, response_col, dots)
+choose_best_weighting_(inputfile, outputpath = "./wwc_weighted.csv", n,
+  response_col, dots)
 }
 \arguments{
-\item{mysurvey}{A survey data frame, such as that created by 
-\code{simulate_survey}}
+\item{inputfile}{A file containing the input survey data (a survey data 
+frame, such as that created by \code{simulate_survey}). Either a path to a 
+file, a connection, or literal data (either a single string or a raw vector). 
+Files starting with \code{http://}, \code{https://}, \code{ftp://}, or 
+\code{ftps://} will be automatically downloaded, and zipped files wll be 
+uncompressed.}
+
+\item{outputpath}{Path to write a csv file of the output weighted results. 
+The new file will contain the original survey data with 1 column added, 
+\code{weight}, the post-stratification weight for each row in the survey.
+Default will write a csv to the working directory.}
 
 \item{n}{Number of bootstrap resamplings to generate in order to find the
 best weighting indicators}
@@ -31,7 +41,7 @@ same time because of how the ACS tables are organized.}
 \item{dots}{List of weighting indicator(s) as string(s)}
 }
 \value{
-??? WHAT WILL IT RETURN ???
+??? WHAT WILL IT RETURN ??? Right now, a list of the best indicators.
 }
 \description{
 Use bootstrap resampling of survey to find best weighting indicators
@@ -39,14 +49,17 @@ Use bootstrap resampling of survey to find best weighting indicators
 \details{
 \code{choose_best_weighting} is given bare names while 
 \code{choose_best_weighting_} is given strings and is therefore suitable for 
-programming with. One column of \code{mysurvey} must be \code{geography}, to 
-indicate what ACS data to use for post-stratification weighting.
+programming with. One column of the survey data in \code{inputfile} must be 
+\code{geography}, to indicate what ACS data to use for post-stratification 
+weighting.
 }
 \examples{
-data(texassurvey)
-choose_best_weighting(texassurvey, 10, response, sex, raceethnicity)
-data(twostatessurvey)
-choose_best_weighting(twostatessurvey, 10, response, sex, education)
+ 
+\dontrun{
+tmp <- tempfile() 
+choose_best_weighting(system.file("extdata/examplesurvey.csv", package = "WWC"), 
+                      tmp, 5, response, sex, raceethnicity)
+}
 
 }
 
