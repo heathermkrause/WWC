@@ -73,14 +73,6 @@ What result would a person using the survey find if s/he looked at the raw resul
 
 ```r
 library(dplyr)
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
 library(ggplot2)
 resultDF <- texassurvey %>% group_by(response) %>% summarize(n = n())
 ggplot(resultDF, aes(x = response, y = n)) +
@@ -94,7 +86,6 @@ Instead, the Veracio survey tool can be used to statistically weight each survey
 
 ```r
 weighted <- weight_wwc(texassurvey, sex, raceethnicity)
-#> Joining, by = c("sex", "raceethnicity")
 weighted
 #> # A tibble: 1,000 × 7
 #>    geography    sex                       raceethnicity               age

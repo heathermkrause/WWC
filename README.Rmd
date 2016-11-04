@@ -16,7 +16,8 @@ WWC: Weighing the Wisdom of Crowds
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "README-"
+  fig.path = "README-",
+  message = FALSE
 )
 options(dplyr.width = 180)
 ```
