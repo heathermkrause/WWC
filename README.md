@@ -79,7 +79,7 @@ ggplot(resultDF, aes(x = response, y = n)) +
         geom_bar(stat = "identity", fill = "midnightblue")
 ```
 
-![plot of chunk unnamed-chunk-4](README-unnamed-chunk-4-1.png)
+![plot of chunk original](README-original-1.png)
 
 Instead, the Veracio survey tool can be used to statistically weight each survey respondent relative to what proportion of Texas' real population he or she represents.
 
@@ -126,7 +126,7 @@ ggplot(resultDF, aes(x = response, y = n)) +
         geom_bar(stat = "identity", fill = "midnightblue")
 ```
 
-![plot of chunk unnamed-chunk-6](README-unnamed-chunk-6-1.png)
+![plot of chunk weighted](README-weighted-1.png)
 
 To learn more about the survey weighting algorithm, see the main vignette.
 
