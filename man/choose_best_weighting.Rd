@@ -55,11 +55,9 @@ weighting.
 }
 \examples{
  
-\dontrun{
 tmp <- tempfile() 
 choose_best_weighting(system.file("extdata/examplesurvey.csv", package = "WWC"), 
                       tmp, 5, response, sex, raceethnicity)
-}
 
 }
 

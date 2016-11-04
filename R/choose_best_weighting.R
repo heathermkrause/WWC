@@ -37,11 +37,9 @@
 #' 
 #' @examples
 #'  
-#' \dontrun{
 #' tmp <- tempfile() 
 #' choose_best_weighting(system.file("extdata/examplesurvey.csv", package = "WWC"), 
 #'                       tmp, 5, response, sex, raceethnicity)
-#' }
 #' 
 #' @export
 choose_best_weighting <- function(inputfile, outputpath, n, response, ...) {
@@ -86,7 +84,7 @@ choose_best_weighting_ <- function(inputfile, outputpath = "./wwc_weighted.csv",
         } else if (length(dots) == 2) {
 
                 list_of_dots <- c(dots, 
-                                  list(as.character(dots)))
+                                  list(purrr::flatten_chr(dots)))
                 results <- data_frame(dots = list_of_dots) %>%
                         mutate(results = purrr::map(list_of_dots, 
                                                     weight_and_process, 
@@ -95,14 +93,17 @@ choose_best_weighting_ <- function(inputfile, outputpath = "./wwc_weighted.csv",
                 
                 dots <- results %>% 
                         top_n(-1, stddev) 
-                best_dots <- dots$dots
+                best_dots <- dots$dots %>%
+                        purrr::transpose() %>%
+                        purrr::map(purrr::flatten_chr)
                 ret <- weight_wwc_(mysurvey, best_dots, force_edu = FALSE)
 
         } else if (length(dots) == 3) {
 
                 list_of_dots <- c(dots, 
-                                  utils::combn(dots, 2, simplify = FALSE), 
-                                  list(as.character(dots)))
+                                  utils::combn(dots, 2, FUN = as.character, 
+                                               simplify = FALSE), 
+                                  list(purrr::flatten_chr(dots)))
                 results <- data_frame(dots = list_of_dots) %>%
                         mutate(results = purrr::map(list_of_dots, 
                                                     weight_and_process, 
@@ -111,7 +112,9 @@ choose_best_weighting_ <- function(inputfile, outputpath = "./wwc_weighted.csv",
                 
                 dots <- results %>% 
                         top_n(-1, stddev) 
-                best_dots <- dots$dots
+                best_dots <- dots$dots %>%
+                        purrr::transpose() %>%
+                        purrr::map(purrr::flatten_chr)
                 ret <- weight_wwc_(mysurvey, best_dots, force_edu = FALSE)
 
         } else {
