@@ -86,34 +86,10 @@ Instead, the Veracio survey tool can be used to statistically weight each survey
 
 ```r
 weighted <- weight_wwc(texassurvey, sex, raceethnicity)
-#> Joining, by = c("sex", "raceethnicity")
+#> Warning: internal error -3 in R_decompress1
+#> Error in eval(expr, envir, enclos): lazy-load database '/Library/Frameworks/R.framework/Versions/3.3/Resources/library/WWC/R/WWC.rdb' is corrupt
 weighted
-#> # A tibble: 1,000 × 7
-#>    geography    sex                       raceethnicity               age
-#>        <chr>  <chr>                               <chr>             <chr>
-#> 1         TX   Male WHITE ALONE, NOT HISPANIC OR LATINO    25 to 44 years
-#> 2         TX Female WHITE ALONE, NOT HISPANIC OR LATINO 65 years and over
-#> 3         TX Female WHITE ALONE, NOT HISPANIC OR LATINO    25 to 44 years
-#> 4         TX   Male WHITE ALONE, NOT HISPANIC OR LATINO 65 years and over
-#> 5         TX   Male WHITE ALONE, NOT HISPANIC OR LATINO    25 to 44 years
-#> 6         TX   Male WHITE ALONE, NOT HISPANIC OR LATINO    25 to 44 years
-#> 7         TX Female WHITE ALONE, NOT HISPANIC OR LATINO    45 to 64 years
-#> 8         TX   Male                         ASIAN ALONE 65 years and over
-#> 9         TX Female WHITE ALONE, NOT HISPANIC OR LATINO 65 years and over
-#> 10        TX Female WHITE ALONE, NOT HISPANIC OR LATINO    25 to 44 years
-#>                                      education response    weight
-#>                                          <chr>    <chr>     <dbl>
-#> 1  High school graduate (includes equivalency)       no 0.5296229
-#> 2           Some college or associate's degree       no 0.7062374
-#> 3                  Bachelor's degree or higher       no 0.7062374
-#> 4                  Bachelor's degree or higher      yes 0.5296229
-#> 5                  Bachelor's degree or higher       no 0.5296229
-#> 6                  Bachelor's degree or higher       no 0.5296229
-#> 7  High school graduate (includes equivalency)       no 0.7062374
-#> 8           Some college or associate's degree      yes 1.9861542
-#> 9  High school graduate (includes equivalency)       no 0.7062374
-#> 10 High school graduate (includes equivalency)       no 0.7062374
-#> # ... with 990 more rows
+#> Error in eval(expr, envir, enclos): object 'weighted' not found
 ```
 
 Now what result on the survey question will we find?
@@ -123,6 +99,7 @@ Now what result on the survey question will we find?
 resultDF <- weighted %>% 
         group_by(response) %>% 
         summarize(n = sum(weight))
+#> Error in eval(expr, envir, enclos): object 'weighted' not found
 ggplot(resultDF, aes(x = response, y = n)) +
         geom_bar(stat = "identity", fill = "midnightblue")
 ```
