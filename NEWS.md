@@ -1,5 +1,7 @@
 # WWC 0.1.1
 
+* Added a new function to find the best weighting indicators for an individual
+survey using bootstrap resampling, `choose_best_weighting`.
 * Now allow multiple geographical areas per survey (for example, multiple states 
 or multiple counties).
 * Change binning of age data from ACS tables to new, bigger bins (only 5 age 
