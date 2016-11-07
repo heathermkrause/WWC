@@ -2,6 +2,8 @@
 
 export(choose_best_weighting)
 export(choose_best_weighting_)
+export(margin_of_error)
+export(margin_of_error_)
 export(simulate_response_age_continuous)
 export(simulate_response_education_continuous)
 export(simulate_survey)
