@@ -9,8 +9,13 @@
 #' \code{simulate_survey}
 #' @param response_col Response column as string
 #' 
-#' @return A list with ?????
-#' 
+#' @return A list with
+#' \itemize{
+#' \item the percent standard error of the raw, unweighted survey,
+#' \item the percent bias of the raw, unweighted survey (compared to the weighted survey), and 
+#' \item the percent standard error of the weighted survey.
+#' }
+
 #' @details \code{margin_of_error} is given bare names while 
 #' \code{margin_of_error_} is given strings and is therefore suitable for 
 #' programming with.
@@ -23,6 +28,10 @@
 #' library(dplyr) 
 #' data(texassurvey)
 #' weight_wwc(texassurvey, sex, raceethnicity) %>%
+#'     margin_of_error(response)
+#'     
+#' data(twostatessurvey)
+#' weight_wwc(twostatessurvey, sex, raceethnicity) %>%
 #'     margin_of_error(response)
 #' 
 #' @export
@@ -38,14 +47,27 @@ margin_of_error <- function(mysurvey, response) {
 margin_of_error_ <- function(mysurvey, response_col) {
         
         # summarize the survey
-        df <- summarize_survey_(mysurvey, response_col) %>%
+        su <- summarize_survey_(mysurvey, response_col)
+        
+        df <- su %>%
                 mutate(percent_error = se / value) %>%
                 group_by(result) %>%
                 summarise(MOE = mean(percent_error))
         
-        raw_standard_error <- df %>% filter(result == "Raw")
-        weighted_standard_error <- df %>% filter(result == "Weighted")
+        raw_standard_error <- df %>% 
+                filter(result == "Raw")
+        weighted_standard_error <- df %>% 
+                filter(result == "Weighted")
+        
+        bias <- su %>% 
+                group_by(answer, result) %>% 
+                summarise(value = value) %>% 
+                tidyr::spread(result, value) %>% 
+                mutate(bias = abs(Raw - Weighted)/Weighted) %>% 
+                ungroup %>% 
+                summarise(bias = mean(bias))
         
         return(list(raw_standard_error = raw_standard_error$MOE,
+                    raw_bias = bias$bias,
                     weighted_standard_error = weighted_standard_error$MOE))
 }

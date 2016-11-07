@@ -22,7 +22,12 @@ weighted, such as the response to a yes/no question as in
 \item{response_col}{Response column as string}
 }
 \value{
-A list with ?????
+A list with
+\itemize{
+\item the percent standard error of the raw, unweighted survey,
+\item the percent bias of the raw, unweighted survey (compared to the weighted survey), and 
+\item the percent standard error of the weighted survey.
+}
 }
 \description{
 Calculate some estimates of the margin of error for a weighted survey 
@@ -37,6 +42,10 @@ programming with.
 library(dplyr) 
 data(texassurvey)
 weight_wwc(texassurvey, sex, raceethnicity) \%>\%
+    margin_of_error(response)
+    
+data(twostatessurvey)
+weight_wwc(twostatessurvey, sex, raceethnicity) \%>\%
     margin_of_error(response)
 
 }
