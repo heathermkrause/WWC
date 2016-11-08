@@ -1,0 +1,1001 @@
+geography,sex,raceethnicity,age,education,response,weight
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),32,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,30,0.6812546993292442
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Less than high school diploma,10,2.23897167448123
+CA,Male,ASIAN ALONE,45 to 64 years,Some college or associate's degree,15,7.548626288953496
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),38,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,38,0.6812546993292442
+CA,Male,OTHER,18 to 24 years,Some college or associate's degree,11,0.5298126081050952
+CA,Male,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),15,2.23897167448123
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,56,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),66,1.0688964208838911
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Less than high school diploma,16,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,36,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,38,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,33,0.6812546993292442
+CA,Female,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),42,5.106844133308608
+CA,Male,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,14,2.23897167448123
+CA,Female,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,37,5.106844133308608
+CA,Female,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,40,5.106844133308608
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,38,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,39,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,40,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,55,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),69,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,47,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,50,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,31,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),61,1.0688964208838911
+CA,Male,HISPANIC OR LATINO,65 years and over,Bachelor's degree or higher,11,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,39,0.6812546993292442
+CA,Male,HISPANIC OR LATINO,25 to 44 years,Less than high school diploma,16,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,27,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,49,1.0688964208838911
+CA,Female,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),40,5.106844133308608
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,32,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),29,0.6812546993292442
+CA,Male,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),14,2.23897167448123
+CA,Male,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),14,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,37,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),30,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),21,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),62,1.0688964208838911
+CA,Male,OTHER,45 to 64 years,High school graduate (includes equivalency),14,0.5298126081050952
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,58,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),32,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),29,0.6812546993292442
+CA,Female,HISPANIC OR LATINO,45 to 64 years,Less than high school diploma,40,5.106844133308608
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,12,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,37,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,33,0.6812546993292442
+CA,Male,OTHER,45 to 64 years,High school graduate (includes equivalency),15,0.5298126081050952
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,37,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,32,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,36,0.6812546993292442
+CA,Male,HISPANIC OR LATINO,18 to 24 years,Less than high school diploma,18,2.23897167448123
+CA,Male,OTHER,25 to 44 years,Some college or associate's degree,17,0.5298126081050952
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),35,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,35,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,37,0.6812546993292442
+CA,Male,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),14,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,29,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,63,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,38,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),66,1.0688964208838911
+CA,Female,BLACK OR AFRICAN AMERICAN ALONE,25 to 44 years,Some college or associate's degree,40,4.461840267249997
+CA,Male,HISPANIC OR LATINO,25 to 44 years,Less than high school diploma,9,2.23897167448123
+CA,Male,ASIAN ALONE,18 to 24 years,Less than high school diploma,17,7.548626288953496
+CA,Female,ASIAN ALONE,65 years and over,Some college or associate's degree,49,7.548626288953496
+CA,Male,HISPANIC OR LATINO,65 years and over,Some college or associate's degree,18,2.23897167448123
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,49,1.0688964208838911
+CA,Male,ASIAN ALONE,45 to 64 years,Some college or associate's degree,17,7.548626288953496
+CA,Male,OTHER,25 to 44 years,High school graduate (includes equivalency),19,0.5298126081050952
+CA,Female,ASIAN ALONE,45 to 64 years,Less than high school diploma,45,7.548626288953496
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,51,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,65,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,33,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,61,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),28,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,28,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,52,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),56,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,48,1.0688964208838911
+CA,Female,ASIAN ALONE,65 years and over,High school graduate (includes equivalency),29,7.548626288953496
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),29,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),31,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,70,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,28,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,30,0.6812546993292442
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Less than high school diploma,17,2.23897167448123
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,74,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,34,0.6812546993292442
+CA,Male,OTHER,65 years and over,High school graduate (includes equivalency),11,0.5298126081050952
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,58,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),62,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,46,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,36,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,34,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,42,0.6812546993292442
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,21,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,33,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,61,1.0688964208838911
+CA,Male,OTHER,45 to 64 years,Some college or associate's degree,11,0.5298126081050952
+CA,Male,OTHER,45 to 64 years,Less than high school diploma,12,0.5298126081050952
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),38,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,21,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,35,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),60,1.0688964208838911
+CA,Male,HISPANIC OR LATINO,25 to 44 years,Less than high school diploma,16,2.23897167448123
+CA,Male,OTHER,65 years and over,Less than high school diploma,13,0.5298126081050952
+CA,Male,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),12,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,37,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,43,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),51,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,41,0.6812546993292442
+CA,Female,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,41,5.106844133308608
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,30,0.6812546993292442
+CA,Male,OTHER,45 to 64 years,Less than high school diploma,10,0.5298126081050952
+CA,Male,HISPANIC OR LATINO,25 to 44 years,Less than high school diploma,16,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,29,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),50,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,39,0.6812546993292442
+CA,Female,HISPANIC OR LATINO,65 years and over,Some college or associate's degree,38,5.106844133308608
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,45,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,60,1.0688964208838911
+CA,Male,BLACK OR AFRICAN AMERICAN ALONE,45 to 64 years,Bachelor's degree or higher,17,3.4827719211689754
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,44,0.6812546993292442
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,9,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,47,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,67,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,51,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),31,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,29,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,79,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,80,1.0688964208838911
+CA,Male,HISPANIC OR LATINO,65 years and over,Some college or associate's degree,17,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),29,0.6812546993292442
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,22,2.23897167448123
+CA,Male,OTHER,65 years and over,Bachelor's degree or higher,13,0.5298126081050952
+CA,Male,HISPANIC OR LATINO,25 to 44 years,Less than high school diploma,22,2.23897167448123
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,55,1.0688964208838911
+CA,Female,OTHER,65 years and over,Some college or associate's degree,38,1.6161709081090105
+CA,Male,HISPANIC OR LATINO,18 to 24 years,Bachelor's degree or higher,17,2.23897167448123
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),80,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),57,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,31,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,23,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),59,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,38,0.6812546993292442
+CA,Male,OTHER,25 to 44 years,Bachelor's degree or higher,11,0.5298126081050952
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,38,0.6812546993292442
+CA,Male,OTHER,18 to 24 years,Less than high school diploma,11,0.5298126081050952
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,19,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,41,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,40,0.6812546993292442
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,13,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),27,0.6812546993292442
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Less than high school diploma,21,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,36,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,49,1.0688964208838911
+CA,Male,HISPANIC OR LATINO,65 years and over,Less than high school diploma,19,2.23897167448123
+CA,Female,HISPANIC OR LATINO,65 years and over,Bachelor's degree or higher,34,5.106844133308608
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,72,1.0688964208838911
+CA,Male,OTHER,45 to 64 years,Some college or associate's degree,10,0.5298126081050952
+CA,Male,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),17,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,37,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,33,0.6812546993292442
+CA,Female,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,35,5.106844133308608
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,54,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,29,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,26,0.6812546993292442
+CA,Female,BLACK OR AFRICAN AMERICAN ALONE,45 to 64 years,High school graduate (includes equivalency),39,4.461840267249997
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,68,1.0688964208838911
+CA,Male,HISPANIC OR LATINO,25 to 44 years,Bachelor's degree or higher,16,2.23897167448123
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),71,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,40,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,51,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,34,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,33,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,38,0.6812546993292442
+CA,Female,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,36,5.106844133308608
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,58,1.0688964208838911
+CA,Female,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,36,5.106844133308608
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,28,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),37,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),61,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),52,1.0688964208838911
+CA,Female,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,44,5.106844133308608
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,45,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,37,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,37,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,31,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),67,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),33,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,33,0.6812546993292442
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,14,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,43,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,36,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),58,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),61,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,60,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,50,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,44,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,53,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,39,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,30,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),37,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,54,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,36,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),38,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,39,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),59,1.0688964208838911
+CA,Male,BLACK OR AFRICAN AMERICAN ALONE,45 to 64 years,Bachelor's degree or higher,9,3.4827719211689754
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),32,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),67,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,61,1.0688964208838911
+CA,Male,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,7,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,30,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,62,1.0688964208838911
+CA,Female,OTHER,18 to 24 years,Some college or associate's degree,38,1.6161709081090105
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),58,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,34,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,28,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,70,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,70,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,36,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,28,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,59,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,72,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,39,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,29,0.6812546993292442
+CA,Female,OTHER,18 to 24 years,Some college or associate's degree,34,1.6161709081090105
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),71,1.0688964208838911
+CA,Male,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),9,2.23897167448123
+CA,Female,HISPANIC OR LATINO,45 to 64 years,Less than high school diploma,36,5.106844133308608
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,34,0.6812546993292442
+CA,Male,BLACK OR AFRICAN AMERICAN ALONE,45 to 64 years,Bachelor's degree or higher,11,3.4827719211689754
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,42,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),58,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),34,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,28,0.6812546993292442
+CA,Male,HISPANIC OR LATINO,65 years and over,Some college or associate's degree,17,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,30,0.6812546993292442
+CA,Female,OTHER,45 to 64 years,High school graduate (includes equivalency),36,1.6161709081090105
+CA,Female,HISPANIC OR LATINO,18 to 24 years,High school graduate (includes equivalency),39,5.106844133308608
+CA,Male,OTHER,45 to 64 years,Some college or associate's degree,20,0.5298126081050952
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),52,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,39,0.6812546993292442
+CA,Male,HISPANIC OR LATINO,18 to 24 years,Some college or associate's degree,16,2.23897167448123
+CA,Female,HISPANIC OR LATINO,65 years and over,Less than high school diploma,39,5.106844133308608
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,32,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,37,0.6812546993292442
+CA,Female,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,43,5.106844133308608
+CA,Female,HISPANIC OR LATINO,18 to 24 years,Less than high school diploma,29,5.106844133308608
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,27,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,37,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Less than high school diploma,33,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,42,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,42,0.6812546993292442
+CA,Male,ASIAN ALONE,25 to 44 years,Some college or associate's degree,20,7.548626288953496
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,73,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,41,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),64,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),52,1.0688964208838911
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,10,2.23897167448123
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,54,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),34,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,40,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,51,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,34,0.6812546993292442
+CA,Male,ASIAN ALONE,18 to 24 years,Some college or associate's degree,18,7.548626288953496
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,43,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),73,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),61,1.0688964208838911
+CA,Male,OTHER,45 to 64 years,High school graduate (includes equivalency),17,0.5298126081050952
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,18,2.23897167448123
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,47,1.0688964208838911
+CA,Female,BLACK OR AFRICAN AMERICAN ALONE,25 to 44 years,High school graduate (includes equivalency),40,4.461840267249997
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,36,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,36,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),34,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),69,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,47,1.0688964208838911
+CA,Female,HISPANIC OR LATINO,18 to 24 years,High school graduate (includes equivalency),47,5.106844133308608
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),35,0.6812546993292442
+CA,Male,BLACK OR AFRICAN AMERICAN ALONE,25 to 44 years,Some college or associate's degree,18,3.4827719211689754
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,83,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,64,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,42,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),34,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,34,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,26,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,60,1.0688964208838911
+CA,Female,HISPANIC OR LATINO,65 years and over,Bachelor's degree or higher,47,5.106844133308608
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,35,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,32,0.6812546993292442
+CA,Female,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,48,5.106844133308608
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),40,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,43,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,71,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),33,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),67,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,65,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,28,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,28,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,32,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),40,0.6812546993292442
+CA,Male,HISPANIC OR LATINO,25 to 44 years,High school graduate (includes equivalency),10,2.23897167448123
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,60,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),34,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,34,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,73,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),66,1.0688964208838911
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Less than high school diploma,11,2.23897167448123
+CA,Female,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,38,5.106844133308608
+CA,Male,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,9,2.23897167448123
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,59,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),37,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,26,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,59,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,36,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,71,1.0688964208838911
+CA,Male,OTHER,45 to 64 years,Some college or associate's degree,14,0.5298126081050952
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,34,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,38,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),30,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),77,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),54,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,36,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,28,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,40,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,60,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),47,1.0688964208838911
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,11,2.23897167448123
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),64,1.0688964208838911
+CA,Male,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,11,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,21,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,63,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,66,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,37,0.6812546993292442
+CA,Male,HISPANIC OR LATINO,65 years and over,Bachelor's degree or higher,12,2.23897167448123
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,15,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),27,0.6812546993292442
+CA,Male,BLACK OR AFRICAN AMERICAN ALONE,25 to 44 years,Some college or associate's degree,16,3.4827719211689754
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),61,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,51,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),29,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,30,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),53,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),61,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,63,1.0688964208838911
+CA,Male,HISPANIC OR LATINO,18 to 24 years,Some college or associate's degree,10,2.23897167448123
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,48,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,38,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,28,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,32,0.6812546993292442
+CA,Female,OTHER,18 to 24 years,Bachelor's degree or higher,31,1.6161709081090105
+CA,Female,OTHER,65 years and over,Bachelor's degree or higher,33,1.6161709081090105
+CA,Male,HISPANIC OR LATINO,65 years and over,High school graduate (includes equivalency),22,2.23897167448123
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),76,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,31,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,82,1.0688964208838911
+CA,Male,OTHER,18 to 24 years,Some college or associate's degree,15,0.5298126081050952
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),52,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,46,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,34,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),35,0.6812546993292442
+CA,Male,HISPANIC OR LATINO,65 years and over,High school graduate (includes equivalency),13,2.23897167448123
+CA,Female,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,52,5.106844133308608
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),49,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,53,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),60,1.0688964208838911
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,8,2.23897167448123
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,51,1.0688964208838911
+CA,Male,HISPANIC OR LATINO,25 to 44 years,Less than high school diploma,11,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,31,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,52,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,36,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,38,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,55,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),68,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,34,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,30,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),43,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),34,0.6812546993292442
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,43,0.6812546993292442
+CA,Male,HISPANIC OR LATINO,25 to 44 years,Bachelor's degree or higher,20,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,44,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,62,1.0688964208838911
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),35,0.6812546993292442
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,61,1.0688964208838911
+CA,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,68,1.0688964208838911
+CA,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,22,2.23897167448123
+CA,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,36,0.6812546993292442
+CA,Female,BLACK OR AFRICAN AMERICAN ALONE,25 to 44 years,Some college or associate's degree,44,4.461840267249997
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,29,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),40,0.329039794469325
+TX,Male,ASIAN ALONE,45 to 64 years,High school graduate (includes equivalency),24,0.8077251510011394
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,38,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,27,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,61,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,28,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),73,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,74,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,41,0.329039794469325
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,15,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),42,0.329039794469325
+TX,Female,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,28,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,31,0.329039794469325
+TX,Male,ASIAN ALONE,25 to 44 years,High school graduate (includes equivalency),13,0.8077251510011394
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,47,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),64,0.6029533291267355
+TX,Female,HISPANIC OR LATINO,25 to 44 years,Bachelor's degree or higher,36,1.7939122990944214
+TX,Female,BLACK OR AFRICAN AMERICAN ALONE,65 years and over,High school graduate (includes equivalency),41,3.3499009364765664
+TX,Male,HISPANIC OR LATINO,65 years and over,Some college or associate's degree,9,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,40,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,54,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),28,0.329039794469325
+TX,Female,HISPANIC OR LATINO,45 to 64 years,Less than high school diploma,38,1.7939122990944214
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,81,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),30,0.329039794469325
+TX,Female,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,36,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,31,0.329039794469325
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,12,0.9891443888498365
+TX,Male,ASIAN ALONE,45 to 64 years,Bachelor's degree or higher,24,0.8077251510011394
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,36,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,34,0.329039794469325
+TX,Female,HISPANIC OR LATINO,65 years and over,Less than high school diploma,38,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,34,0.329039794469325
+TX,Female,HISPANIC OR LATINO,25 to 44 years,Less than high school diploma,38,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,46,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),32,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,32,0.329039794469325
+TX,Male,HISPANIC OR LATINO,65 years and over,Some college or associate's degree,15,0.9891443888498365
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Bachelor's degree or higher,21,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,32,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,69,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,32,0.329039794469325
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Less than high school diploma,15,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,28,0.329039794469325
+TX,Male,ASIAN ALONE,45 to 64 years,Bachelor's degree or higher,12,0.8077251510011394
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,38,0.329039794469325
+TX,Male,HISPANIC OR LATINO,65 years and over,High school graduate (includes equivalency),12,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),37,0.329039794469325
+TX,Female,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,39,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,33,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,27,0.329039794469325
+TX,Female,ASIAN ALONE,18 to 24 years,Some college or associate's degree,32,2.138360954861592
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,63,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,62,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),53,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),22,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,39,0.329039794469325
+TX,Male,HISPANIC OR LATINO,18 to 24 years,High school graduate (includes equivalency),16,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),38,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,59,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),36,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),30,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),30,0.329039794469325
+TX,Female,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,38,1.7939122990944214
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Less than high school diploma,59,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,25,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),38,0.329039794469325
+TX,Female,HISPANIC OR LATINO,45 to 64 years,Less than high school diploma,33,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),33,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),35,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),59,0.6029533291267355
+TX,Female,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,49,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,33,0.329039794469325
+TX,Female,ASIAN ALONE,18 to 24 years,High school graduate (includes equivalency),43,2.138360954861592
+TX,Female,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,41,1.7939122990944214
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,51,0.6029533291267355
+TX,Male,ASIAN ALONE,45 to 64 years,Some college or associate's degree,21,0.8077251510011394
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,34,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,43,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,38,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,54,0.6029533291267355
+TX,Male,OTHER,18 to 24 years,Bachelor's degree or higher,17,0.13570439925840191
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,17,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,38,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,29,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),39,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,43,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,43,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),62,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,33,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,29,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),58,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Less than high school diploma,15,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,36,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,65,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,29,0.329039794469325
+TX,Female,OTHER,18 to 24 years,High school graduate (includes equivalency),41,0.2668489618276657
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,63,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,65 years and over,High school graduate (includes equivalency),12,0.9891443888498365
+TX,Male,ASIAN ALONE,45 to 64 years,High school graduate (includes equivalency),15,0.8077251510011394
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),65,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),31,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,60,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,30,0.329039794469325
+TX,Female,HISPANIC OR LATINO,45 to 64 years,Less than high school diploma,43,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,28,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,49,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,11,0.9891443888498365
+TX,Male,HISPANIC OR LATINO,65 years and over,Bachelor's degree or higher,16,0.9891443888498365
+TX,Female,BLACK OR AFRICAN AMERICAN ALONE,65 years and over,Less than high school diploma,46,3.3499009364765664
+TX,Male,OTHER,25 to 44 years,Bachelor's degree or higher,13,0.13570439925840191
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,58,0.6029533291267355
+TX,Female,HISPANIC OR LATINO,25 to 44 years,Bachelor's degree or higher,42,1.7939122990944214
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Less than high school diploma,16,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,40,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,47,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Bachelor's degree or higher,17,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,49,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,48,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,27,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,71,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,57,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),33,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,64,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,50,0.6029533291267355
+TX,Male,OTHER,18 to 24 years,Bachelor's degree or higher,18,0.13570439925840191
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,32,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),35,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,33,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,30,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,30,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,68,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),64,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,56,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,15,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),56,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),41,0.329039794469325
+TX,Male,OTHER,45 to 64 years,Some college or associate's degree,17,0.13570439925840191
+TX,Female,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),34,1.7939122990944214
+TX,Female,OTHER,45 to 64 years,Less than high school diploma,40,0.2668489618276657
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,31,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,60,0.6029533291267355
+TX,Female,HISPANIC OR LATINO,25 to 44 years,Bachelor's degree or higher,37,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,30,0.329039794469325
+TX,Male,HISPANIC OR LATINO,18 to 24 years,Bachelor's degree or higher,15,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,64,0.6029533291267355
+TX,Male,BLACK OR AFRICAN AMERICAN ALONE,45 to 64 years,High school graduate (includes equivalency),19,2.5918769452349246
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,52,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,18,0.9891443888498365
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Bachelor's degree or higher,13,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,51,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,53,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,28,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,50,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),57,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Bachelor's degree or higher,17,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,33,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),35,0.329039794469325
+TX,Male,OTHER,45 to 64 years,Bachelor's degree or higher,14,0.13570439925840191
+TX,Female,OTHER,65 years and over,Some college or associate's degree,46,0.2668489618276657
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,41,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,53,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,58,0.6029533291267355
+TX,Male,OTHER,65 years and over,Some college or associate's degree,6,0.13570439925840191
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),64,0.6029533291267355
+TX,Female,OTHER,45 to 64 years,Bachelor's degree or higher,41,0.2668489618276657
+TX,Male,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),16,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,70,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,33,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,59,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,50,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,13,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,31,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,71,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,65 years and over,Some college or associate's degree,16,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,35,0.329039794469325
+TX,Male,OTHER,45 to 64 years,High school graduate (includes equivalency),9,0.13570439925840191
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,57,0.6029533291267355
+TX,Female,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),42,1.7939122990944214
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,12,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,42,0.329039794469325
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,17,0.9891443888498365
+TX,Male,OTHER,18 to 24 years,Bachelor's degree or higher,22,0.13570439925840191
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,31,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),38,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,41,0.329039794469325
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,10,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,62,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,52,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Less than high school diploma,41,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,39,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,23,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),40,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),49,0.6029533291267355
+TX,Female,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),48,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),39,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),59,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,38,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,51,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,34,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,41,0.329039794469325
+TX,Male,OTHER,45 to 64 years,High school graduate (includes equivalency),17,0.13570439925840191
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,52,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,60,0.6029533291267355
+TX,Male,OTHER,45 to 64 years,High school graduate (includes equivalency),16,0.13570439925840191
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,24,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,53,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),66,0.6029533291267355
+TX,Female,OTHER,25 to 44 years,Bachelor's degree or higher,29,0.2668489618276657
+TX,Male,OTHER,65 years and over,Bachelor's degree or higher,18,0.13570439925840191
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,43,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,34,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,43,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,31,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),58,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,41,0.329039794469325
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,17,0.9891443888498365
+TX,Female,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,36,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,51,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,58,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),42,0.329039794469325
+TX,Male,HISPANIC OR LATINO,65 years and over,Less than high school diploma,11,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,36,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,35,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Less than high school diploma,33,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,31,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,24,0.329039794469325
+TX,Female,OTHER,25 to 44 years,Less than high school diploma,47,0.2668489618276657
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,52,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,36,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,23,0.329039794469325
+TX,Female,ASIAN ALONE,25 to 44 years,High school graduate (includes equivalency),40,2.138360954861592
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Less than high school diploma,40,0.329039794469325
+TX,Female,HISPANIC OR LATINO,65 years and over,Bachelor's degree or higher,44,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),32,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,52,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,65 years and over,High school graduate (includes equivalency),11,0.9891443888498365
+TX,Male,BLACK OR AFRICAN AMERICAN ALONE,25 to 44 years,High school graduate (includes equivalency),13,2.5918769452349246
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,33,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),40,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),38,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),21,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),31,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,61,0.6029533291267355
+TX,Male,OTHER,25 to 44 years,Bachelor's degree or higher,20,0.13570439925840191
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),31,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,33,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,33,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,36,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,39,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),70,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,31,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,53,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),34,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),34,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),31,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,38,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,36,0.329039794469325
+TX,Female,HISPANIC OR LATINO,65 years and over,Less than high school diploma,42,1.7939122990944214
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,60,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,43,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,73,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,31,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,35,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,35,0.329039794469325
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,13,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,37,0.329039794469325
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,19,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,34,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,41,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,25 to 44 years,High school graduate (includes equivalency),15,0.9891443888498365
+TX,Female,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),43,1.7939122990944214
+TX,Female,HISPANIC OR LATINO,65 years and over,Less than high school diploma,40,1.7939122990944214
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),46,0.6029533291267355
+TX,Female,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,35,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),30,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),28,0.329039794469325
+TX,Male,HISPANIC OR LATINO,25 to 44 years,High school graduate (includes equivalency),9,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,71,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,41,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,55,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,39,0.6029533291267355
+TX,Male,OTHER,25 to 44 years,High school graduate (includes equivalency),15,0.13570439925840191
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),44,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,30,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,54,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,59,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Less than high school diploma,37,0.329039794469325
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,15,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),30,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,35,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,32,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),60,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,44,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,61,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,50,0.6029533291267355
+TX,Female,ASIAN ALONE,45 to 64 years,Some college or associate's degree,29,2.138360954861592
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,34,0.329039794469325
+TX,Female,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,45,1.7939122990944214
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,78,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,63,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,13,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),65,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Less than high school diploma,15,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,54,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,43,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,34,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,37,0.329039794469325
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,8,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,59,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,11,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,32,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),65,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Bachelor's degree or higher,14,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),35,0.329039794469325
+TX,Female,HISPANIC OR LATINO,65 years and over,Some college or associate's degree,41,1.7939122990944214
+TX,Male,HISPANIC OR LATINO,18 to 24 years,Bachelor's degree or higher,16,0.9891443888498365
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Bachelor's degree or higher,18,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,41,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,44,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,31,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,72,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,39,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,57,0.6029533291267355
+TX,Female,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,31,1.7939122990944214
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),73,0.6029533291267355
+TX,Male,OTHER,45 to 64 years,High school graduate (includes equivalency),16,0.13570439925840191
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),60,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),34,0.329039794469325
+TX,Male,OTHER,25 to 44 years,High school graduate (includes equivalency),23,0.13570439925840191
+TX,Female,OTHER,45 to 64 years,Bachelor's degree or higher,37,0.2668489618276657
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,32,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,37,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,35,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,35,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,60,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,16,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,23,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,58,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Less than high school diploma,23,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,37,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,26,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,62,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,21,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,63,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,40,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),64,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,62,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,40,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,22,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,32,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,54,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,56,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,33,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),50,0.6029533291267355
+TX,Male,BLACK OR AFRICAN AMERICAN ALONE,25 to 44 years,Bachelor's degree or higher,10,2.5918769452349246
+TX,Female,HISPANIC OR LATINO,45 to 64 years,Less than high school diploma,45,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,36,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,64,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,29,0.329039794469325
+TX,Female,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),43,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,37,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,34,0.329039794469325
+TX,Female,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,50,1.7939122990944214
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,51,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,29,0.329039794469325
+TX,Female,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,34,1.7939122990944214
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,22,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),39,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),65,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),34,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,48,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),74,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,12,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,58,0.6029533291267355
+TX,Female,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),39,1.7939122990944214
+TX,Female,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,38,1.7939122990944214
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Less than high school diploma,63,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,50,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,35,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,39,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,33,0.329039794469325
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Bachelor's degree or higher,17,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,54,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,64,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),41,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),28,0.329039794469325
+TX,Male,BLACK OR AFRICAN AMERICAN ALONE,45 to 64 years,Bachelor's degree or higher,20,2.5918769452349246
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,38,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,45,0.329039794469325
+TX,Female,OTHER,18 to 24 years,High school graduate (includes equivalency),40,0.2668489618276657
+TX,Male,ASIAN ALONE,45 to 64 years,Some college or associate's degree,16,0.8077251510011394
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,37,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,28,0.329039794469325
+TX,Male,HISPANIC OR LATINO,65 years and over,High school graduate (includes equivalency),7,0.9891443888498365
+TX,Male,HISPANIC OR LATINO,65 years and over,High school graduate (includes equivalency),12,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,44,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,57,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Less than high school diploma,28,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),62,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),33,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,33,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,41,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),36,0.329039794469325
+TX,Male,ASIAN ALONE,65 years and over,Less than high school diploma,11,0.8077251510011394
+TX,Female,BLACK OR AFRICAN AMERICAN ALONE,25 to 44 years,Bachelor's degree or higher,37,3.3499009364765664
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,68,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,63,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),25,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,42,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,79,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,32,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,37,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Less than high school diploma,42,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,34,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,34,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,33,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),24,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,31,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),55,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,37,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,33,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,29,0.329039794469325
+TX,Male,ASIAN ALONE,65 years and over,Some college or associate's degree,17,0.8077251510011394
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),66,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,25 to 44 years,High school graduate (includes equivalency),12,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),33,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),55,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,72,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),51,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,46,0.329039794469325
+TX,Male,OTHER,45 to 64 years,Some college or associate's degree,20,0.13570439925840191
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),36,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,32,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,42,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,38,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,57,0.6029533291267355
+TX,Female,HISPANIC OR LATINO,25 to 44 years,Bachelor's degree or higher,35,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),27,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,82,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,65 years and over,High school graduate (includes equivalency),17,0.9891443888498365
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Bachelor's degree or higher,8,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),39,0.329039794469325
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,11,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,61,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),37,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,36,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,64,0.6029533291267355
+TX,Female,OTHER,45 to 64 years,Some college or associate's degree,32,0.2668489618276657
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,16,0.9891443888498365
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Less than high school diploma,15,0.9891443888498365
+TX,Female,OTHER,65 years and over,Bachelor's degree or higher,45,0.2668489618276657
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,38,0.329039794469325
+TX,Female,HISPANIC OR LATINO,45 to 64 years,Less than high school diploma,44,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,45,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,32,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,31,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,38,0.329039794469325
+TX,Male,BLACK OR AFRICAN AMERICAN ALONE,65 years and over,Less than high school diploma,12,2.5918769452349246
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,66,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,47,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,38,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,32,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,38,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,35,0.329039794469325
+TX,Female,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,49,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,35,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,63,0.6029533291267355
+TX,Female,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),48,1.7939122990944214
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),56,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,36,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,34,0.329039794469325
+TX,Male,HISPANIC OR LATINO,45 to 64 years,High school graduate (includes equivalency),12,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,37,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),30,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,31,0.329039794469325
+TX,Female,HISPANIC OR LATINO,25 to 44 years,Less than high school diploma,36,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),37,0.329039794469325
+TX,Female,HISPANIC OR LATINO,25 to 44 years,Bachelor's degree or higher,43,1.7939122990944214
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,15,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,69,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,59,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Less than high school diploma,38,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),26,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,57,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,18 to 24 years,Some college or associate's degree,16,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,59,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,33,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),27,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,31,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),33,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,36,0.329039794469325
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,11,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,48,0.6029533291267355
+TX,Male,OTHER,45 to 64 years,High school graduate (includes equivalency),19,0.13570439925840191
+TX,Male,OTHER,65 years and over,Bachelor's degree or higher,11,0.13570439925840191
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,61,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,35,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),32,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,35,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,69,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,33,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,39,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,64,0.6029533291267355
+TX,Female,BLACK OR AFRICAN AMERICAN ALONE,45 to 64 years,High school graduate (includes equivalency),38,3.3499009364765664
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),24,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,66,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,27,0.329039794469325
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,13,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,45,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,31,0.329039794469325
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Less than high school diploma,13,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,34,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,37,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,61,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),35,0.329039794469325
+TX,Male,OTHER,25 to 44 years,Bachelor's degree or higher,17,0.13570439925840191
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,42,0.329039794469325
+TX,Female,HISPANIC OR LATINO,25 to 44 years,High school graduate (includes equivalency),42,1.7939122990944214
+TX,Male,BLACK OR AFRICAN AMERICAN ALONE,65 years and over,Some college or associate's degree,12,2.5918769452349246
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),34,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,61,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Less than high school diploma,12,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,56,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),42,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),41,0.329039794469325
+TX,Male,HISPANIC OR LATINO,65 years and over,Bachelor's degree or higher,15,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,44,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),37,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,High school graduate (includes equivalency),50,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,12,0.9891443888498365
+TX,Female,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,43,1.7939122990944214
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,49,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Less than high school diploma,65,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,14,0.9891443888498365
+TX,Male,OTHER,65 years and over,High school graduate (includes equivalency),20,0.13570439925840191
+TX,Male,BLACK OR AFRICAN AMERICAN ALONE,25 to 44 years,Some college or associate's degree,19,2.5918769452349246
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),56,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),24,0.329039794469325
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,24,0.9891443888498365
+TX,Female,OTHER,65 years and over,High school graduate (includes equivalency),42,0.2668489618276657
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Less than high school diploma,18,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,44,0.329039794469325
+TX,Male,OTHER,18 to 24 years,Bachelor's degree or higher,10,0.13570439925840191
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Some college or associate's degree,12,0.9891443888498365
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,17,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,29,0.329039794469325
+TX,Female,BLACK OR AFRICAN AMERICAN ALONE,25 to 44 years,Some college or associate's degree,37,3.3499009364765664
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,26,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,36,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),54,0.6029533291267355
+TX,Female,OTHER,25 to 44 years,Bachelor's degree or higher,36,0.2668489618276657
+TX,Male,HISPANIC OR LATINO,25 to 44 years,High school graduate (includes equivalency),15,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),56,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,59,0.6029533291267355
+TX,Male,OTHER,45 to 64 years,High school graduate (includes equivalency),13,0.13570439925840191
+TX,Male,ASIAN ALONE,65 years and over,Bachelor's degree or higher,13,0.8077251510011394
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,33,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),36,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,66,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,9,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,36,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Some college or associate's degree,30,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),71,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,High school graduate (includes equivalency),60,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),47,0.329039794469325
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Some college or associate's degree,18,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,38,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,High school graduate (includes equivalency),36,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Less than high school diploma,33,0.329039794469325
+TX,Male,HISPANIC OR LATINO,25 to 44 years,Bachelor's degree or higher,15,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,34,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,52,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,74,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,49,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Some college or associate's degree,39,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,40,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,39,0.329039794469325
+TX,Male,HISPANIC OR LATINO,65 years and over,Less than high school diploma,19,0.9891443888498365
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,30,0.329039794469325
+TX,Female,HISPANIC OR LATINO,25 to 44 years,High school graduate (includes equivalency),36,1.7939122990944214
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,59,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,34,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,47,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Some college or associate's degree,37,0.329039794469325
+TX,Female,HISPANIC OR LATINO,25 to 44 years,Bachelor's degree or higher,45,1.7939122990944214
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),44,0.329039794469325
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,83,0.6029533291267355
+TX,Male,HISPANIC OR LATINO,25 to 44 years,High school graduate (includes equivalency),11,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,47,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,64,0.6029533291267355
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Bachelor's degree or higher,57,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,32,0.329039794469325
+TX,Female,HISPANIC OR LATINO,65 years and over,Bachelor's degree or higher,52,1.7939122990944214
+TX,Male,OTHER,45 to 64 years,Some college or associate's degree,15,0.13570439925840191
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,31,0.329039794469325
+TX,Male,HISPANIC OR LATINO,65 years and over,High school graduate (includes equivalency),13,0.9891443888498365
+TX,Male,HISPANIC OR LATINO,45 to 64 years,Bachelor's degree or higher,14,0.9891443888498365
+TX,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Some college or associate's degree,63,0.6029533291267355
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),39,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,High school graduate (includes equivalency),35,0.329039794469325
+TX,Male,BLACK OR AFRICAN AMERICAN ALONE,45 to 64 years,Bachelor's degree or higher,15,2.5918769452349246
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",25 to 44 years,Bachelor's degree or higher,30,0.329039794469325
+TX,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,33,0.329039794469325
+TX,Male,BLACK OR AFRICAN AMERICAN ALONE,18 to 24 years,Some college or associate's degree,13,2.5918769452349246
+TX,Male,HISPANIC OR LATINO,65 years and over,Bachelor's degree or higher,10,0.9891443888498365
