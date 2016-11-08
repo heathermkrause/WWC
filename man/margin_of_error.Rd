@@ -3,19 +3,23 @@
 \name{margin_of_error}
 \alias{margin_of_error}
 \alias{margin_of_error_}
-\title{Calculate some estimates of the margin of error for a weighted survey 
-data frame}
+\title{Calculate some estimates of the margin of error for weighted survey 
+results}
 \usage{
-margin_of_error(mysurvey, response)
+margin_of_error(inputfile, response)
 
-margin_of_error_(mysurvey, response_col)
+margin_of_error_(inputfile, response_col)
 }
 \arguments{
-\item{mysurvey}{A survey data frame with post-stratification weights, such 
-as those created by \code{weight_wwc}. There must be a column \code{weight} 
-in the data frame.}
+\item{inputfile}{A file containing the weighted survey data (a survey data 
+frame with post-stratification weights, such as those created by 
+\code{weight_wwc}). There must be a column \code{weight} in the file. Either 
+a path to a file, a connection, or literal data (either a single string or a 
+raw vector). Files starting with \code{http://}, \code{https://}, 
+\code{ftp://}, or \code{ftps://} will be automatically downloaded, and 
+zipped files wll be uncompressed.}
 
-\item{response}{A column in \code{mysurvey} that contains the quantity to be
+\item{response}{A column in \code{inputfile} that contains the quantity to be
 weighted, such as the response to a yes/no question as in 
 \code{simulate_survey}}
 
@@ -25,13 +29,14 @@ weighted, such as the response to a yes/no question as in
 A list with
 \itemize{
 \item the percent standard error of the raw, unweighted survey,
-\item the percent bias of the raw, unweighted survey (compared to the weighted survey), and 
+\item the percent bias of the raw, unweighted survey (compared to the weighted survey),
+\item the percent total error of the raw, unweighted survey (the square root of the sum of the squares of the bias and standard error), and
 \item the percent standard error of the weighted survey.
 }
 }
 \description{
-Calculate some estimates of the margin of error for a weighted survey 
-data frame
+Calculate some estimates of the margin of error for weighted survey 
+results
 }
 \details{
 \code{margin_of_error} is given bare names while 
@@ -39,14 +44,8 @@ data frame
 programming with.
 }
 \examples{
-library(dplyr) 
-data(texassurvey)
-weight_wwc(texassurvey, sex, raceethnicity) \%>\%
-    margin_of_error(response)
-    
-data(twostatessurvey)
-weight_wwc(twostatessurvey, sex, raceethnicity) \%>\%
-    margin_of_error(response)
+margin_of_error(system.file("extdata/weightedsurvey.csv", package = "WWC"),
+    response)
 
 }
 

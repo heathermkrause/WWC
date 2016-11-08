@@ -1,5 +1,8 @@
 # WWC 0.1.1
 
+* Report estimates of margin of error in new `margin_of_error` function (reported
+values include standard error of the weighted survey, and the standard error,
+bias, and total error of the unweighted/raw survey)
 * Added a new function to find the best weighting indicators for an individual
 survey using bootstrap resampling, `choose_best_weighting`.
 * Now allow multiple geographical areas per survey (for example, multiple states 
