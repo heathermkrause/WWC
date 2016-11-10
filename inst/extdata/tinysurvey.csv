@@ -1,0 +1,21 @@
+geography,sex,raceethnicity,age,education,response,weight
+UT,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Bachelor's degree or higher,28,2.6611819251713222
+UT,Male,ASIAN ALONE,45 to 64 years,Bachelor's degree or higher,12,0.06577304613664993
+UT,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",65 years and over,Bachelor's degree or higher,34,2.6611819251713222
+UT,Male,BLACK OR AFRICAN AMERICAN ALONE,25 to 44 years,Some college or associate's degree,8,0.12149283215382467
+UT,Male,ASIAN ALONE,18 to 24 years,Less than high school diploma,12,0.06577304613664993
+UT,Female,BLACK OR AFRICAN AMERICAN ALONE,45 to 64 years,Bachelor's degree or higher,16,0.02414356895166073
+UT,Female,BLACK OR AFRICAN AMERICAN ALONE,Under 18 years,Bachelor's degree or higher,13,0.02414356895166073
+UT,Male,OTHER,18 to 24 years,Some college or associate's degree,6,0.0953951753448344
+UT,Male,OTHER,65 years and over,Some college or associate's degree,6,0.0953951753448344
+UT,Female,ASIAN ALONE,Under 18 years,Bachelor's degree or higher,16,0.2269540966043656
+UT,Female,BLACK OR AFRICAN AMERICAN ALONE,Under 18 years,Less than high school diploma,17,0.02414356895166073
+UT,Male,OTHER,25 to 44 years,Some college or associate's degree,6,0.0953951753448344
+UT,Female,BLACK OR AFRICAN AMERICAN ALONE,45 to 64 years,Some college or associate's degree,12,0.02414356895166073
+UT,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Less than high school diploma,29,3.985177622562594
+UT,Male,"WHITE ALONE, NOT HISPANIC OR LATINO",45 to 64 years,Less than high school diploma,21,2.6611819251713222
+UT,Male,OTHER,Under 18 years,Bachelor's degree or higher,9,0.0953951753448344
+UT,Female,OTHER,65 years and over,Bachelor's degree or higher,16,0.36689967604477225
+UT,Male,HISPANIC OR LATINO,18 to 24 years,High school graduate (includes equivalency),6,1.3691910496128388
+UT,Female,"WHITE ALONE, NOT HISPANIC OR LATINO",18 to 24 years,Less than high school diploma,34,3.985177622562594
+UT,Male,ASIAN ALONE,45 to 64 years,Some college or associate's degree,8,0.06577304613664993

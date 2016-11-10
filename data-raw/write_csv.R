@@ -6,3 +6,6 @@ write_csv(texassurvey, "inst/extdata/examplesurvey.csv")
 
 write_csv(weight_wwc(twostatessurvey, sex, raceethnicity),
           "inst/extdata/weightedsurvey.csv")
+
+write_csv(weight_wwc(tinysurvey, sex, raceethnicity),
+          "inst/extdata/tinysurvey.csv")
