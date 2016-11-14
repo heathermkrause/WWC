@@ -23,7 +23,7 @@
 #' same time because of how the ACS tables are organized.
 #' @param dots List of weighting indicator(s) as string(s)
 #' 
-#' @return ??? WHAT WILL IT RETURN ??? Right now, a list of the best indicators.
+#' @return A list of the best indicators.
 #' 
 #' @details \code{choose_best_weighting} is given bare names while 
 #' \code{choose_best_weighting_} is given strings and is therefore suitable for 

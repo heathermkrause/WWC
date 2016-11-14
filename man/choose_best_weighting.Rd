@@ -41,7 +41,7 @@ same time because of how the ACS tables are organized.}
 \item{dots}{List of weighting indicator(s) as string(s)}
 }
 \value{
-??? WHAT WILL IT RETURN ??? Right now, a list of the best indicators.
+A list of the best indicators.
 }
 \description{
 Use bootstrap resampling of survey to find best weighting indicators
