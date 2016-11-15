@@ -7,8 +7,10 @@
 #' \code{ftps://} will be automatically downloaded, and zipped files wll be 
 #' uncompressed. 
 #' @param outputpath Path to write a csv file of the output weighted results. 
-#' The new file will contain the original survey data with 1 column added, 
-#' \code{weight}, the post-stratification weight for each row in the survey.
+#' The new file will contain the original survey data with 2 columns added, 
+#' \code{weight_best}, the post-stratification weight for each row in the 
+#' survey using the best indicators, and \code{weight_all}, the 
+#' post-stratification weight for each row using all the indicators available.
 #' Default will write a csv to the working directory.
 #' @param n Number of bootstrap resamplings to generate in order to find the
 #' best weighting indicators
@@ -23,7 +25,8 @@
 #' same time because of how the ACS tables are organized.
 #' @param dots List of weighting indicator(s) as string(s)
 #' 
-#' @return A list of the best indicators.
+#' @return A list of the best indicators. This function also saves a csv file 
+#' of the output weighted results
 #' 
 #' @details \code{choose_best_weighting} is given bare names while 
 #' \code{choose_best_weighting_} is given strings and is therefore suitable for 
@@ -64,6 +67,9 @@ choose_best_weighting_ <- function(inputfile, outputpath = "./wwc_weighted.csv",
         # exclude rows/observations/respondents who have NA for geography
         mysurvey <- mysurvey[!is.na(mysurvey$geography),]
 
+        all_weights <- weight_wwc_(mysurvey, dots, force_edu = FALSE) %>%
+                rename(weight_all = weight)
+        
         weight_and_process <- function(dots, mysurvey, n, response_col) {
                 boot <- modelr::bootstrap(mysurvey, n)
                 boot <- purrr::map(boot$strap, weight_wwc_, dots)
@@ -121,8 +127,11 @@ choose_best_weighting_ <- function(inputfile, outputpath = "./wwc_weighted.csv",
                 stop("indicators can only include three of sex, raceethnicity, age, and education")
                 
         }
+        
+        ret <- ret %>%
+                rename(weight_best = weight) %>%
+                inner_join(all_weights)
 
-   
         readr::write_csv(ret, outputpath)
         message("The set of indicators best suited to this survey is")
         message(unlist(best_dots))

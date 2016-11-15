@@ -19,8 +19,10 @@ Files starting with \code{http://}, \code{https://}, \code{ftp://}, or
 uncompressed.}
 
 \item{outputpath}{Path to write a csv file of the output weighted results. 
-The new file will contain the original survey data with 1 column added, 
-\code{weight}, the post-stratification weight for each row in the survey.
+The new file will contain the original survey data with 2 columns added, 
+\code{weight_best}, the post-stratification weight for each row in the 
+survey using the best indicators, and \code{weight_all}, the 
+post-stratification weight for each row using all the indicators available.
 Default will write a csv to the working directory.}
 
 \item{n}{Number of bootstrap resamplings to generate in order to find the
@@ -41,7 +43,8 @@ same time because of how the ACS tables are organized.}
 \item{dots}{List of weighting indicator(s) as string(s)}
 }
 \value{
-A list of the best indicators.
+A list of the best indicators. This function also saves a csv file 
+of the output weighted results
 }
 \description{
 Use bootstrap resampling of survey to find best weighting indicators
