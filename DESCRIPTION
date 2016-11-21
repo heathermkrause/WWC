@@ -26,6 +26,7 @@ Imports: purrr,
 Suggests: ggplot2,
         knitr,
         testthat,
-        acs
+        acs,
+        rmarkdown
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1
