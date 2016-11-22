@@ -1,0 +1,61 @@
+---
+title: "Introduction to the WWC Package"
+author: "Heather Krause and Julia Silge"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, echo=FALSE}
+library(knitr)
+opts_chunk$set(warning = FALSE, message = FALSE)
+library(ggplot2)
+theme_set(theme_light())
+```
+
+The WWC package is part of the the [Veracio](http://veracio.org/) survey tool developed by leaders from [Orb](http://www.orbmedia.org/), [Datassist](http://idatassist.com/), and [Cognite Labs](http://www.cognitelabs.com/), and supported by a [2016 Knight Foundation News Challenge on Data](http://idatassist.com/knight/). This survey tool provides a set of software tools and online services for nonprofits, local governments, social service agencies, journalists, and others to:
+
+- frame proper sampling questions,
+- help construct, link, and embed them into a survey platform, and 
+- visualize and then statistically adjust the collected results.
+
+This open-source tool weights collected survey results for demographic and other factors to make them more scientifically sound. The Veracio tool is being developed and made available at no cost to anyone wishing to poll the crowd and share reliable, credible results.
+
+This vignette explains how the functions are used in production online at [Veracio](http://veracio.org/).
+
+## Surveys using the Veracio tool
+
+A user of the Veracio tool sets up a survey via the website that s/he can share with members of a community. The survey will always include demographic questions, such as sex, race/ethnicity, education, or age, because the Veracio tool works by statistically weighting survey respondents by how much of the population they represent. During the survey period, responses are stored. At the end of the survey period, all the survey responses are ready to be analyzed.
+
+The R package has several example surveys; let's use one for Texas that is stored as a `.csv` file, since that is how it is used in production. This simulated survey is *biased*, meaning that the population in the survey does not match the true population in Texas. It has different proportions with respect to sex and race/ethnicity compared to the real population in Texas (2010-2014 5-year ACS population estimates). 
+
+```{r}
+library(readr)
+survey <- read_csv(system.file("extdata/examplesurvey.csv", package = "WWC"))
+
+survey
+```
+
+## Choosing the best set of weighting indicators
+
+When Veracio users design a survey, they will not know ahead of time which set of demographic factors will be the best set of weighting indicators to use for their individual surveys. The Veracio tool uses a function called `choose_best_weighting` to find the best set using bootstrap resampling of the survey itself. Based on our work preparing to implement the Veracio tool, we found that the set of weighting indicators that gives the most consistent result in post-stratification weighting (in the sense of lowest variance) is the right set. Let's implement that here.
+
+```{r, eval = FALSE}
+library(WWC)
+best_indicators <- choose_best_weighting(inputfile = system.file("extdata/examplesurvey.csv", 
+                                                                 package = "WWC"),
+                                         outputpath = "./wwc_weighted.csv",
+                                         n = 500, 
+                                         response, sex, raceethnicity, age)
+```
+
+```{r, echo = FALSE}
+# the bootstrap resampling takes too long to run in the vignette
+library(WWC)
+load(system.file("extdata", "best_indicators.rda", package = "WWC"))
+```
+
+In the Veracio tool, we use 500 bootstrap resamplings to find the 
