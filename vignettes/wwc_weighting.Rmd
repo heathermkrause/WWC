@@ -30,11 +30,11 @@ This vignette explains how the functions are used in production online at [Verac
 
 A user of the Veracio tool sets up a survey via the website that s/he can share with members of a community. The survey will always include demographic questions, such as sex, race/ethnicity, education, or age, because the Veracio tool works by statistically weighting survey respondents by how much of the population they represent. During the survey period, responses are stored. At the end of the survey period, all the survey responses are ready to be analyzed.
 
-The R package has several example surveys; let's use one for Texas that is stored as a `.csv` file, since that is how it is used in production. This simulated survey is *biased*, meaning that the population in the survey does not match the true population in Texas. It has different proportions with respect to sex and race/ethnicity compared to the real population in Texas (2010-2014 5-year ACS population estimates). 
+The R package has several example surveys; let's use one that is stored as a `.csv` file, since that is how it is used in production. This simulated survey is *biased*, meaning that the population in the survey does not match the true population in the two states (TX and CA) where it is simulated. It has different proportions with respect to sex and race/ethnicity compared to the real population (2010-2014 5-year ACS population estimates). 
 
 ```{r}
 library(readr)
-survey <- read_csv(system.file("extdata/examplesurvey.csv", package = "WWC"))
+survey <- read_csv(system.file("extdata/twostatessurvey.csv", package = "WWC"))
 
 survey
 ```
@@ -45,7 +45,7 @@ When Veracio users design a survey, they will not know ahead of time which set o
 
 ```{r, eval = FALSE}
 library(WWC)
-best_indicators <- choose_best_weighting(inputfile = system.file("extdata/examplesurvey.csv", 
+best_indicators <- choose_best_weighting(inputfile = system.file("extdata/twostatessurvey.csv", 
                                                                  package = "WWC"),
                                          outputpath = "./wwc_weighted.csv",
                                          n = 500, 
@@ -54,8 +54,32 @@ best_indicators <- choose_best_weighting(inputfile = system.file("extdata/exampl
 
 ```{r, echo = FALSE}
 # the bootstrap resampling takes too long to run in the vignette
-library(WWC)
 load(system.file("extdata", "best_indicators.rda", package = "WWC"))
 ```
 
 In the Veracio tool, we use 500 bootstrap resamplings to find the 
+
+```{r, eval = FALSE}
+weighted <- read_csv("./wwc_weighted.csv")
+
+weighted
+```
+
+```{r, echo = FALSE}
+# the bootstrap resampling takes too long to run in the vignette
+load(system.file("extdata", "weighted.rda", package = "WWC"))
+weighted
+```
+
+
+```{r}
+library(dplyr)
+
+weighted %>% 
+        select(contains("weight"))
+```
+
+
+
+## Reporting estimates of error
+
