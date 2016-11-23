@@ -117,7 +117,8 @@ choose_best_weighting_ <- function(inputfile, outputpath = "./wwc_weighted.csv",
                         tidyr::unnest(results, .drop = FALSE)
                 
                 dots <- results %>% 
-                        top_n(-1, stddev) 
+                        top_n(-1, stddev) %>%
+                        sample_n(1)
                 best_dots <- dots$dots %>%
                         purrr::transpose() %>%
                         purrr::map(purrr::flatten_chr)
@@ -134,7 +135,7 @@ choose_best_weighting_ <- function(inputfile, outputpath = "./wwc_weighted.csv",
 
         readr::write_csv(ret, outputpath)
         message("The set of indicators best suited to this survey is")
-        message(unlist(best_dots))
+        message(cat(unlist(best_dots), sep = " "))
 
         return(best_dots)
 }
