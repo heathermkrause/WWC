@@ -109,3 +109,11 @@ When these weights are higher than 1, the survey respondent was from a group und
 
 ## Reporting estimates of error
 
+Survey users are also interested in understanding the margin of error of their surveys, and how the weighting procedure implemented by the Veracio tool affects the margin of error and uncertainty in their surveys.
+
+Before finding the post-stratification weights, the raw survey has two main sources of uncertainty. One is random error, due to random sampling differences, and the other is bias, due to the survey sample not being an accurate reflection of the real population in question. The algorithm implemented by the Veracio tool reduces the second source of error and uncertainty as much as possible. One result of this is that the random error of the weighted survey results is somewhat higher than the raw survey results; we can think of this as an example of the bias-variance tradeoff. For many biased surveys, the overall error is still lower after applying post-stratification weights. Let's see how this works for the example survey we have here.
+
+```{r, eval = FALSE}
+margin_of_error("./wwc_weighted.csv", response)
+```
+
