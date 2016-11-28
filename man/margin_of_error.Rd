@@ -13,11 +13,11 @@ margin_of_error_(inputfile, response_col)
 \arguments{
 \item{inputfile}{A file containing the weighted survey data (a survey data 
 frame with post-stratification weights, such as those created by 
-\code{weight_wwc}). There must be a column \code{weight} in the file. Either 
-a path to a file, a connection, or literal data (either a single string or a 
-raw vector). Files starting with \code{http://}, \code{https://}, 
-\code{ftp://}, or \code{ftps://} will be automatically downloaded, and 
-zipped files wll be uncompressed.}
+\code{weight_wwc}). There must be a column \code{weight} or 
+\code{weight_best} in the file. Either a path to a file, a connection, or 
+literal data (either a single string or a raw vector). Files starting with 
+\code{http://}, \code{https://}, \code{ftp://}, or \code{ftps://} will be 
+automatically downloaded, and zipped files wll be uncompressed.}
 
 \item{response}{A column in \code{inputfile} that contains the quantity to be
 weighted, such as the response to a yes/no question as in 
