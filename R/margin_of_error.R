@@ -47,9 +47,9 @@ margin_of_error_ <- function(inputfile, response_col) {
         
         mysurvey <- readr::read_csv(inputfile)
         
-        if ('weight_all' %in% colnames(mysurvey))
+        if ('weight_best' %in% colnames(mysurvey))
                 mysurvey <- mysurvey %>% 
-                        rename(weight = weight_all)
+                        rename(weight = weight_best)
         
         # summarize the survey
         su <- summarize_survey_(mysurvey, response_col)
