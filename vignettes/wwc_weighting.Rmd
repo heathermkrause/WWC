@@ -116,3 +116,10 @@ Before finding the post-stratification weights, the raw survey has two main sour
 ```{r, eval = FALSE}
 margin_of_error("./wwc_weighted.csv", response)
 ```
+
+```{r, echo = FALSE}
+tmp <- tempfile()
+write_csv(weighted, tmp)
+margin_of_error(tmp, response)
+```
+
