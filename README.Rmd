@@ -53,7 +53,9 @@ What result would a person using the survey find if s/he looked at the raw resul
 ```{r original, fig.height=5, fig.width=5}
 library(dplyr)
 library(ggplot2)
-resultDF <- texassurvey %>% group_by(response) %>% summarize(n = n())
+resultDF <- texassurvey %>% 
+        group_by(response) %>% 
+        summarize(n = n())
 ggplot(resultDF, aes(x = response, y = n)) +
         geom_bar(stat = "identity", fill = "midnightblue")
 ```

@@ -15,7 +15,7 @@ functions to `data-raw`.
 post-stratification weighting now done with `weight_wwc`.
 * Changed weighting algorithm to remove strata with no survey respondents from 
 population frequency table used for weighting.
-* Added codecov and Travis.
+* Added codecov, Travis, and vignette.
 
 # WWC 0.1.0
 
