@@ -1,0 +1,200 @@
+Gender,Education,Response,Weight
+Male,High School Education,10000,1.67
+Male,High School Education,11000,1.67
+Male,High School Education,9000,1.67
+Male,High School Education,10500,1.67
+Male,High School Education,25000,1.67
+Male,High School Education,28000,1.67
+Male,High School Education,17000,1.67
+Male,High School Education,21000,1.67
+Male,High School Education,10000,1.67
+Male,High School Education,11000,1.67
+Male,High School Education,9000,1.67
+Male,High School Education,10500,1.67
+Male,High School Education,25000,1.67
+Male,High School Education,28000,1.67
+Male,High School Education,17000,1.67
+Male,High School Education,21000,1.67
+Male,High School Education,10000,1.67
+Male,High School Education,11000,1.67
+Male,High School Education,9000,1.67
+Male,High School Education,10500,1.67
+Male,High School Education,25000,1.67
+Male,High School Education,28000,1.67
+Male,High School Education,17000,1.67
+Male,High School Education,21000,1.67
+Male,High School Education,22000,1.67
+Male,High School Education,21500,1.67
+Male,High School Education,17900,1.67
+Male,High School Education,20500,1.67
+Male,High School Education,21500,1.67
+Female,High School Education,10000,1.1
+Female,High School Education,10000,1.1
+Female,High School Education,7500,1.1
+Female,High School Education,7500,1.1
+Female,High School Education,9000,1.1
+Female,High School Education,11500,1.1
+Female,High School Education,12500,1.1
+Female,High School Education,13000,1.1
+Female,High School Education,17500,1.1
+Female,High School Education,14500,1.1
+Female,High School Education,20000,1.1
+Female,High School Education,19500,1.1
+Female,High School Education,21000,1.1
+Female,High School Education,10000,1.1
+Female,High School Education,10000,1.1
+Female,High School Education,7500,1.1
+Female,High School Education,7500,1.1
+Female,High School Education,9000,1.1
+Female,High School Education,11500,1.1
+Female,High School Education,12500,1.1
+Female,High School Education,13000,1.1
+Female,High School Education,17500,1.1
+Female,High School Education,14500,1.1
+Female,High School Education,20000,1.1
+Female,High School Education,19500,1.1
+Female,High School Education,21000,1.1
+Female,High School Education,10000,1.1
+Female,High School Education,10000,1.1
+Female,High School Education,7500,1.1
+Female,High School Education,7500,1.1
+Female,High School Education,9000,1.1
+Female,High School Education,11500,1.1
+Female,High School Education,12500,1.1
+Female,High School Education,13000,1.1
+Female,High School Education,17500,1.1
+Female,High School Education,14500,1.1
+Female,High School Education,20000,1.1
+Female,High School Education,19500,1.1
+Female,High School Education,21000,1.1
+Female,High School Education,23000,1.1
+Male,Bachelors or higher Education,90000,0.72
+Male,Bachelors or higher Education,100000,0.72
+Male,Bachelors or higher Education,75000,0.72
+Male,Bachelors or higher Education,89000,0.72
+Male,Bachelors or higher Education,95000,0.72
+Male,Bachelors or higher Education,89000,0.72
+Male,Bachelors or higher Education,110000,0.72
+Male,Bachelors or higher Education,120000,0.72
+Male,Bachelors or higher Education,150000,0.72
+Male,Bachelors or higher Education,109000,0.72
+Male,Bachelors or higher Education,90000,0.72
+Male,Bachelors or higher Education,100000,0.72
+Male,Bachelors or higher Education,75000,0.72
+Male,Bachelors or higher Education,89000,0.72
+Male,Bachelors or higher Education,95000,0.72
+Male,Bachelors or higher Education,89000,0.72
+Male,Bachelors or higher Education,110000,0.72
+Male,Bachelors or higher Education,120000,0.72
+Male,Bachelors or higher Education,150000,0.72
+Male,Bachelors or higher Education,109000,0.72
+Male,Bachelors or higher Education,90000,0.72
+Male,Bachelors or higher Education,100000,0.72
+Male,Bachelors or higher Education,75000,0.72
+Male,Bachelors or higher Education,89000,0.72
+Male,Bachelors or higher Education,95000,0.72
+Male,Bachelors or higher Education,89000,0.72
+Male,Bachelors or higher Education,110000,0.72
+Male,Bachelors or higher Education,120000,0.72
+Male,Bachelors or higher Education,150000,0.72
+Male,Bachelors or higher Education,109000,0.72
+Male,Bachelors or higher Education,90000,0.72
+Male,Bachelors or higher Education,100000,0.72
+Male,Bachelors or higher Education,75000,0.72
+Male,Bachelors or higher Education,89000,0.72
+Male,Bachelors or higher Education,95000,0.72
+Male,Bachelors or higher Education,89000,0.72
+Male,Bachelors or higher Education,110000,0.72
+Male,Bachelors or higher Education,120000,0.72
+Male,Bachelors or higher Education,150000,0.72
+Male,Bachelors or higher Education,109000,0.72
+Male,Bachelors or higher Education,90000,0.72
+Male,Bachelors or higher Education,100000,0.72
+Male,Bachelors or higher Education,75000,0.72
+Male,Bachelors or higher Education,89000,0.72
+Male,Bachelors or higher Education,95000,0.72
+Male,Bachelors or higher Education,89000,0.72
+Male,Bachelors or higher Education,110000,0.72
+Male,Bachelors or higher Education,120000,0.72
+Male,Bachelors or higher Education,150000,0.72
+Male,Bachelors or higher Education,109000,0.72
+Female,Bachelors or higher Education,80000,0.67
+Female,Bachelors or higher Education,74000,0.67
+Female,Bachelors or higher Education,95000,0.67
+Female,Bachelors or higher Education,105000,0.67
+Female,Bachelors or higher Education,135000,0.67
+Female,Bachelors or higher Education,94000,0.67
+Female,Bachelors or higher Education,75000,0.67
+Female,Bachelors or higher Education,85000,0.67
+Female,Bachelors or higher Education,60000,0.67
+Female,Bachelors or higher Education,74000,0.67
+Female,Bachelors or higher Education,80000,0.67
+Female,Bachelors or higher Education,74000,0.67
+Female,Bachelors or higher Education,95000,0.67
+Female,Bachelors or higher Education,105000,0.67
+Female,Bachelors or higher Education,74000,0.67
+Female,Bachelors or higher Education,95000,0.67
+Female,Bachelors or higher Education,105000,0.67
+Female,Bachelors or higher Education,135000,0.67
+Female,Bachelors or higher Education,94000,0.67
+Female,Bachelors or higher Education,75000,0.67
+Female,Bachelors or higher Education,85000,0.67
+Female,Bachelors or higher Education,60000,0.67
+Female,Bachelors or higher Education,74000,0.67
+Female,Bachelors or higher Education,80000,0.67
+Female,Bachelors or higher Education,74000,0.67
+Female,Bachelors or higher Education,95000,0.67
+Female,Bachelors or higher Education,105000,0.67
+Female,Bachelors or higher Education,74000,0.67
+Female,Bachelors or higher Education,95000,0.67
+Female,Bachelors or higher Education,105000,0.67
+Female,Bachelors or higher Education,135000,0.67
+Female,Bachelors or higher Education,94000,0.67
+Female,Bachelors or higher Education,75000,0.67
+Female,Bachelors or higher Education,85000,0.67
+Female,Bachelors or higher Education,60000,0.67
+Female,Bachelors or higher Education,74000,0.67
+Female,Bachelors or higher Education,80000,0.67
+Female,Bachelors or higher Education,74000,0.67
+Female,Bachelors or higher Education,95000,0.67
+Female,Bachelors or higher Education,105000,0.67
+Female,Bachelors or higher Education,74000,0.67
+Female,Bachelors or higher Education,95000,0.67
+Female,Bachelors or higher Education,105000,0.67
+Female,Bachelors or higher Education,135000,0.67
+Female,Bachelors or higher Education,94000,0.67
+Female,Bachelors or higher Education,75000,0.67
+Female,Bachelors or higher Education,85000,0.67
+Female,Bachelors or higher Education,60000,0.67
+Female,Bachelors or higher Education,74000,0.67
+Female,Bachelors or higher Education,80000,0.67
+Female,Bachelors or higher Education,74000,0.67
+Female,Bachelors or higher Education,95000,0.67
+Female,Bachelors or higher Education,105000,0.67
+Female,Bachelors or higher Education,74000,0.67
+Female,Bachelors or higher Education,95000,0.67
+Female,Bachelors or higher Education,105000,0.67
+Female,Bachelors or higher Education,135000,0.67
+Female,Bachelors or higher Education,94000,0.67
+Female,Bachelors or higher Education,75000,0.67
+Female,Bachelors or higher Education,85000,0.67
+Male,Some College Education,50000,1
+Male,Some College Education,74000,1
+Male,Some College Education,42000,1
+Male,Some College Education,35000,1
+Male,Some College Education,40000,1
+Male,Some College Education,38000,1
+Male,Some College Education,50000,1
+Male,Some College Education,74000,1
+Male,Some College Education,42000,1
+Male,Some College Education,35000,1
+Female,Some College Education,40000,2
+Female,Some College Education,38000,2
+Female,Some College Education,27000,2
+Female,Some College Education,20000,2
+Female,Some College Education,25000,2
+Female,Some College Education,23000,2
+Female,Some College Education,12000,2
+Female,Some College Education,25000,2
+Female,Some College Education,26000,2
+Female,Some College Education,28000,2
