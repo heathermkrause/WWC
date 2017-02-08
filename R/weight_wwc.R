@@ -40,6 +40,10 @@ weight_wwc <- function(mysurvey, ..., force_edu = FALSE) {
         dots <- eval(substitute(alist(...)))
         dots <- purrr::map(dots, col_name)
         
+        ########  added by GM to try to fix list of dots problem ----------------
+        dots <- unique(unlist(dots))
+        ######## end of code added by GM
+        
         weight_wwc_(mysurvey, dots, force_edu)
 }
 
@@ -49,11 +53,11 @@ weight_wwc_ <- function(mysurvey, dots, force_edu = FALSE) {
         
         # error handling for weighting indicator
         test_indicators(dots, force_edu)
-        
+
         # exclude rows/observations/respondents who have NA for geography
         mysurvey <- as.data.frame(mysurvey)
         mysurvey <- mysurvey[!is.na(mysurvey$geography),]
-        
+
         # what is the population of the survey by geography?
         surveytotals <- mysurvey %>% 
                 group_by(geography) %>% 
