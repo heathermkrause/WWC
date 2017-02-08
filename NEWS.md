@@ -1,5 +1,5 @@
 # WWC 0.1.1
-
+* bug fixes: input data: restoring leading 0s for geography, temporary fix for categorical data, mean imputation of NAs in response, dots as list problem calling 'weight_wwc_'
 * Report estimates of margin of error in new `margin_of_error` function (reported
 values include standard error of the weighted survey, and the standard error,
 bias, and total error of the unweighted/raw survey)
