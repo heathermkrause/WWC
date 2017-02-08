@@ -58,11 +58,38 @@ choose_best_weighting <- function(inputfile, outputpath, n, response, ...) {
 #' @export
 choose_best_weighting_ <- function(inputfile, outputpath = "./wwc_weighted.csv", 
                                    n, response_col, dots) {
-        
+        .debug <- F
         mysurvey <- readr::read_csv(inputfile)
         # error handling for weighting indicator
         force_edu <- FALSE
         test_indicators(dots, force_edu)
+        
+        ###### added by GM to debug  'contrasts can be applied only to factors with 2 ...' -------
+        #
+        # Restore leading 0s for geography
+        #
+        geog <- as.character(mysurvey$geography)
+        nc <- nchar(geog)
+        if(any(bad <- !(nc %in% c(2,4,5)))) {
+                print(geog[bad])
+                stop("Bad number of characters in geography\n")
+        }
+        geog <- ifelse(nchar(geog)==4, paste0('0',geog), geog)
+        mysurvey$geography <- geog
+        #
+        # Temporary fix to problem with categorical responses
+        #
+        resp <- mysurvey[[response_col]]
+        if(length( unique(resp)) == 1) stop('response is a constant')
+        if(!is.numeric(resp)) {
+                resp <- as.numeric(as.factor(resp))
+        }
+        #
+        # use mean imputation for NAs
+        #
+        resp[is.na(resp)] <- mean(resp, na.rm = T)
+        mysurvey[[response_col]] <- resp
+        ###### end of code added by GM
         
         # exclude rows/observations/respondents who have NA for geography
         mysurvey <- mysurvey[!is.na(mysurvey$geography),]
@@ -96,12 +123,16 @@ choose_best_weighting_ <- function(inputfile, outputpath = "./wwc_weighted.csv",
                                                     weight_and_process, 
                                                     mysurvey, n, response_col)) %>%
                         tidyr::unnest(results, .drop = FALSE)
-                
                 dots <- results %>% 
                         top_n(-1, stddev) 
                 best_dots <- dots$dots %>%
                         purrr::transpose() %>%
                         purrr::map(purrr::flatten_chr)
+                ########## added by GM to fix dot list problem ------------
+                best_dots <- unique(unlist(best_dots))
+                if(.debug) browser()
+                ########## end of code added by GM                
+                
                 ret <- weight_wwc_(mysurvey, best_dots, force_edu = FALSE)
 
         } else if (length(dots) == 3) {
@@ -115,13 +146,17 @@ choose_best_weighting_ <- function(inputfile, outputpath = "./wwc_weighted.csv",
                                                     weight_and_process, 
                                                     mysurvey, n, response_col)) %>%
                         tidyr::unnest(results, .drop = FALSE)
-                
                 dots <- results %>% 
                         top_n(-1, stddev) %>%
                         sample_n(1)
                 best_dots <- dots$dots %>%
                         purrr::transpose() %>%
                         purrr::map(purrr::flatten_chr)
+                ########## added by GM to fix dot list problem ------------
+                best_dots <- unique(unlist(best_dots))
+                if(.debug) browser()
+                ########## end of code added by GM                
+                
                 ret <- weight_wwc_(mysurvey, best_dots, force_edu = FALSE)
 
         } else {
